@@ -11,7 +11,7 @@ public class conexionMS {
     public String driver="com.mysql.jdbc.Driver";
     public String host="localhost";
     public String port="3306";
-    public String user="";
+    public String user="root";
     public String pass="";
     public String url="jdbc:mysql://" + host + ":" + port + "/" + database + "?useSSL=false";
     
@@ -26,7 +26,7 @@ public class conexionMS {
                 JOptionPane.showMessageDialog(null, "CONEXION ESTABLECIDA PRRO");
             }
         } catch (ClassNotFoundException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "ERROR EN LA CONEXION","CONEXION DB",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "ERROR EN LA CONEXION"+e,"CONEXION DB",JOptionPane.WARNING_MESSAGE);
         }
         return cn;
     }
