@@ -1,12 +1,16 @@
 package Presentacion;
 
-public class zmenu extends javax.swing.JFrame {
+import AD.conexionMS;
+import java.sql.Connection;
 
+public class zmenu extends javax.swing.JFrame {
+    conexionMS con;
     public zmenu() {
         initComponents();
         this.setExtendedState(this.MAXIMIZED_BOTH); //maximizar ventana
         this.setTitle("Sistema para bodegas | G&K Systems");
         //tab.setFont(new java.awt.Font("Century Gothic", 0, 18));//font de tab
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -66,7 +70,6 @@ public class zmenu extends javax.swing.JFrame {
         });
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/blacky.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -181,6 +184,9 @@ public class zmenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
+        
+        con = new conexionMS();
+        Connection log = con.conexion();
         /*String tus = txusuario.getText().toUpperCase();
         String tpas = txclave.getText();
         if (tus.isEmpty() || tpas.isEmpty()) {
