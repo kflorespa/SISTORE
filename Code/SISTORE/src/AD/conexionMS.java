@@ -26,7 +26,7 @@ public class conexionMS {
                 JOptionPane.showMessageDialog(null, "CONEXION ESTABLECIDA PRRO");
             }
         } catch (ClassNotFoundException | SQLException e) {
-            JOptionPane.showMessageDialog(null, "ERROR EN LA CONEXION"+e,"CONEXION DB",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "ERROR EN LA CONEXION","CONEXION DB",JOptionPane.WARNING_MESSAGE);
         }
         return cn;
     }

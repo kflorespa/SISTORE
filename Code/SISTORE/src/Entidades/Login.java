@@ -5,15 +5,10 @@
  */
 package Entidades;
 
-import AD.tienda;
-import javax.swing.DefaultComboBoxModel;
-
 /**
  *
- * @author kflores
+ * @author anroq
  */
-public class Tienda {
-    public DefaultComboBoxModel Listar(){
-        return new tienda().Listar();
-    }
+public class Login {
+    
 }
