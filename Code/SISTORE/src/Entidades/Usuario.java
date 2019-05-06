@@ -155,21 +155,21 @@ char FLGELI;
     public Usuario() {
     }
        public String [] DatosArray(){
-        String [] lista = new String[15];
+        String [] lista = new String[14];
         lista[0]=String.valueOf(IDUSUARIO);
         lista[1]=String.valueOf(TIPO);
-        lista[3]=USUARIO;
-        lista[4]=CLAVE;
-        lista[5]=EMAIL;
-        lista[6]=NOMBRES;
-        lista[7]=APELLIDOS;
-        lista[8]=Formatos.sdf.format(FCHNAC);
-        lista[9]=DNI;
-        lista[10]=Formatos.sdf.format(FCHCREA);
-        lista[11]=USRCREA;
-        lista[12]=Formatos.sdf.format(FCHMOD);
-        lista[13]=USRMOD;
-        lista[14]=String.valueOf(FLGELI);
+        lista[2]=USUARIO;
+        lista[3]=CLAVE;
+        lista[4]=EMAIL;
+        lista[5]=NOMBRES;
+        lista[6]=APELLIDOS;
+        lista[7]=Formatos.sdf.format(FCHNAC);
+        lista[8]=DNI;
+        lista[9]=Formatos.sdf.format(FCHCREA);
+        lista[10]=USRCREA;
+        lista[11]=Formatos.sdf.format(FCHMOD);
+        lista[12]=USRMOD;
+        lista[13]=String.valueOf(FLGELI);
         return lista;
     }   
 

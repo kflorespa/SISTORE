@@ -97,8 +97,8 @@ char FLGELI;
         public String [] DatosArray(){
         String [] lista = new String[8];
         lista[0]=String.valueOf(IDOPCIONES);
-        lista[0]=DESCRIPCION;
-        lista[0]=String.valueOf(ORDEN);
+        lista[1]=DESCRIPCION;
+        lista[2]=String.valueOf(ORDEN);
         lista[3]=USRCREA;
         lista[4]=Formatos.sdf.format(FCHCREA);
         lista[5]=USRMOD;

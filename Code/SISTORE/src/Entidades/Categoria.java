@@ -87,14 +87,14 @@ String USRMOD;
     }
 
         public String [] DatosArray(){
-        String [] lista = new String[8];
+        String [] lista = new String[7];
         lista[0]=String.valueOf(IDCATEGORIA);
-        lista[2]=String.valueOf(DESCRIPCION);
-        lista[3]=String.valueOf(DIARETIRO);
-        lista[4]=Formatos.sdf.format(FCHCREA);
-        lista[5]=USRCREA;
-        lista[6]=Formatos.sdf.format(FCHMOD);
-        lista[7]=USRMOD;
+        lista[1]=String.valueOf(DESCRIPCION);
+        lista[2]=String.valueOf(DIARETIRO);
+        lista[3]=Formatos.sdf.format(FCHCREA);
+        lista[4]=USRCREA;
+        lista[5]=Formatos.sdf.format(FCHMOD);
+        lista[6]=USRMOD;
         return lista;
     } 
 }
