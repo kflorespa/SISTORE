@@ -126,7 +126,7 @@ char FLGELI;
         this.FLGELI = FLGELI;
     }
 
-           public String [] DatosArray(){
+        public String [] DatosArray(){
         String [] lista = new String[11];
         lista[0]=String.valueOf(IDPRODUCTO);
         lista[1]=String.valueOf(IDCATEGORIA);
