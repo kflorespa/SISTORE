@@ -61,7 +61,10 @@ public class ADUsuario {
     
     private static boolean Comprobar(Usuario u) throws ClassNotFoundException, SQLException{
     boolean r = false;
-    String sql = "SELECT TU.USUARIO FROM TUSUARIO TU INNER JOIN TSUCURSAL_USUARIO TSU ON TU.IDUSUARIO=TSU.IDUSUARIO WHERE TU.USUARIO=? AND TU.CLAVE=? AND TSU.IDSUCURSAL=?";
+    //Hacer un procedure
+    String sql = "SELECT TU.USUARIO FROM TUSUARIO TU INNER JOIN TSUCURSAL_USUARIO TSU ON \n" +
+"TU.IDUSUARIO=TSU.IDUSUARIO WHERE TU.USUARIO=? AND TU.CLAVE=?\n" +
+" AND TSU.IDSUCURSAL=? AND TU.FLGELI='0' AND TSU.FLGELI='0'";
         try (Connection cn = conexionSS.conexion();
             PreparedStatement ps = cn.prepareStatement(sql)){ 
             ps.setString(1, u.getUSUARIO());
