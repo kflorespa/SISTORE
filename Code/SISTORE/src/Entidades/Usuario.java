@@ -24,6 +24,17 @@ Date FCHMOD;
 String USRMOD;
 char FLGELI;
 
+//VARIABLES AUXILIARES
+int IDSUCURSAL;
+
+    public int getIDSUCURSAL() {
+        return IDSUCURSAL;
+    }
+
+    public void setIDSUCURSAL(int IDSUCURSAL) {
+        this.IDSUCURSAL = IDSUCURSAL;
+    }
+
     public int getIDUSUARIO() {
         return IDUSUARIO;
     }

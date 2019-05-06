@@ -1,14 +1,22 @@
 package Presentacion;
 
+import AD.ADSucursal;
+import AD.ADUsuario;
 import AD.conexionMS;
-import java.sql.Connection;
+import Entidades.Sucursal;
+import Entidades.Usuario;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
-public class zmenu extends javax.swing.JFrame {
+public final class zmenu extends javax.swing.JFrame {
     conexionMS con;
-    public zmenu() {
+    public zmenu() throws ClassNotFoundException, SQLException {
         initComponents();
-        this.setExtendedState(this.MAXIMIZED_BOTH); //maximizar ventana
-        this.setTitle("Sistema para bodegas | G&K Systems");
+        this.setExtendedState(zmenu.MAXIMIZED_BOTH); //maximizar ventana
+        this.setTitle("Sistema de logística para bodegas | Allqu Systems");
+        cargardatos();
         //tab.setFont(new java.awt.Font("Century Gothic", 0, 18));//font de tab
         
     }
@@ -28,7 +36,7 @@ public class zmenu extends javax.swing.JFrame {
         btnentrar1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbsucursal = new javax.swing.JComboBox<>();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -77,9 +85,7 @@ public class zmenu extends javax.swing.JFrame {
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel4.setText("Tienda");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jLabel4.setText("Sucursal");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -101,7 +107,7 @@ public class zmenu extends javax.swing.JFrame {
                                 .addComponent(btnentrar1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txclave)
                             .addComponent(txusuario)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(cbsucursal, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -115,7 +121,7 @@ public class zmenu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbsucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -198,64 +204,83 @@ public class zmenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnentrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrarActionPerformed
-        
-        con = new conexionMS();
-        Connection log = con.conexion();
-        /*String tus = txusuario.getText().toUpperCase();
-        String tpas = txclave.getText();
-        if (tus.isEmpty() || tpas.isEmpty()) {
-            JOptionPane.showMessageDialog(this,"Se deben completar todos los campos.");
-        }else{
-            usuario = new usuario();
-            try {
-                if (usuario.comprobar(tus)) {
+        Usuario u=new Usuario();
+        u.setUSUARIO(txusuario.getText());
+        u.setCLAVE(txclave.getText());
+        String[] combo = cbsucursal.getSelectedItem().toString().split("-");
+        u.setIDSUCURSAL(Integer.parseInt(combo[0]));
+        try {
+            if (ADUsuario.Login(u)) {
+                JOptionPane.showMessageDialog(this, "Ingresa al sistema");
+            }else{
+                JOptionPane.showMessageDialog(this, "Usuario o clave incorrecta.");
+            }
+                 } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(zmenu.class.getName()).log(Level.SEVERE, null, ex);
+        }     
+                    
+                    
+                    /*
+                    CÓDIGO ANDERS
+                    
+                    con = new conexionMS();
+                    Connection log = con.conexion();
+                    String tus = txusuario.getText().toUpperCase();
+                    String tpas = txclave.getText();
+                    if (tus.isEmpty() || tpas.isEmpty()) {
+                    JOptionPane.showMessageDialog(this,"Se deben completar todos los campos.");
+                    }else{
+                    usuario = new usuario();
+                    try {
+                    if (usuario.comprobar(tus)) {
                     String tipo = usuario.ingresar(tus, tpas);
                     if (tipo==null) {
-                        JOptionPane.showMessageDialog(this,"La contraseña no es correcta");
+                    JOptionPane.showMessageDialog(this,"La contraseña no es correcta");
                     }else{
-                        //ingresar y activar campos
-                        switch(tipo){
-                            case "ADMIN":
-                            modeloarbol = new DefaultTreeModel(root);
-                            modeloarbol.insertNodeInto(P01,root,0);
-                            modeloarbol.insertNodeInto(P02,root,1);
-                            modeloarbol.insertNodeInto(P03,root,2);
-                            modeloarbol.insertNodeInto(A01,root,3);
-                            modeloarbol.insertNodeInto(A02,root,4);
-                            modeloarbol.insertNodeInto(A03,root,5);
-                            modeloarbol.insertNodeInto(A04,root,6);
-                            modeloarbol.insertNodeInto(A05,root,7);
-                            tree.setModel(modeloarbol);
-                            activar();break;
-                            case "CLI":
-                            modeloarbol = new DefaultTreeModel(root);
-                            modeloarbol.insertNodeInto(P01,root,0);
-                            modeloarbol.insertNodeInto(P02,root,1);
-                            modeloarbol.insertNodeInto(P03,root,2);
-                            modeloarbol.insertNodeInto(A01,root,3);
-                            tree.setModel(modeloarbol);
-                            activar()
-                            ;break;
-                        }
+                    //ingresar y activar campos
+                    switch(tipo){
+                    case "ADMIN":
+                    modeloarbol = new DefaultTreeModel(root);
+                    modeloarbol.insertNodeInto(P01,root,0);
+                    modeloarbol.insertNodeInto(P02,root,1);
+                    modeloarbol.insertNodeInto(P03,root,2);
+                    modeloarbol.insertNodeInto(A01,root,3);
+                    modeloarbol.insertNodeInto(A02,root,4);
+                    modeloarbol.insertNodeInto(A03,root,5);
+                    modeloarbol.insertNodeInto(A04,root,6);
+                    modeloarbol.insertNodeInto(A05,root,7);
+                    tree.setModel(modeloarbol);
+                    activar();break;
+                    case "CLI":
+                    modeloarbol = new DefaultTreeModel(root);
+                    modeloarbol.insertNodeInto(P01,root,0);
+                    modeloarbol.insertNodeInto(P02,root,1);
+                    modeloarbol.insertNodeInto(P03,root,2);
+                    modeloarbol.insertNodeInto(A01,root,3);
+                    tree.setModel(modeloarbol);
+                    activar()
+                    ;break;
                     }
-                }
-                else{
+                    }
+                    }
+                    else{
                     JOptionPane.showMessageDialog(this,"Usuario no registrado");
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(zprin.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }*/
+                    }
+                    } catch (SQLException ex) {
+                    Logger.getLogger(zprin.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    }*/
+                  
     }//GEN-LAST:event_btnentrarActionPerformed
 
     private void btnentrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnentrar1ActionPerformed
-        // TODO add your handling code here:
+System.exit(0);
     }//GEN-LAST:event_btnentrar1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnentrar;
     private javax.swing.JButton btnentrar1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cbsucursal;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -271,4 +296,16 @@ public class zmenu extends javax.swing.JFrame {
     private javax.swing.JPasswordField txclave;
     private javax.swing.JTextField txusuario;
     // End of variables declaration//GEN-END:variables
+
+          public void cargardatos() throws ClassNotFoundException, SQLException {
+        try {
+
+                 for (Sucursal s : ADSucursal.Listar()) {
+                     cbsucursal.addItem(s.getDESCRIPCION());
+                 }
+             }catch(ClassNotFoundException | NumberFormatException | SQLException e){
+             JOptionPane.showMessageDialog(this, e);
+             }
+        }
+    
 }

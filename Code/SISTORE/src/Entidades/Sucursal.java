@@ -119,4 +119,8 @@ char FLGELI;
         lista[8]=String.valueOf(FLGELI);
         return lista;
     } 
+
+    public Sucursal(String DESCRIPCIONLARGA) {
+        this.DESCRIPCION = DESCRIPCIONLARGA;
+    }
 }
