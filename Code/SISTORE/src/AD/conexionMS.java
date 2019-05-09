@@ -7,19 +7,19 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class conexionMS {
-    public String database="db_sistore";
-    public String driver="com.mysql.jdbc.Driver";
-    public String host="localhost";
-    public String port="3306";
-    public String user="root";
-    public String pass="";
-    public String url="jdbc:mysql://" + host + ":" + port + "/" + database + "?useSSL=false";
     
-    Connection cn = null;
     Statement sn;
+    public static Connection cn = null;
     
-    public Connection conexion() {
+    public static Connection conexion() {
         try {
+String database="db_sistore";
+String driver="com.mysql.jdbc.Driver";
+String host="localhost";
+String port="3306";
+String user="root";
+String pass="";
+String url="jdbc:mysql://" + host + ":" + port + "/" + database + "?useSSL=false";
             Class.forName(driver);
             cn = DriverManager.getConnection(url, user, pass);
             if (cn != null) {

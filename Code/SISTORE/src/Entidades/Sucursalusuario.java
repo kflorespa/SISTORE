@@ -10,7 +10,6 @@ import recursos.Formatos;
  */
 public class Sucursalusuario {
 int IDREGISTRO;
-int IDSUCURSAL;
 int IDUSUARIO;
 Date FCHCREA;
 String USRCREA;
@@ -26,13 +25,6 @@ char FLGELI;
         this.IDREGISTRO = IDREGISTRO;
     }
 
-    public int getIDSUCURSAL() {
-        return IDSUCURSAL;
-    }
-
-    public void setIDSUCURSAL(int IDSUCURSAL) {
-        this.IDSUCURSAL = IDSUCURSAL;
-    }
 
     public int getIDUSUARIO() {
         return IDUSUARIO;
@@ -82,9 +74,8 @@ char FLGELI;
         this.FLGELI = FLGELI;
     }
 
-    public Sucursalusuario(int IDREGISTRO, int IDSUCURSAL, int IDUSUARIO, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD, char FLGELI) {
+    public Sucursalusuario(int IDREGISTRO, int IDUSUARIO, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD, char FLGELI) {
         this.IDREGISTRO = IDREGISTRO;
-        this.IDSUCURSAL = IDSUCURSAL;
         this.IDUSUARIO = IDUSUARIO;
         this.FCHCREA = FCHCREA;
         this.USRCREA = USRCREA;
@@ -95,16 +86,16 @@ char FLGELI;
 
     public Sucursalusuario() {
     }
+    
    public String [] DatosArray(){
-        String [] lista = new String[8];
+        String [] lista = new String[7];
         lista[0]=String.valueOf(IDREGISTRO);
-        lista[1]=String.valueOf(IDSUCURSAL);
-        lista[2]=String.valueOf(IDUSUARIO);
-        lista[3]=Formatos.sdf.format(FCHCREA);
-        lista[4]=USRCREA;
-        lista[5]=Formatos.sdf.format(FCHMOD);
-        lista[6]=USRMOD;
-        lista[7]=String.valueOf(FLGELI);
+        lista[1]=String.valueOf(IDUSUARIO);
+        lista[2]=Formatos.sdf.format(FCHCREA);
+        lista[3]=USRCREA;
+        lista[4]=Formatos.sdf.format(FCHMOD);
+        lista[5]=USRMOD;
+        lista[6]=String.valueOf(FLGELI);
         return lista;
     }   
 }

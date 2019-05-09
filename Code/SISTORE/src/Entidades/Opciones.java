@@ -10,8 +10,8 @@ import recursos.Formatos;
  */
 public class Opciones {
 int IDOPCIONES;
+int IDMODULO;
 String DESCRIPCION;
-int ORDEN;
 String USRCREA;
 Date FCHCREA;
 String USRMOD;
@@ -26,6 +26,14 @@ char FLGELI;
         this.IDOPCIONES = IDOPCIONES;
     }
 
+    public int getIDMODULO() {
+        return IDMODULO;
+    }
+
+    public void setIDMODULO(int IDMODULO) {
+        this.IDMODULO = IDMODULO;
+    }
+
     public String getDESCRIPCION() {
         return DESCRIPCION;
     }
@@ -33,16 +41,7 @@ char FLGELI;
     public void setDESCRIPCION(String DESCRIPCION) {
         this.DESCRIPCION = DESCRIPCION;
     }
-
-    public int getORDEN() {
-        return ORDEN;
-    }
-
-    public void setORDEN(int ORDEN) {
-        this.ORDEN = ORDEN;
-    }
-
-        public String getFCHCREA() {
+    public String getFCHCREA() {
         return Formatos.sdf.format(FCHCREA);
     }
 
@@ -81,10 +80,12 @@ char FLGELI;
     public void setFLGELI(char FLGELI) {
         this.FLGELI = FLGELI;
     }
-    public Opciones(int IDOPCIONES, String DESCRIPCION, int ORDEN, String USRCREA, Date FCHCREA, String USRMOD, Date FCHMOD, char FLGELI) {
+
+
+    public Opciones(int IDOPCIONES, int IDMODULO, String DESCRIPCION, String USRCREA, Date FCHCREA, String USRMOD, Date FCHMOD, char FLGELI) {
         this.IDOPCIONES = IDOPCIONES;
+        this.IDMODULO = IDMODULO;
         this.DESCRIPCION = DESCRIPCION;
-        this.ORDEN = ORDEN;
         this.USRCREA = USRCREA;
         this.FCHCREA = FCHCREA;
         this.USRMOD = USRMOD;
@@ -92,13 +93,15 @@ char FLGELI;
         this.FLGELI = FLGELI;
     }
 
+
     public Opciones() {
     }
+    
         public String [] DatosArray(){
         String [] lista = new String[8];
         lista[0]=String.valueOf(IDOPCIONES);
-        lista[1]=DESCRIPCION;
-        lista[2]=String.valueOf(ORDEN);
+        lista[1]=String.valueOf(IDMODULO);
+        lista[2]=DESCRIPCION;
         lista[3]=USRCREA;
         lista[4]=Formatos.sdf.format(FCHCREA);
         lista[5]=USRMOD;
