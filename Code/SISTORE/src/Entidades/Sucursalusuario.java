@@ -9,7 +9,8 @@ import recursos.Formatos;
  * @author kflores
  */
 public class Sucursalusuario {
-int IDREGISTRO;
+int IDSUCURSAL_USUARIO;
+int IDSUCURSAL;
 int IDUSUARIO;
 Date FCHCREA;
 String USRCREA;
@@ -17,14 +18,21 @@ Date FCHMOD;
 String USRMOD;
 char FLGELI;
 
-    public int getIDREGISTRO() {
-        return IDREGISTRO;
+    public int getIDSUCURSAL_USUARIO() {
+        return IDSUCURSAL_USUARIO;
     }
 
-    public void setIDREGISTRO(int IDREGISTRO) {
-        this.IDREGISTRO = IDREGISTRO;
+    public void setIDSUCURSAL_USUARIO(int IDSUCURSAL_USUARIO) {
+        this.IDSUCURSAL_USUARIO = IDSUCURSAL_USUARIO;
     }
 
+    public int getIDSUCURSAL() {
+        return IDSUCURSAL;
+    }
+
+    public void setIDSUCURSAL(int IDSUCURSAL) {
+        this.IDSUCURSAL = IDSUCURSAL;
+    }
 
     public int getIDUSUARIO() {
         return IDUSUARIO;
@@ -74,8 +82,9 @@ char FLGELI;
         this.FLGELI = FLGELI;
     }
 
-    public Sucursalusuario(int IDREGISTRO, int IDUSUARIO, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD, char FLGELI) {
-        this.IDREGISTRO = IDREGISTRO;
+    public Sucursalusuario(int IDSUCURSAL_USUARIO, int IDSUCURSAL, int IDUSUARIO, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD, char FLGELI) {
+        this.IDSUCURSAL_USUARIO = IDSUCURSAL_USUARIO;
+        this.IDSUCURSAL = IDSUCURSAL;
         this.IDUSUARIO = IDUSUARIO;
         this.FCHCREA = FCHCREA;
         this.USRCREA = USRCREA;
@@ -88,14 +97,15 @@ char FLGELI;
     }
     
    public String [] DatosArray(){
-        String [] lista = new String[7];
-        lista[0]=String.valueOf(IDREGISTRO);
-        lista[1]=String.valueOf(IDUSUARIO);
-        lista[2]=Formatos.sdf.format(FCHCREA);
-        lista[3]=USRCREA;
-        lista[4]=Formatos.sdf.format(FCHMOD);
-        lista[5]=USRMOD;
-        lista[6]=String.valueOf(FLGELI);
+        String [] lista = new String[8];
+        lista[0]=String.valueOf(IDSUCURSAL_USUARIO);
+        lista[1]=String.valueOf(IDSUCURSAL);
+        lista[2]=String.valueOf(IDUSUARIO);
+        lista[3]=Formatos.sdf.format(FCHCREA);
+        lista[4]=USRCREA;
+        lista[5]=Formatos.sdf.format(FCHMOD);
+        lista[6]=USRMOD;
+        lista[7]=String.valueOf(FLGELI);
         return lista;
     }   
 }

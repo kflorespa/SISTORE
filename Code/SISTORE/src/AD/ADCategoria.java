@@ -1,6 +1,6 @@
 package AD;
 
-import Entidades.*;
+import Entidades.Categoria;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,20 +11,19 @@ import java.util.LinkedList;
  *
  * @author kflores
  */
-public class ADSucursal {
-     
-    public static LinkedList<Sucursal> Listar() throws ClassNotFoundException, SQLException{
-    LinkedList<Sucursal> lista = new LinkedList<>();
-    String sql = "SELECT CONCAT(IDSUCURSAL,'-' ,DESCRIPCION) AS DESCRIPCION FROM TSUCURSAL WHERE FLGELI=0";
+public class ADCategoria {
+    
+    public static LinkedList<Categoria> Listar() throws ClassNotFoundException, SQLException{
+    LinkedList<Categoria> lista = new LinkedList<>();
+    String sql = "SELECT CONCAT(IDCATEGORIA,'-',DESCRIPCION) AS ITEM,DIARETIRO fROM TCATEGORIA";
         try (Connection cn = conexionSS.conexion();
             PreparedStatement ps = cn.prepareStatement(sql)){            
             try (ResultSet rs = ps.executeQuery();){
                 while(rs.next()){
-                lista.add(new Sucursal(rs.getString(1)));
+                lista.add(new Categoria(rs.getString(1), rs.getInt(2)));
                 }
             }            
         }
     return lista;
     }
-    
 }

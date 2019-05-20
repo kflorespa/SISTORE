@@ -6,7 +6,6 @@
 package run;
 
 import Presentacion.zmenu;
-import java.sql.SQLException;
 import recursos.dashstyle;
 
 /**
@@ -14,7 +13,7 @@ import recursos.dashstyle;
  * @author kflores
  */
 public class main {
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    public static void main(String[] args){
     new dashstyle().estilo_windows();
     new zmenu().setVisible(true);
     }

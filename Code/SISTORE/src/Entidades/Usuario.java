@@ -10,7 +10,7 @@ import recursos.Formatos;
  */
 public class Usuario {
 int IDUSUARIO;
-char TIPO;
+int IDPERFIL;
 String USUARIO;
 String CLAVE;
 String EMAIL;
@@ -43,13 +43,14 @@ int IDSUCURSAL;
         this.IDUSUARIO = IDUSUARIO;
     }
 
-    public char getTIPO() {
-        return TIPO;
+    public int getPERFIL() {
+        return IDPERFIL;
     }
 
-    public void setTIPO(char TIPO) {
-        this.TIPO = TIPO;
+    public void setPERFIL(int IDPERFIL) {
+        this.IDPERFIL = IDPERFIL;
     }
+
 
     public String getUSUARIO() {
         return USUARIO;
@@ -146,9 +147,9 @@ int IDSUCURSAL;
         this.FLGELI = FLGELI;
     }
 
-    public Usuario(int IDUSUARIO, char TIPO, String USUARIO, String CLAVE, String EMAIL, String NOMBRES, String APELLIDOS, Date FCHNAC, String DNI, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD, char FLGELI) {
+    public Usuario(int IDUSUARIO, int IDPERFIL, String USUARIO, String CLAVE, String EMAIL, String NOMBRES, String APELLIDOS, Date FCHNAC, String DNI, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD, char FLGELI) {
         this.IDUSUARIO = IDUSUARIO;
-        this.TIPO = TIPO;
+        this.IDPERFIL = IDPERFIL;
         this.USUARIO = USUARIO;
         this.CLAVE = CLAVE;
         this.EMAIL = EMAIL;
@@ -168,7 +169,7 @@ int IDSUCURSAL;
        public String [] DatosArray(){
         String [] lista = new String[14];
         lista[0]=String.valueOf(IDUSUARIO);
-        lista[1]=String.valueOf(TIPO);
+        lista[1]=String.valueOf(IDPERFIL);
         lista[2]=USUARIO;
         lista[3]=CLAVE;
         lista[4]=EMAIL;

@@ -12,10 +12,14 @@ public class Movimiento {
 int IDMOVIMIENTO;
 int IDPROVEEDOR;
 int IDALMACEN;
-char CODOPERACION;
+int IDSUCURSAL;
+int CODOPERACION;
 float MONTOTOTAL;
 Date FCHMOV;
+Date FCHCREA;
 String USRCREA;
+Date FCHMOD;
+String USRMOD;
 char FLGELI;
 char CODESTADO;
 
@@ -43,11 +47,19 @@ char CODESTADO;
         this.IDALMACEN = IDALMACEN;
     }
 
-    public char getCODOPERACION() {
+    public int getIDSUCURSAL() {
+        return IDSUCURSAL;
+    }
+
+    public void setIDSUCURSAL(int IDSUCURSAL) {
+        this.IDSUCURSAL = IDSUCURSAL;
+    }
+
+    public int getCODOPERACION() {
         return CODOPERACION;
     }
 
-    public void setCODOPERACION(char CODOPERACION) {
+    public void setCODOPERACION(int CODOPERACION) {
         this.CODOPERACION = CODOPERACION;
     }
 
@@ -67,12 +79,37 @@ char CODESTADO;
         this.FCHMOV = Formatos.sdf.parse(FCHMOV);
     }
 
+
+    public String getFCHCREA() {
+        return Formatos.sdf.format(FCHCREA);
+    }
+
+    public void setFCHCREA(String FCHCREA) throws ParseException{
+        this.FCHCREA = Formatos.sdf.parse(FCHCREA);
+    }
+
     public String getUSRCREA() {
         return USRCREA;
     }
 
     public void setUSRCREA(String USRCREA) {
         this.USRCREA = USRCREA;
+    }
+
+    public String getFCHMOD() {
+        return Formatos.sdf.format(FCHMOD);
+    }
+
+    public void setFCHMOD(String FCHMOD) throws ParseException{
+        this.FCHMOD = Formatos.sdf.parse(FCHMOD);
+    }
+
+    public String getUSRMOD() {
+        return USRMOD;
+    }
+
+    public void setUSRMOD(String USRMOD) {
+        this.USRMOD = USRMOD;
     }
 
     public char getFLGELI() {
@@ -91,14 +128,18 @@ char CODESTADO;
         this.CODESTADO = CODESTADO;
     }
 
-    public Movimiento(int IDMOVIMIENTO, int IDPROVEEDOR, int IDALMACEN, char CODOPERACION, float MONTOTOTAL, Date FCHMOV, String USRCREA, char FLGELI, char CODESTADO) {
+    public Movimiento(int IDMOVIMIENTO, int IDPROVEEDOR, int IDALMACEN, int IDSUCURSAL, int CODOPERACION, float MONTOTOTAL, Date FCHMOV, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD, char FLGELI, char CODESTADO) {
         this.IDMOVIMIENTO = IDMOVIMIENTO;
         this.IDPROVEEDOR = IDPROVEEDOR;
         this.IDALMACEN = IDALMACEN;
+        this.IDSUCURSAL = IDSUCURSAL;
         this.CODOPERACION = CODOPERACION;
         this.MONTOTOTAL = MONTOTOTAL;
         this.FCHMOV = FCHMOV;
+        this.FCHCREA = FCHCREA;
         this.USRCREA = USRCREA;
+        this.FCHMOD = FCHMOD;
+        this.USRMOD = USRMOD;
         this.FLGELI = FLGELI;
         this.CODESTADO = CODESTADO;
     }

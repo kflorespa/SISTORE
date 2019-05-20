@@ -1,9 +1,5 @@
 package Entidades;
 
-import java.text.ParseException;
-import java.util.Date;
-import recursos.Formatos;
-
 /**
  *
  * @author kflores
@@ -12,11 +8,20 @@ public class Categoria {
 int IDCATEGORIA;
 String DESCRIPCION;
 int DIARETIRO;
-Date FCHCREA;
-String USRCREA;
-Date FCHMOD;
-String USRMOD;
+char FLGELI;
 
+/*VARIABLE DE AUXILIAR*/
+String ITEM;
+
+    public String getITEM() {
+        return ITEM;
+    }
+
+    public void setITEM(String ITEM) {
+        this.ITEM = ITEM;
+    }
+
+    
     public int getIDCATEGORIA() {
         return IDCATEGORIA;
     }
@@ -40,61 +45,45 @@ String USRMOD;
     public void setDIARETIRO(int DIARETIRO) {
         this.DIARETIRO = DIARETIRO;
     }
-    public String getFCHCREA() {
-        return Formatos.sdf.format(FCHCREA);
+
+    public char getFLGELI() {
+        return FLGELI;
     }
 
-    public void setFCHCREA(String FCHCREA) throws ParseException{
-        this.FCHCREA = Formatos.sdf.parse(FCHCREA);
+    public void setFLGELI(char FLGELI) {
+        this.FLGELI = FLGELI;
     }
 
-    public String getUSRCREA() {
-        return USRCREA;
+    public Categoria(String ITEM, int DIARETIRO){
+        this.DIARETIRO = DIARETIRO;
+        this.ITEM = ITEM;
     }
 
-    public void setUSRCREA(String USRCREA) {
-        this.USRCREA = USRCREA;
-    }
-
-    public String getFCHMOD() {
-        return Formatos.sdf.format(FCHMOD);
-    }
-
-    public void setFCHMOD(String FCHMOD) throws ParseException{
-        this.FCHMOD = Formatos.sdf.parse(FCHMOD);
-    }
-
-    public String getUSRMOD() {
-        return USRMOD;
-    }
-
-    public void setUSRMOD(String USRMOD) {
-        this.USRMOD = USRMOD;
-    }
-
-
-    public Categoria(int IDCATEGORIA, String DESCRIPCION, int DIARETIRO, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD) {
+    public Categoria(int IDCATEGORIA, String DESCRIPCION, int DIARETIRO, char FLGELI, String ITEM) {
         this.IDCATEGORIA = IDCATEGORIA;
         this.DESCRIPCION = DESCRIPCION;
         this.DIARETIRO = DIARETIRO;
-        this.FCHCREA = FCHCREA;
-        this.USRCREA = USRCREA;
-        this.FCHMOD = FCHMOD;
-        this.USRMOD = USRMOD;
+        this.FLGELI = FLGELI;
+        this.ITEM = ITEM;
     }
 
+    
     public Categoria() {
     }
 
         public String [] DatosArray(){
-        String [] lista = new String[7];
+        String [] lista = new String[4];
         lista[0]=String.valueOf(IDCATEGORIA);
         lista[1]=String.valueOf(DESCRIPCION);
         lista[2]=String.valueOf(DIARETIRO);
-        lista[3]=Formatos.sdf.format(FCHCREA);
-        lista[4]=USRCREA;
-        lista[5]=Formatos.sdf.format(FCHMOD);
-        lista[6]=USRMOD;
+        lista[3]=String.valueOf(FLGELI);
+        return lista;
+    } 
+
+        public String [] ComboCategoria(){
+        String [] lista = new String[2];
+        lista[0]=String.valueOf(ITEM);
+        lista[1]=String.valueOf(DIARETIRO);
         return lista;
     } 
 }

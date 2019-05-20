@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 
-public class conexionSS {
+public class conexionSS{
     Statement sn; 
     
     public static Connection conexion()throws ClassNotFoundException, SQLException {
