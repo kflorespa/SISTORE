@@ -2,9 +2,21 @@
 
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+    <Menu class="javax.swing.JMenuBar" name="menubar">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu3">
+        <Menu class="javax.swing.JMenu" name="jmarchivo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Archivo"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cerrar"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jmtablas">
           <Properties>
             <Property name="text" type="java.lang.String" value="Tablas"/>
           </Properties>
@@ -12,16 +24,19 @@
             <MenuItem class="javax.swing.JMenuItem" name="ialmacenes">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Almacenes"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="iproveedores">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Proveedores"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="iproductos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Productos"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="iproductosActionPerformed"/>
@@ -30,6 +45,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="icategorias">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Categorias"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="icategoriasActionPerformed"/>
@@ -37,19 +53,29 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu2">
+        <Menu class="javax.swing.JMenu" name="jmoperaciones">
           <Properties>
             <Property name="text" type="java.lang.String" value="Operaciones"/>
           </Properties>
           <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="ivisualizarstock">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Visualizar de stocks"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator2">
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="imovimientos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Movimientos"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="ilistamovimientos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Listar items de movimientos"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ilistamovimientosActionPerformed"/>
@@ -57,19 +83,29 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu4">
+        <Menu class="javax.swing.JMenu" name="jmreportes">
           <Properties>
             <Property name="text" type="java.lang.String" value="Reportes"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="ivisualizarstock">
+            <MenuItem class="javax.swing.JMenuItem" name="ireportekardexproducto">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Visualizar de stocks"/>
+                <Property name="text" type="java.lang.String" value="Reporte de kardex de productos"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="ireporteingresosalida">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Reportes de ingresos y salidas"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ireporteingresosalidaActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
+        <Menu class="javax.swing.JMenu" name="jmregistros">
           <Properties>
             <Property name="text" type="java.lang.String" value="Registros"/>
           </Properties>
@@ -77,70 +113,106 @@
             <MenuItem class="javax.swing.JMenuItem" name="ivistas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Vistas"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="iperfiles">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Perfiles"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="iusuarios">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Usuarios"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itienda">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tienda"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="isucursales">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sucursales"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
-            <Menu class="javax.swing.JMenu" name="jMenu11">
+            <Menu class="javax.swing.JMenu" name="imasignaciones">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Asignaciones"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="iasigvistausuario">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Asignar vista a usuario"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="iasigusuariosucursal">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Asignar usuario a sucursal"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="iasigprivilegiousuario">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Asignar privilegios a usuario"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </MenuItem>
               </SubComponents>
             </Menu>
-            <Menu class="javax.swing.JMenu" name="jMenu10">
+            <Menu class="javax.swing.JMenu" name="imparametros">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Par&#xe1;metros"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="igrupoparametros">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Grupo de par&#xe1;metros"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="iagregaparametros">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Agregar items par&#xe1;metros"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </MenuItem>
               </SubComponents>
             </Menu>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenu5">
+        <Menu class="javax.swing.JMenu" name="jmsistema">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sistema"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cerrar sesi&#xf3;n"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator1">
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mi perfil"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cambiar contrase&#xf1;a"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jmayuda">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ayuda"/>
           </Properties>
@@ -159,7 +231,7 @@
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="menubar"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
@@ -178,8 +250,8 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="internal" max="32767" attributes="0"/>
           <Component id="pbarra" alignment="1" max="32767" attributes="0"/>
+          <Component id="internal" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -199,6 +271,9 @@
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
         </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -218,7 +293,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="68" max="32767" attributes="0"/>
+                  <EmptySpace pref="198" max="32767" attributes="0"/>
                   <Component id="plogin" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="32767" attributes="0"/>
                   <Component id="lbminilogo" min="-2" max="-2" attributes="0"/>
@@ -381,7 +456,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Century Gothic" size="14" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Salir"/>
+                    <Property name="text" type="java.lang.String" value="Cerrar"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnentrar1ActionPerformed"/>
@@ -391,9 +466,6 @@
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/recursos/logo.png"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">

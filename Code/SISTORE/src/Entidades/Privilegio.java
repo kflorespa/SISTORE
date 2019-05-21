@@ -104,8 +104,8 @@ String DESCRIPCION_VISTA;
         this.FLGELI = FLGELI;
     }
 
-    public Privilegio(int IDPRIVILEGIO, String DESCRIPCION_VISTA, char CREAR, char MODIFICAR, char IMPRIMIR, char EXPORTAR) {
-        this.IDPRIVILEGIO = IDPRIVILEGIO;
+    public Privilegio(int IDVISTA, String DESCRIPCION_VISTA, char CREAR, char MODIFICAR, char IMPRIMIR, char EXPORTAR) {
+        this.IDPRIVILEGIO = IDVISTA;
         this.CREAR = CREAR;
         this.MODIFICAR = MODIFICAR;
         this.IMPRIMIR = IMPRIMIR;
@@ -131,13 +131,13 @@ String DESCRIPCION_VISTA;
 
 
         public String [] DatosPrivilegios(){
-        String [] lista = new String[8];
-        lista[0]=String.valueOf(IDPRIVILEGIO);
-        lista[3]=DESCRIPCION_VISTA;
-        lista[3]=String.valueOf(CREAR);
-        lista[4]=String.valueOf(MODIFICAR);
-        lista[5]=String.valueOf(IMPRIMIR);
-        lista[6]=String.valueOf(EXPORTAR);
+        String [] lista = new String[7];
+        lista[0]=String.valueOf(IDVISTA);
+        lista[1]=DESCRIPCION_VISTA;
+        lista[2]=String.valueOf(CREAR);
+        lista[3]=String.valueOf(MODIFICAR);
+        lista[4]=String.valueOf(IMPRIMIR);
+        lista[5]=String.valueOf(EXPORTAR);
         return lista;
     }   
 

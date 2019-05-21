@@ -16,7 +16,7 @@ public class ADPrivilegio {
         public static LinkedList<Privilegio> Listar(Usuario u) throws ClassNotFoundException, SQLException{
     LinkedList<Privilegio> lista = new LinkedList<>();
     //Procedure
-    String sql = "SELECT P.IDPRIVILEGIO,V.DESCRIPCION,P.CREAR,P.MODIFICAR,P.IMPRIMIR,P.EXPORTAR\n" +
+    String sql = "SELECT V.IDVISTA,V.DESCRIPCION,P.CREAR,P.MODIFICAR,P.IMPRIMIR,P.EXPORTAR\n" +
 " FROM TUSUARIO U INNER JOIN (TPRIVILEGIO P INNER JOIN TVISTA V ON P.IDVISTA=V.IDVISTA) ON U.IDUSUARIO=P.IDUSUARIO\n" +
 " WHERE U.USUARIO=? AND P.FLGELI='0' AND V.FLGELI='0'";
         try (Connection cn = conexionSS.conexion();
