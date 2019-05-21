@@ -31,6 +31,7 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
     public static char []P_PERFILES;
     public static char []P_PRIVILEGIOS;
     public static char []P_TIENDA;
+    public static char []P_VISTAUSUARIO;
     
     public zmenu(){
         
@@ -72,25 +73,31 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
         lbu = new javax.swing.JLabel();
         lbf = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
-        jMenu9 = new javax.swing.JMenu();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
+        ialmacenes = new javax.swing.JMenuItem();
+        iproveedores = new javax.swing.JMenuItem();
         iproductos = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        icategorias = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        imovimientos = new javax.swing.JMenuItem();
+        ilistamovimientos = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        ivisualizarstock = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        ivistas = new javax.swing.JMenuItem();
+        iperfiles = new javax.swing.JMenuItem();
+        iusuarios = new javax.swing.JMenuItem();
+        itienda = new javax.swing.JMenuItem();
+        isucursales = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
+        iasigvistausuario = new javax.swing.JMenuItem();
+        iasigusuariosucursal = new javax.swing.JMenuItem();
+        iasigprivilegiousuario = new javax.swing.JMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        igrupoparametros = new javax.swing.JMenuItem();
+        iagregaparametros = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        iacercade = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -129,7 +136,7 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
         });
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("jLabel3");
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/logo.png"))); // NOI18N
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -221,7 +228,7 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
         internalLayout.setVerticalGroup(
             internalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, internalLayout.createSequentialGroup()
-                .addContainerGap(185, Short.MAX_VALUE)
+                .addContainerGap(68, Short.MAX_VALUE)
                 .addComponent(plogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(lbminilogo)
@@ -275,77 +282,101 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
                 .addGap(0, 0, 0))
         );
 
-        jMenu1.setText("Movimientos");
-        jMenuBar1.add(jMenu1);
+        jMenu3.setText("Tablas");
 
-        jMenu4.setText("Reportes");
-        jMenuBar1.add(jMenu4);
+        ialmacenes.setText("Almacenes");
+        jMenu3.add(ialmacenes);
 
-        jMenu3.setText("Registros");
+        iproveedores.setText("Proveedores");
+        jMenu3.add(iproveedores);
 
-        jMenu8.setText("Depositos");
-
-        jMenuItem12.setText("Almacenes");
-        jMenu8.add(jMenuItem12);
-
-        jMenuItem14.setText("Listado de stocks");
-        jMenu8.add(jMenuItem14);
-
-        jMenu3.add(jMenu8);
-
-        jMenu9.setText("Movimientos");
-
-        jMenuItem10.setText("Nuevo movimiento");
-        jMenu9.add(jMenuItem10);
-
-        jMenuItem13.setText("Modificar movimiento");
-        jMenu9.add(jMenuItem13);
-
-        jMenu3.add(jMenu9);
-
-        jMenuItem11.setText("Proveedores");
-        jMenu3.add(jMenuItem11);
-
-        jMenu2.setText("Usuarios");
-
-        jMenuItem2.setText("Lista de usuarios");
-        jMenu2.add(jMenuItem2);
-
-        jMenu3.add(jMenu2);
-
-        jMenu6.setText("Productos");
-
-        iproductos.setText("Lista de productos");
+        iproductos.setText("Productos");
         iproductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 iproductosActionPerformed(evt);
             }
         });
-        jMenu6.add(iproductos);
+        jMenu3.add(iproductos);
 
-        jMenuItem1.setText("Categorias");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        icategorias.setText("Categorias");
+        icategorias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                icategoriasActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem1);
-
-        jMenu3.add(jMenu6);
-
-        jMenu7.setText("Vistas");
-
-        jMenuItem4.setText("Nueva vista");
-        jMenu7.add(jMenuItem4);
-
-        jMenu3.add(jMenu7);
-
-        jMenuItem7.setText("Sucursales");
-        jMenu3.add(jMenuItem7);
+        jMenu3.add(icategorias);
 
         jMenuBar1.add(jMenu3);
 
+        jMenu2.setText("Operaciones");
+
+        imovimientos.setText("Movimientos");
+        jMenu2.add(imovimientos);
+
+        ilistamovimientos.setText("Listar items de movimientos");
+        ilistamovimientos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ilistamovimientosActionPerformed(evt);
+            }
+        });
+        jMenu2.add(ilistamovimientos);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu4.setText("Reportes");
+
+        ivisualizarstock.setText("Visualizar de stocks");
+        jMenu4.add(ivisualizarstock);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu1.setText("Registros");
+
+        ivistas.setText("Vistas");
+        jMenu1.add(ivistas);
+
+        iperfiles.setText("Perfiles");
+        jMenu1.add(iperfiles);
+
+        iusuarios.setText("Usuarios");
+        jMenu1.add(iusuarios);
+
+        itienda.setText("Tienda");
+        jMenu1.add(itienda);
+
+        isucursales.setText("Sucursales");
+        jMenu1.add(isucursales);
+
+        jMenu11.setText("Asignaciones");
+
+        iasigvistausuario.setText("Asignar vista a usuario");
+        jMenu11.add(iasigvistausuario);
+
+        iasigusuariosucursal.setText("Asignar usuario a sucursal");
+        jMenu11.add(iasigusuariosucursal);
+
+        iasigprivilegiousuario.setText("Asignar privilegios a usuario");
+        jMenu11.add(iasigprivilegiousuario);
+
+        jMenu1.add(jMenu11);
+
+        jMenu10.setText("Parámetros");
+
+        igrupoparametros.setText("Grupo de parámetros");
+        jMenu10.add(igrupoparametros);
+
+        iagregaparametros.setText("Agregar items parámetros");
+        jMenu10.add(iagregaparametros);
+
+        jMenu1.add(jMenu10);
+
+        jMenuBar1.add(jMenu1);
+
         jMenu5.setText("Ayuda");
+
+        iacercade.setText("Acerca de");
+        jMenu5.add(iacercade);
+
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
@@ -396,39 +427,49 @@ System.exit(0);
         internal.add(fip);
     }//GEN-LAST:event_iproductosActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void icategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_icategoriasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_icategoriasActionPerformed
+
+    private void ilistamovimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ilistamovimientosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ilistamovimientosActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnentrar;
     private javax.swing.JButton btnentrar1;
     private javax.swing.JComboBox<String> cbsucursal;
+    private javax.swing.JMenuItem iacercade;
+    private javax.swing.JMenuItem iagregaparametros;
+    private javax.swing.JMenuItem ialmacenes;
+    private javax.swing.JMenuItem iasigprivilegiousuario;
+    private javax.swing.JMenuItem iasigusuariosucursal;
+    private javax.swing.JMenuItem iasigvistausuario;
+    private javax.swing.JMenuItem icategorias;
+    private javax.swing.JMenuItem igrupoparametros;
+    private javax.swing.JMenuItem ilistamovimientos;
+    private javax.swing.JMenuItem imovimientos;
     private javax.swing.JDesktopPane internal;
+    private javax.swing.JMenuItem iperfiles;
     private javax.swing.JMenuItem iproductos;
+    private javax.swing.JMenuItem iproveedores;
+    private javax.swing.JMenuItem isucursales;
+    private javax.swing.JMenuItem itienda;
+    private javax.swing.JMenuItem iusuarios;
+    private javax.swing.JMenuItem ivistas;
+    private javax.swing.JMenuItem ivisualizarstock;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JLabel lbf;
     public static javax.swing.JLabel lbhorasistema;
     private javax.swing.JLabel lbminilogo;
@@ -489,39 +530,38 @@ System.exit(0);
     //Obtener datos
     lbnombreusuario.setText(txusuario.getText());
     lbsucursal.setText(cbsucursal.getSelectedItem().toString());
-    
     try {
     for (Privilegio s : ADPrivilegio.Listar(u)) {
         switch(s.getIDPRIVILEGIO()){
-    case 100 : iproductos.setEnabled(true);
+    case 100 : ialmacenes.setEnabled(true);
     P_ALMACENES= new char[4];
     P_ALMACENES[0] = s.getCREAR();
     P_ALMACENES[1] = s.getMODIFICAR();
     P_ALMACENES[2] = s.getEXPORTAR();
     P_ALMACENES[3] = s.getIMPRIMIR(); 
     break;
-     case 101 : iproductos.setEnabled(true);
+     case 101 : ivisualizarstock.setEnabled(true);
      P_VISUALIZARSTOCKS= new char[4];
     P_VISUALIZARSTOCKS[0] = s.getCREAR();
     P_VISUALIZARSTOCKS[1] = s.getMODIFICAR();
     P_VISUALIZARSTOCKS[2] = s.getEXPORTAR();
     P_VISUALIZARSTOCKS[3] = s.getIMPRIMIR();
     break;
-     case 102 : iproductos.setEnabled(true);
+     case 102 : imovimientos.setEnabled(true);
     P_MOVIMIENTOS= new char[4];
     P_MOVIMIENTOS[0] = s.getCREAR();
     P_MOVIMIENTOS[1] = s.getMODIFICAR();
     P_MOVIMIENTOS[2] = s.getEXPORTAR();
     P_MOVIMIENTOS[3] = s.getIMPRIMIR();
     break;
-     case 103 : iproductos.setEnabled(true);
+     case 103 : ilistamovimientos.setEnabled(true);
     P_LISTARITEMSDEMOVIMIENTO= new char[4];
     P_LISTARITEMSDEMOVIMIENTO[0] = s.getCREAR();
     P_LISTARITEMSDEMOVIMIENTO[1] = s.getMODIFICAR();
     P_LISTARITEMSDEMOVIMIENTO[2] = s.getEXPORTAR();
     P_LISTARITEMSDEMOVIMIENTO[3] = s.getIMPRIMIR();
     break;
-     case 104 : iproductos.setEnabled(true);
+     case 104 : iproveedores.setEnabled(true);
      P_PROVEEDORES= new char[4];
     P_PROVEEDORES[0] = s.getCREAR();
     P_PROVEEDORES[1] = s.getMODIFICAR();
@@ -535,78 +575,107 @@ System.exit(0);
     P_PRODUCTOS[2] = s.getEXPORTAR();
     P_PRODUCTOS[3] = s.getIMPRIMIR();
     break;
-     case 106 : iproductos.setEnabled(true);
+     case 106 : icategorias.setEnabled(true);
      P_CATEGORIASDEPRODUCTOS= new char[4];
     P_CATEGORIASDEPRODUCTOS[0] = s.getCREAR();
     P_CATEGORIASDEPRODUCTOS[1] = s.getMODIFICAR();
     P_CATEGORIASDEPRODUCTOS[2] = s.getEXPORTAR();
     P_CATEGORIASDEPRODUCTOS[3] = s.getIMPRIMIR();
     break;
-     case 107 : iproductos.setEnabled(true);
+     case 107 : iusuarios.setEnabled(true);
      P_USUARIOS= new char[4];
     P_USUARIOS[0] = s.getCREAR();
     P_USUARIOS[1] = s.getMODIFICAR();
     P_USUARIOS[2] = s.getEXPORTAR();
     P_USUARIOS[3] = s.getIMPRIMIR();
     break;
-     case 108 : iproductos.setEnabled(true);
+     case 108 : isucursales.setEnabled(true);
     P_SUCURSALES= new char[4];
     P_SUCURSALES[0] = s.getCREAR();
     P_SUCURSALES[1] = s.getMODIFICAR();
     P_SUCURSALES[2] = s.getEXPORTAR();
     P_SUCURSALES[3] = s.getIMPRIMIR(); 
     break;
-     case 109 : iproductos.setEnabled(true);
+     case 109 : iasigusuariosucursal.setEnabled(true);
      P_USUARIOSDESUCURSAL= new char[4];
     P_USUARIOSDESUCURSAL[0] = s.getCREAR();
     P_USUARIOSDESUCURSAL[1] = s.getMODIFICAR();
     P_USUARIOSDESUCURSAL[2] = s.getEXPORTAR();
     P_USUARIOSDESUCURSAL[3] = s.getIMPRIMIR();
     break;
-     case 110 : iproductos.setEnabled(true);
+     case 110 : ivistas.setEnabled(true);
      P_VISTAS= new char[4];
     P_VISTAS[0] = s.getCREAR();
     P_VISTAS[1] = s.getMODIFICAR();
     P_VISTAS[2] = s.getEXPORTAR();
     P_VISTAS[3] = s.getIMPRIMIR();
     break;
-     case 111 : iproductos.setEnabled(true);
+     case 111 : igrupoparametros.setEnabled(true);
      P_GRUPOSDEPARAMETROS= new char[4];
     P_GRUPOSDEPARAMETROS[0] = s.getCREAR();
     P_GRUPOSDEPARAMETROS[1] = s.getMODIFICAR();
     P_GRUPOSDEPARAMETROS[2] = s.getEXPORTAR();
     P_GRUPOSDEPARAMETROS[3] = s.getIMPRIMIR();
     break;
-     case 112 : iproductos.setEnabled(true);
+     case 112 : iagregaparametros.setEnabled(true);
      P_PARAMETROS= new char[4];
     P_PARAMETROS[0] = s.getCREAR();
     P_PARAMETROS[1] = s.getMODIFICAR();
     P_PARAMETROS[2] = s.getEXPORTAR();
     P_PARAMETROS[3] = s.getIMPRIMIR();
     break;
-     case 113 : iproductos.setEnabled(true);
+     case 113 : iperfiles.setEnabled(true);
      P_PERFILES= new char[4];
     P_PERFILES[0] = s.getCREAR();
     P_PERFILES[1] = s.getMODIFICAR();
     P_PERFILES[2] = s.getEXPORTAR();
     P_PERFILES[3] = s.getIMPRIMIR();
     break;
-     case 114 : iproductos.setEnabled(true);
+     case 114 : iasigprivilegiousuario.setEnabled(true);
      P_PRIVILEGIOS= new char[4];
     P_PRIVILEGIOS[0] = s.getCREAR();
     P_PRIVILEGIOS[1] = s.getMODIFICAR();
     P_PRIVILEGIOS[2] = s.getEXPORTAR();
     P_PRIVILEGIOS[3] = s.getIMPRIMIR();
     break;
-     case 115 : iproductos.setEnabled(true);
+     case 115 : itienda.setEnabled(true);
     P_TIENDA= new char[4];   
     P_TIENDA[0] = s.getCREAR();
     P_TIENDA[1] = s.getMODIFICAR();
     P_TIENDA[2] = s.getEXPORTAR();
     P_TIENDA[3] = s.getIMPRIMIR();
-    default: break;
+    break;
+        case 116 : iasigvistausuario.setEnabled(true);
+    P_VISTAUSUARIO= new char[4];   
+    P_VISTAUSUARIO[0] = s.getCREAR();
+    P_VISTAUSUARIO[1] = s.getMODIFICAR();
+    P_VISTAUSUARIO[2] = s.getEXPORTAR();
+    P_VISTAUSUARIO[3] = s.getIMPRIMIR();
+    break;
+    
+     default: break;
             }
     }
+
+//iagregaparametros;
+//ialmacenes;
+//iasigprivilegiousuario;
+//iasigusuariosucursal;
+//iasigvistausuario;
+//icategorias;
+//igrupoparametros;
+//ilistamovimientos;
+//imovimientos;
+//iperfiles;
+//iproductos;
+//iproveedores;
+//isucursales;
+//itienda;
+//iusuarios;
+//ivistas;
+//ivisualizarstock;
+  
+    
     }catch(ClassNotFoundException | NumberFormatException | SQLException e){
     JOptionPane.showMessageDialog(this, e);
     }
