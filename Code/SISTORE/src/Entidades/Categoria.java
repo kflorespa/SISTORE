@@ -59,12 +59,11 @@ String ITEM;
         this.ITEM = ITEM;
     }
 
-    public Categoria(int IDCATEGORIA, String DESCRIPCION, int DIARETIRO, char FLGELI, String ITEM) {
+    public Categoria(int IDCATEGORIA, int DIARETIRO, String DESCRIPCION, char FLGELI) {
         this.IDCATEGORIA = IDCATEGORIA;
         this.DESCRIPCION = DESCRIPCION;
         this.DIARETIRO = DIARETIRO;
         this.FLGELI = FLGELI;
-        this.ITEM = ITEM;
     }
 
     
@@ -74,8 +73,8 @@ String ITEM;
         public String [] DatosArray(){
         String [] lista = new String[4];
         lista[0]=String.valueOf(IDCATEGORIA);
-        lista[1]=String.valueOf(DESCRIPCION);
-        lista[2]=String.valueOf(DIARETIRO);
+        lista[1]=String.valueOf(DIARETIRO);
+        lista[2]=DESCRIPCION;
         lista[3]=String.valueOf(FLGELI);
         return lista;
     } 

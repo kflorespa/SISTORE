@@ -15,12 +15,12 @@ public class ADCategoria {
     
     public static LinkedList<Categoria> Listar() throws ClassNotFoundException, SQLException{
     LinkedList<Categoria> lista = new LinkedList<>();
-    String sql = "SELECT CONCAT(IDCATEGORIA,'-',DESCRIPCION) AS ITEM,DIARETIRO fROM TCATEGORIA";
+    String sql = "SELECT IDCATEGORIA,DIARETIRO,DESCRIPCION,FLGELI fROM TCATEGORIA t WHERE t.FLGELI='0'";
         try (Connection cn = conexionSS.conexion();
             PreparedStatement ps = cn.prepareStatement(sql)){            
             try (ResultSet rs = ps.executeQuery();){
                 while(rs.next()){
-                lista.add(new Categoria(rs.getString(1), rs.getInt(2)));
+                lista.add(new Categoria(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4).charAt(0)));
                 }
             }            
         }

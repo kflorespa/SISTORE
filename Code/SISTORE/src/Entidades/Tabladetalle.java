@@ -42,10 +42,10 @@ String ITEM;
         this.ITEM = ITEM;
     }
 
-    public Tabladetalle(int IDTABLADETALLE, int IDTABLA, String DESCRIPCION,char FLGELI) {
+    public Tabladetalle(int IDTABLADETALLE,int IDTABLA,String DESCRIPCION,char FLGELI) {
         this.IDTABLADETALLE = IDTABLADETALLE;
-        this.IDTABLA = IDTABLA;
         this.DESCRIPCION = DESCRIPCION;
+        this.IDTABLA=IDTABLA;
         this.FLGELI = FLGELI;
     }
 

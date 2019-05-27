@@ -19,12 +19,12 @@ import java.util.LinkedList;
 public class ADTabladetalle {
        public static LinkedList<Tabladetalle> Listar() throws ClassNotFoundException, SQLException{
     LinkedList<Tabladetalle> lista = new LinkedList<>();
-    String sql = "SELECT TA.DESCRIPCION AS DESCRIPCIONTABLA,CONCAT(TD.IDTABLADETALLE,'-',TD.DESCRIPCION) AS ITEM FROM TABLADETALLE TD inner join TTABLA TA ON TD.IDTABLA=TA.IDTABLA WHERE TD.FLGELI='0'";
+    String sql = "SELECT IDTABLADETALLE,TA.IDTABLA,TD.DESCRIPCION,TD.FLGELI FROM TABLADETALLE TD inner join TTABLA TA ON TD.IDTABLA=TA.IDTABLA WHERE TD.FLGELI='0'";
         try (Connection cn = conexionSS.conexion();
             PreparedStatement ps = cn.prepareStatement(sql)){            
             try (ResultSet rs = ps.executeQuery();){
                 while(rs.next()){
-                lista.add(new Tabladetalle(rs.getString(1), rs.getString(2)));
+                lista.add(new Tabladetalle(rs.getInt(1),rs.getInt(2),rs.getString(3), rs.getString(4).charAt(0)));
                 }
             }            
         }
