@@ -10,6 +10,7 @@ import AD.ADTabladetalle;
 import Entidades.Categoria;
 import Entidades.Tabladetalle;
 import static Presentacion.FIProductos.idtabla;
+import static Presentacion.FIProductos.titulo;
 import java.awt.AWTEvent;
 import java.awt.ActiveEvent;
 import java.awt.Component;
@@ -35,6 +36,7 @@ public class FIDTabladetalle extends javax.swing.JInternalFrame{
     public FIDTabladetalle() throws ClassNotFoundException, SQLException {
         initComponents();
         cargardatos();
+        
     }
 
     /**
@@ -56,7 +58,7 @@ public class FIDTabladetalle extends javax.swing.JInternalFrame{
         jButton2 = new javax.swing.JButton();
 
         setClosable(true);
-        setFrameIcon(null);
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icono.png"))); // NOI18N
 
         tabladetalle = new javax.swing.JTable(){
             public boolean isCellEditable(int rowIndex, int colIndex){
@@ -247,6 +249,7 @@ this.dispose();
     DefaultTableModel modelo;
     
     private void cargardatos() throws ClassNotFoundException, SQLException {
+    setTitle(titulo);
     String[] columnas = {"Código","Tabla","Descripción","Fleje"};    
     modelo = new DefaultTableModel(null,columnas); 
     s = new TableRowSorter(modelo);

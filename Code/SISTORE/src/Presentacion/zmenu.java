@@ -6,10 +6,12 @@ import AD.ADUsuario;
 import Entidades.Privilegio;
 import Entidades.Sucursal;
 import Entidades.Usuario;
+import java.awt.Toolkit;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import recursos.Formatos;
 
@@ -41,6 +43,7 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
             initComponents();
             cargarconfig();
             cargardatos();
+            
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(zmenu.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -132,6 +135,7 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
         txclave.setText("123");
 
         btnentrar.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btnentrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/check.png"))); // NOI18N
         btnentrar.setText("Entrar");
         btnentrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,6 +144,7 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
         });
 
         btnentrar1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btnentrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/no-check.png"))); // NOI18N
         btnentrar1.setText("Cerrar");
         btnentrar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,8 +152,8 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
             }
         });
 
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/logosistore.png"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel4.setText("Sucursal");
@@ -184,7 +189,7 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pingresoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
                 .addGroup(pingresoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(cbsucursal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -586,7 +591,8 @@ System.exit(0);
     //Cargar configuración del sistema de arranque
     private void cargarconfig() {
        this.setExtendedState(zmenu.MAXIMIZED_BOTH); //maximizar ventana
-       this.setTitle("Sistema de logística para bodegas | Allqu Systems");
+       this.setTitle("Sistore | Sistema de logística");
+       this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("../recursos/icono.png")));
         pbarra.setVisible(false);
         lbminilogo.setVisible(false);
         jmtablas.setVisible(false);
