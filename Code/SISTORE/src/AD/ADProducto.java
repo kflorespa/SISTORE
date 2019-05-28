@@ -98,16 +98,12 @@ public class ADProducto {
     
     public static LinkedList<Producto> Listar() throws ClassNotFoundException, SQLException{
     LinkedList<Producto> lista = new LinkedList<>();
-    String sql = "SELECT IDPRODUCTO, EAN, P.DESCRIPCION, PRECIOCOM,PRECIOVEN, CONCAT(C.IDCATEGORIA,'-',C.DESCRIPCION) AS CATEGORIA,\n" +
-"(SELECT CONCAT(IDTABLADETALLE,'-',DESCRIPCION) FROM TABLADETALLE WHERE IDTABLADETALLE=CODUME) AS CODUME,\n" +
-"(SELECT CONCAT(IDTABLADETALLE,'-',DESCRIPCION) FROM TABLADETALLE WHERE IDTABLADETALLE=CODESTADO) AS CODESTADO,\n" +
-"P.FLGELI,P.FCHCREA,P.USRCREA,P.FCHMOD,P.USRMOD FROM TPRODUCTO P INNER JOIN TCATEGORIA C ON P.IDCATEGORIA=C.IDCATEGORIA";
+    String sql = "SELECT * FROM V_PRODUCTOS";
         try (Connection cn = conexionSS.conexion();
             PreparedStatement ps = cn.prepareStatement(sql)){            
             try (ResultSet rs = ps.executeQuery();){
                 while(rs.next()){
-                    //int IDPRODUCTO,String EAN,String DESCRIPCION, float PRECIOCOM, float PRECIOVEN, int IDCATEGORIA, int CODUME, String FLGELI,  Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD
-                    lista.add(new Producto(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getFloat(4), rs.getFloat(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9).charAt(0), rs.getDate(10), rs.getString(11), rs.getDate(12), rs.getString(13)));  
+                lista.add(new Producto(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getFloat(4), rs.getFloat(5), rs.getInt(6), rs.getString(7), rs.getInt(8), rs.getString(9), rs.getInt(10), rs.getString(11), rs.getString(12).charAt(0), rs.getString(13), rs.getDate(14), rs.getString(15), rs.getDate(16), rs.getString(17)));  
                 }
             }            
         }
