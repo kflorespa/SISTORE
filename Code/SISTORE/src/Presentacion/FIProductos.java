@@ -218,14 +218,6 @@ public final class FIProductos extends javax.swing.JInternalFrame {
             }
         });
 
-        txcategoria.setEditable(false);
-
-        txumedida.setEditable(false);
-
-        txestado.setEditable(false);
-
-        txfleje.setEditable(false);
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -450,6 +442,10 @@ public final class FIProductos extends javax.swing.JInternalFrame {
             p.setPRECIOVEN(Float.parseFloat(txprecioventa.getText()));
             p.setFCHMOD(zmenu.lbhorasistema.getText());
             p.setUSRMOD(zmenu.lbnombreusuario.getText());
+            p.setCODESTADO(Integer.parseInt(txestado.getText()));
+            p.setIDCATEGORIA(Integer.parseInt(txcategoria.getText()));
+            p.setCODUME(Integer.parseInt(txumedida.getText()));
+            p.setFLGELI(txfleje.getText().charAt(0));
             if (ADProducto.Guardar(p)) {
              JOptionPane.showMessageDialog(this, "Se guardaron cambios");
              cargartabla();
@@ -607,10 +603,10 @@ public void limpiarcampos(){
             listaproductos.getColumnModel().getColumn(posicion[i]).setPreferredWidth(0);
         }
     //tamaños de columnas de tabla    
-    listaproductos.getColumnModel().getColumn(0).setPreferredWidth(80);
+    listaproductos.getColumnModel().getColumn(0).setPreferredWidth(60);
     listaproductos.getColumnModel().getColumn(1).setPreferredWidth(80);
     listaproductos.getColumnModel().getColumn(2).setPreferredWidth(250);
-    listaproductos.getColumnModel().getColumn(3).setPreferredWidth(120);
+    listaproductos.getColumnModel().getColumn(6).setPreferredWidth(120);
     TableRowSorter<DefaultTableModel> sorteo = new TableRowSorter<> (modelo);
     listaproductos.setRowSorter(sorteo);
     }
@@ -624,29 +620,33 @@ public void limpiarcampos(){
             txumedida.setEnabled(estado);
             txestado.setEnabled(estado);
             txfleje.setEnabled(estado);
+            btnbcategoria.setEnabled(estado);
+            btnbestado.setEnabled(estado);
+            btnbfleje.setEnabled(estado);
+            btnbumedida.setEnabled(estado);
             btnguardar.setEnabled(estado);
         }
-        
+        int columnaABuscar = 0;
         //Filtro de combo para busqueda
         public void filtro() {
-        int columnaABuscar = 0;
-        if ("Descripcion".equals(cbfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 2;
-        }
-        if ("IDProducto".equals(cbfiltro.getSelectedItem().toString())) {
+            
+        if ("IDPRODUCTO".equals(cbfiltro.getSelectedItem().toString())) {
             columnaABuscar = 0;
         }
-        if ("Ean".equals(cbfiltro.getSelectedItem().toString())) {
+        if ("DESCRIPCION".equals(cbfiltro.getSelectedItem().toString())) {
+            columnaABuscar = 2;
+        }
+        if ("EAN".equals(cbfiltro.getSelectedItem().toString())) {
             columnaABuscar = 1;
         }
-         if ("Categoria".equals(cbfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 5;
+         if ("CATEGORIA".equals(cbfiltro.getSelectedItem().toString())) {
+            columnaABuscar = 6;
         }
-         if ("Estado".equals(cbfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 7;
+         if ("ESTADO".equals(cbfiltro.getSelectedItem().toString())) {
+            columnaABuscar = 10;
         }
-         if ("Fleje".equals(cbfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 8;
+         if ("FLEJE".equals(cbfiltro.getSelectedItem().toString())) {
+            columnaABuscar = 12;
         }
         s.setRowFilter(RowFilter.regexFilter(txdetalle.getText(), columnaABuscar));
     }

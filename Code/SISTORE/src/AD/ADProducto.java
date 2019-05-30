@@ -13,7 +13,19 @@ import java.util.LinkedList;
  * @author kflores
  */
 public class ADProducto {
-    
+//    int IDPRODUCTO;
+//int IDCATEGORIA;
+//int CODUME;
+//int CODESTADO;
+//String EAN;
+//String DESCRIPCION;
+//float PRECIOCOM;
+//float PRECIOVEN;
+//Date FCHCREA;
+//String USRCREA;
+//Date FCHMOD;
+//String USRMOD;
+//char FLGELI;
     private static boolean Nuevo(Producto u) throws ClassNotFoundException, SQLException, ParseException{
     int r = 0;
     String sql = "INSERT INTO TPRODUCTO VALUES (?,?,?,?,?,?,?,?,?,?,?)";

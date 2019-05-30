@@ -11,6 +11,10 @@ import Entidades.Categoria;
 import Entidades.Tabladetalle;
 import static Presentacion.FIProductos.idtabla;
 import static Presentacion.FIProductos.titulo;
+import static Presentacion.FIProductos.txcategoria;
+import static Presentacion.FIProductos.txestado;
+import static Presentacion.FIProductos.txfleje;
+import static Presentacion.FIProductos.txumedida;
 import java.awt.AWTEvent;
 import java.awt.ActiveEvent;
 import java.awt.Component;
@@ -86,7 +90,7 @@ public class FIDTabladetalle extends javax.swing.JInternalFrame{
 
         cbcondicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Contiene", "Es igual", "=/=", ">", "<" }));
 
-        cbcolumna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Descripción", "Código", "Fleje" }));
+        cbcolumna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Descripción", "Código" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -164,6 +168,15 @@ this.dispose();
     private void btnaplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaplicarActionPerformed
 String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
 this.dispose();
+        if (idtabla==0) {
+        txcategoria.setText(valor);
+        }if (idtabla==100) {
+        txumedida.setText(valor);
+        }if (idtabla==104) {
+        txestado.setText(valor);
+        }if (idtabla==103) {
+        txfleje.setText(valor);
+        }
 //abrir ventana y cargar la fila donde esta ubicada el elemento.
 //cargar elemento seleccionado directo en el cuadro invocador.
     }//GEN-LAST:event_btnaplicarActionPerformed
@@ -271,7 +284,9 @@ this.dispose();
     tabladetalle.setModel(modelo);
     tabladetalle.setRowSorter(s);
     
+    tabladetalle.removeColumn(tabladetalle.getColumnModel().getColumn(3));
     tabladetalle.removeColumn(tabladetalle.getColumnModel().getColumn(1));
+    
     //tabladetalle.getColumnModel().getColumn(0).setPreferredWidth(25);
     tabladetalle.getColumnModel().getColumn(1).setPreferredWidth(200);
     TableRowSorter<DefaultTableModel> sorteo = new TableRowSorter<> (modelo);
