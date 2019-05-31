@@ -28,22 +28,24 @@ public class ADProducto {
 //char FLGELI;
     private static boolean Nuevo(Producto u) throws ClassNotFoundException, SQLException, ParseException{
     int r = 0;
-    String sql = "INSERT INTO TPRODUCTO VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+    String sql = "INSERT INTO TPRODUCTO VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
         try (Connection cn = conexionSS.conexion();
             PreparedStatement ps = cn.prepareStatement(sql)){
             u.setUSRCREA(u.getUSRMOD());
             u.setFCHCREA(u.getFCHMOD());
+            
             ps.setInt(1, u.getIDCATEGORIA());
             ps.setInt(2, u.getCODUME());
-            ps.setString(3, u.getEAN());
-            ps.setString(4, u.getDESCRIPCION());
-            ps.setFloat(5, u.getPRECIOCOM());
-            ps.setFloat(6, u.getPRECIOVEN());
-            ps.setString(7, u.getFCHCREA());
-            ps.setString(8, u.getUSRCREA());
-            ps.setString(9, u.getFCHMOD());
-            ps.setString(10, u.getUSRMOD());
-            ps.setString(11, String.valueOf(u.getFLGELI()));
+            ps.setInt(3, u.getCODESTADO());
+            ps.setString(4, u.getEAN());
+            ps.setString(5, u.getDESCRIPCION());
+            ps.setFloat(6, u.getPRECIOCOM());
+            ps.setFloat(7, u.getPRECIOVEN());
+            ps.setString(8, u.getFCHCREA());
+            ps.setString(9, u.getUSRCREA());
+            ps.setString(10, u.getFCHMOD());
+            ps.setString(11, u.getUSRMOD());
+            ps.setString(12, String.valueOf(u.getFLGELI()));
             r = ps.executeUpdate();            
         }
     return r==1;
@@ -51,19 +53,20 @@ public class ADProducto {
     
     private static boolean Actualizar(Producto u) throws ClassNotFoundException, SQLException{
     int r = 0;
-    String sql = "UPDATE TPRODUCTO SET IDCATEGORIA=?, CODUME=?,EAN=?, DESCRIPCION=?,PRECIOCOM=?,PRECIOVEN=?,FCHMOD=?,USRMOD=?,FLGELI=? WHERE IDPRODUCTO=?";
+    String sql = "UPDATE TPRODUCTO SET IDCATEGORIA=?, CODUME=?, CODESTADO=?, EAN=?, DESCRIPCION=?,PRECIOCOM=?,PRECIOVEN=?,FCHMOD=?,USRMOD=?,FLGELI=? WHERE IDPRODUCTO=?";
         try (Connection cn = conexionSS.conexion();
             PreparedStatement ps = cn.prepareStatement(sql)){            
             ps.setInt(1, u.getIDCATEGORIA());
             ps.setInt(2, u.getCODUME());
-            ps.setString(3, u.getEAN());
-            ps.setString(4, u.getDESCRIPCION());
-            ps.setFloat(5, u.getPRECIOCOM());
-            ps.setFloat(6, u.getPRECIOVEN());
-            ps.setString(7, u.getFCHMOD());
-            ps.setString(8, u.getUSRMOD());
-            ps.setString(9, String.valueOf(u.getFLGELI()));
-            ps.setInt(10, u.getIDPRODUCTO());
+            ps.setInt(3, u.getCODESTADO());
+            ps.setString(4, u.getEAN());
+            ps.setString(5, u.getDESCRIPCION());
+            ps.setFloat(6, u.getPRECIOCOM());
+            ps.setFloat(7, u.getPRECIOVEN());
+            ps.setString(8, u.getFCHMOD());
+            ps.setString(9, u.getUSRMOD());
+            ps.setString(10, String.valueOf(u.getFLGELI()));
+            ps.setInt(11, u.getIDPRODUCTO());
             r = ps.executeUpdate();            
         }
     return r==1;
@@ -71,7 +74,7 @@ public class ADProducto {
     
     private static boolean Existe(Producto u) throws ClassNotFoundException, SQLException{
     boolean r = false;
-    String sql = "SELECT IDPRODUCTO fROM TPRODUCTO WHERE IDPRODUCTO=?";
+    String sql = "SELECT IDPRODUCTO FROM TPRODUCTO WHERE IDPRODUCTO=?";
         try (Connection cn = conexionSS.conexion();
             PreparedStatement ps = cn.prepareStatement(sql)){            
             ps.setInt(1, u.getIDPRODUCTO());
@@ -86,8 +89,9 @@ public class ADProducto {
     int r = 0;
     String sql = "UPDATE TPRODUCTO SET FLGELI=? WHERE IDPRODUCTO=?";
         try (Connection cn = conexionSS.conexion();
-            PreparedStatement ps = cn.prepareStatement(sql)){            
-            ps.setInt(1, u.getIDPRODUCTO());
+            PreparedStatement ps = cn.prepareStatement(sql)){
+            ps.setString(1, String.valueOf(u.getFLGELI()));            
+            ps.setInt(2, u.getIDPRODUCTO());
             r = ps.executeUpdate();            
         }
     return r==1;

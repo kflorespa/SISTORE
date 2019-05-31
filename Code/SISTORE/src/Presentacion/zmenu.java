@@ -8,6 +8,7 @@ import Entidades.Sucursal;
 import Entidades.Usuario;
 import java.awt.Toolkit;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -498,10 +499,14 @@ System.exit(0);
     }//GEN-LAST:event_btnentrar1ActionPerformed
 
     private void iproductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iproductosActionPerformed
-        FIProductos fip=new FIProductos();
-        fip.setSize(internal.getWidth(),internal.getHeight());
-        fip.setVisible(true);
-        internal.add(fip);
+        try {
+            FIProductos fip=new FIProductos();
+            fip.setSize(internal.getWidth(),internal.getHeight());
+            fip.setVisible(true);
+            internal.add(fip);
+        } catch (ParseException ex) {
+            Logger.getLogger(zmenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_iproductosActionPerformed
 
     private void icategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_icategoriasActionPerformed

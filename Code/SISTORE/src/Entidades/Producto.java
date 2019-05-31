@@ -2,6 +2,7 @@ package Entidades;
 
 import java.text.ParseException;
 import java.util.Date;
+import javax.swing.JOptionPane;
 import recursos.Formatos;
 
 /**
@@ -92,11 +93,11 @@ String FLEJE;
     }
 
     public String getFCHCREA() {
-        return Formatos.sdf.format(FCHCREA);
+        return Formatos.sdflargo.format(FCHCREA);
     }
 
     public void setFCHCREA(String FCHCREA) throws ParseException{
-        this.FCHCREA = Formatos.sdf.parse(FCHCREA);
+        this.FCHCREA = Formatos.sdflargo.parse(FCHCREA);
     }
 
     public String getUSRCREA() {
@@ -108,11 +109,11 @@ String FLEJE;
     }
 
     public String getFCHMOD() {
-        return Formatos.sdf.format(FCHMOD);
+        return Formatos.sdflargo.format(FCHMOD);
     }
 
     public void setFCHMOD(String FCHMOD) throws ParseException{
-        this.FCHMOD = Formatos.sdf.parse(FCHMOD);
+        this.FCHMOD = Formatos.sdflargo.parse(FCHMOD);
     }
 
     public String getUSRMOD() {
@@ -203,9 +204,9 @@ String FLEJE;
         lista[10]=DESTADO;
         lista[11]=String.valueOf(FLGELI);
         lista[12]=FLEJE;
-        lista[13]=Formatos.sdf.format(FCHCREA);
+        lista[13]=Formatos.sdflargo.format(FCHCREA);
         lista[14]=USRCREA;
-        lista[15]=Formatos.sdf.format(FCHMOD);
+        lista[15]=Formatos.sdflargo.format(FCHMOD);
         lista[16]=USRMOD;
         return lista;
     } 

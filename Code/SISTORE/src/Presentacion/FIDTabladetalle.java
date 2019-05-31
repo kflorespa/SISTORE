@@ -15,6 +15,7 @@ import static Presentacion.FIProductos.txcategoria;
 import static Presentacion.FIProductos.txestado;
 import static Presentacion.FIProductos.txfleje;
 import static Presentacion.FIProductos.txumedida;
+import static Presentacion.zmenu.internal;
 import java.awt.AWTEvent;
 import java.awt.ActiveEvent;
 import java.awt.Component;
@@ -84,6 +85,11 @@ public class FIDTabladetalle extends javax.swing.JInternalFrame{
         tabladetalle.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tabladetalle.getTableHeader().setResizingAllowed(false);
         tabladetalle.getTableHeader().setReorderingAllowed(false);
+        tabladetalle.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabladetalleMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tabladetalle);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Filtro"));
@@ -166,8 +172,11 @@ this.dispose();
     }//GEN-LAST:event_btncancelarActionPerformed
 
     private void btnaplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaplicarActionPerformed
-String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
-this.dispose();
+        if (tabladetalle.getSelectedRow()==-1) {
+        JOptionPane.showInternalMessageDialog(internal, "Selecciona una fila","Validar datos",JOptionPane.INFORMATION_MESSAGE);    
+        }else{
+        String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
+        this.dispose();
         if (idtabla==0) {
         txcategoria.setText(valor);
         }if (idtabla==100) {
@@ -177,9 +186,27 @@ this.dispose();
         }if (idtabla==103) {
         txfleje.setText(valor);
         }
+        }
+        
 //abrir ventana y cargar la fila donde esta ubicada el elemento.
 //cargar elemento seleccionado directo en el cuadro invocador.
     }//GEN-LAST:event_btnaplicarActionPerformed
+
+    private void tabladetalleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabladetalleMouseClicked
+       if(evt.getClickCount()==2){
+       String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
+        this.dispose();
+           if (idtabla==0) {
+        txcategoria.setText(valor);
+        }if (idtabla==100) {
+        txumedida.setText(valor);
+        }if (idtabla==104) {
+        txestado.setText(valor);
+        }if (idtabla==103) {
+        txfleje.setText(valor);
+        }
+       }
+    }//GEN-LAST:event_tabladetalleMouseClicked
 
 // indica si aquest es modal o no.
     boolean modal = false;

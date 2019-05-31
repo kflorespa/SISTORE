@@ -78,11 +78,4 @@ String ITEM;
         lista[3]=String.valueOf(FLGELI);
         return lista;
     } 
-
-        public String [] ComboCategoria(){
-        String [] lista = new String[2];
-        lista[0]=String.valueOf(ITEM);
-        lista[1]=String.valueOf(DIARETIRO);
-        return lista;
-    } 
 }

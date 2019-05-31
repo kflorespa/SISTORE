@@ -18,7 +18,7 @@ import java.util.Locale;
  */
 public class Formatos {
     public static SimpleDateFormat  sdf = new SimpleDateFormat("dd/MM/yyyy");
-    public static SimpleDateFormat  sdflargo = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+    public static SimpleDateFormat  sdflargo = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     public static DecimalFormat df = new DecimalFormat("0.00",DecimalFormatSymbols.getInstance(Locale.US));
     
     public static java.sql.Date fechasql(String fecha) throws ParseException{
