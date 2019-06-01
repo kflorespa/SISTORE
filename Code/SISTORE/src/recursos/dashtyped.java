@@ -92,17 +92,17 @@ public class dashtyped {
             System.out.println(e);
         }
             } 
-//            /*CONTROLAR 0 Y 1 */
-//        public void control_cero_uno(KeyEvent evt,JTextField campo){
-//          try {          
-//        char c = evt.getKeyChar();
-//        
-//        if (campo.getText().length()>=numax)evt.consume();
-//        if ((c<'0' || c>'9')) evt.consume(); 
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
-//            } 
+            /*CONTROLAR 0 Y 1 */
+        public void control_cero_uno(KeyEvent evt,JTextField campo){
+          try {          
+        char c = evt.getKeyChar();
+        
+        if (campo.getText().length()>=1)evt.consume();
+        if ((c<'0' || c>'1')) evt.consume(); 
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+            } 
         
         
         
