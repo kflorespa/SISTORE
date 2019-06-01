@@ -6,14 +6,23 @@ import static Presentacion.zmenu.internal;
 import java.awt.HeadlessException;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.print.PrinterException;
+import java.io.IOException;
 import java.sql.SQLException;
+import java.text.MessageFormat;
 import java.text.ParseException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTable.PrintMode;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import recursos.ExportarExcel;
+import recursos.Formatos;
+import recursos.dashtyped;
 
 /**
  *
@@ -123,11 +132,21 @@ public final class FIProductos extends javax.swing.JInternalFrame {
         btnexportaexcel.setToolTipText("");
         btnexportaexcel.setFocusable(false);
         btnexportaexcel.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnexportaexcel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnexportaexcelActionPerformed(evt);
+            }
+        });
         jToolBar1.add(btnexportaexcel);
 
         btnimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/print.png"))); // NOI18N
         btnimprimir.setFocusable(false);
         btnimprimir.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnimprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnimprimirActionPerformed(evt);
+            }
+        });
         jToolBar1.add(btnimprimir);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Búsqueda avanzada"));
@@ -177,9 +196,27 @@ public final class FIProductos extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Ean");
 
+        txean.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txeanKeyTyped(evt);
+            }
+        });
+
+        txdescripcion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txdescripcionKeyTyped(evt);
+            }
+        });
+
         jLabel5.setText("Descripcion");
 
         jLabel6.setText("P. Compra");
+
+        txpreciocompra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txpreciocompraKeyTyped(evt);
+            }
+        });
 
         jLabel7.setText("Categoria");
 
@@ -188,6 +225,12 @@ public final class FIProductos extends javax.swing.JInternalFrame {
         jLabel9.setText("Estado");
 
         jLabel10.setText("P. Venta");
+
+        txprecioventa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txprecioventaKeyTyped(evt);
+            }
+        });
 
         jLabel11.setText("Fleje");
 
@@ -216,6 +259,30 @@ public final class FIProductos extends javax.swing.JInternalFrame {
         btnbfleje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbflejeActionPerformed(evt);
+            }
+        });
+
+        txcategoria.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txcategoriaKeyTyped(evt);
+            }
+        });
+
+        txumedida.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txumedidaKeyTyped(evt);
+            }
+        });
+
+        txestado.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txestadoKeyTyped(evt);
+            }
+        });
+
+        txfleje.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txflejeKeyTyped(evt);
             }
         });
 
@@ -414,6 +481,7 @@ public final class FIProductos extends javax.swing.JInternalFrame {
 
     private void txdetalleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txdetalleKeyTyped
     // TODO add your handling code here:
+    new dashtyped().control_maxdigitos(evt, txdetalle, 50); 
         txdetalle.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(final KeyEvent e) {
@@ -490,9 +558,10 @@ public final class FIProductos extends javax.swing.JInternalFrame {
                       
         try{
             //Guardamos en un entero la fila seleccionada.
-            if (filaseleccionada == -1){
+            if (listaproductos.getSelectedRow()<0){
                 JOptionPane.showInternalMessageDialog(internal, "Selecciona una fila","Validar datos",JOptionPane.INFORMATION_MESSAGE);
             } else {
+                    pasarDatosFila();
                     setEnabledDatosP(zmenu.P_PRODUCTOS[1]=='0'); //Verificar si puede modificar
             }
         }catch (HeadlessException ex){
@@ -558,6 +627,75 @@ public static String titulo;
         }
     }//GEN-LAST:event_btnbflejeActionPerformed
 
+    private void btnexportaexcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexportaexcelActionPerformed
+        try {
+            ExportarExcel obj = new ExportarExcel();
+            JTable tablatemp = new JTable();
+            String[] columnas = {"IDPRODUCTO","EAN","DESCRIPCION","DCATEGORIA","DUME","DESTADO","FLEJE"};
+            String copiatemp [] = new String[7];
+            DefaultTableModel mtablatemp =new DefaultTableModel (null,columnas);
+            for (int f = 0; f < listaproductos.getRowCount(); f++) {
+                    copiatemp[0]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 0).toString();
+                    copiatemp[1]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 1).toString();
+                    copiatemp[2]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 2).toString();
+                    copiatemp[3]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 6).toString();
+                    copiatemp[4]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 8).toString();
+                    copiatemp[5]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 10).toString();
+                    copiatemp[6]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 12).toString();
+                    mtablatemp.addRow(copiatemp);
+            }
+            tablatemp.setModel(mtablatemp);
+            obj.exportarExcel(tablatemp);
+        } catch (IOException ex) {
+           JOptionPane.showInternalMessageDialog(internal, "Error inesperado, intente más tarde","Validar datos",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnexportaexcelActionPerformed
+
+    private void btnimprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimirActionPerformed
+                  try {
+              // tabla1.print();//envia los datos de la tabla a la impresora
+                     MessageFormat headerFormat = new MessageFormat("Sistore - Productos "+Formatos.sdfruta.format(new Date()));
+                     MessageFormat footerFormat = new MessageFormat("- Página {0} -");
+                     listaproductos.print(PrintMode.FIT_WIDTH, headerFormat, footerFormat);
+                                         
+                     
+            } catch (PrinterException ex) {
+                JOptionPane.showMessageDialog(null, "No se ha podido imprimir correctamente, intentalo más tarde.");
+            }  
+    }//GEN-LAST:event_btnimprimirActionPerformed
+
+    private void txeanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txeanKeyTyped
+ new dashtyped().control_maxdigitos_numeros(evt, txean, 20);
+    }//GEN-LAST:event_txeanKeyTyped
+
+    private void txdescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txdescripcionKeyTyped
+ new dashtyped().control_maxdigitos(evt, txdescripcion, 50);
+    }//GEN-LAST:event_txdescripcionKeyTyped
+
+    private void txpreciocompraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txpreciocompraKeyTyped
+ new dashtyped().control_maxdigitos_decimales(evt, txpreciocompra, 5);
+    }//GEN-LAST:event_txpreciocompraKeyTyped
+
+    private void txprecioventaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txprecioventaKeyTyped
+ new dashtyped().control_maxdigitos_decimales(evt, txprecioventa, 5);
+    }//GEN-LAST:event_txprecioventaKeyTyped
+
+    private void txcategoriaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txcategoriaKeyTyped
+ new dashtyped().control_maxdigitos_numeros(evt, txcategoria, 5);
+    }//GEN-LAST:event_txcategoriaKeyTyped
+
+    private void txumedidaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txumedidaKeyTyped
+ new dashtyped().control_maxdigitos_numeros(evt, txumedida, 5);
+    }//GEN-LAST:event_txumedidaKeyTyped
+
+    private void txestadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txestadoKeyTyped
+ new dashtyped().control_maxdigitos_numeros(evt, txestado, 5);
+    }//GEN-LAST:event_txestadoKeyTyped
+
+    private void txflejeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txflejeKeyTyped
+
+    }//GEN-LAST:event_txflejeKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnbcategoria;
@@ -598,7 +736,7 @@ public static String titulo;
     private javax.swing.JTextField txprecioventa;
     public static javax.swing.JTextField txumedida;
     // End of variables declaration//GEN-END:variables
-    
+
 public void limpiarcampos(){
     txidproducto.setText("0");
     txean.setText("");
@@ -626,6 +764,7 @@ public void limpiarcampos(){
             listaproductos.getColumnModel().getColumn(posicion[i]).setMinWidth(0);
             listaproductos.getColumnModel().getColumn(posicion[i]).setPreferredWidth(0);
         }
+
     //tamaños de columnas de tabla    
     listaproductos.getColumnModel().getColumn(0).setPreferredWidth(60);
     listaproductos.getColumnModel().getColumn(1).setPreferredWidth(80);

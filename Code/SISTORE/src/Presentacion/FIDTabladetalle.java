@@ -20,12 +20,17 @@ import java.awt.AWTEvent;
 import java.awt.ActiveEvent;
 import java.awt.Component;
 import java.awt.MenuComponent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import recursos.dashstyle;
+import recursos.dashtyped;
 
 /**
  *
@@ -42,6 +47,7 @@ public class FIDTabladetalle extends javax.swing.JInternalFrame{
     public FIDTabladetalle() throws ClassNotFoundException, SQLException {
         initComponents();
         cargardatos();
+        txbusqueda.requestFocus();
         
     }
 
@@ -57,7 +63,6 @@ public class FIDTabladetalle extends javax.swing.JInternalFrame{
         jScrollPane1 = new javax.swing.JScrollPane();
         tabladetalle = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        cbcondicion = new javax.swing.JComboBox<>();
         txbusqueda = new javax.swing.JTextField();
         cbcolumna = new javax.swing.JComboBox<>();
         btnaplicar = new javax.swing.JButton();
@@ -94,7 +99,11 @@ public class FIDTabladetalle extends javax.swing.JInternalFrame{
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Filtro"));
 
-        cbcondicion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Contiene", "Es igual", "=/=", ">", "<" }));
+        txbusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txbusquedaKeyTyped(evt);
+            }
+        });
 
         cbcolumna.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Descripción", "Código" }));
 
@@ -105,10 +114,8 @@ public class FIDTabladetalle extends javax.swing.JInternalFrame{
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cbcolumna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbcondicion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txbusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txbusqueda)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -116,7 +123,6 @@ public class FIDTabladetalle extends javax.swing.JInternalFrame{
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbcondicion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txbusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbcolumna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -208,6 +214,22 @@ this.dispose();
        }
     }//GEN-LAST:event_tabladetalleMouseClicked
 
+    private void txbusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txbusquedaKeyTyped
+        new dashtyped().control_maxdigitos(evt, txestado, 50); 
+        txbusqueda.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(final KeyEvent e) {
+                String cadena = (txbusqueda.getText());
+                txbusqueda.setText(cadena.toUpperCase());
+                repaint();
+                filtro();
+            }
+        });
+        s = new TableRowSorter(tabladetalle.getModel());
+        tabladetalle.setRowSorter(s);
+
+    }//GEN-LAST:event_txbusquedaKeyTyped
+
 // indica si aquest es modal o no.
     boolean modal = false;
 
@@ -292,7 +314,6 @@ this.dispose();
     private javax.swing.JButton btnaplicar;
     private javax.swing.JButton btncancelar;
     private javax.swing.JComboBox<String> cbcolumna;
-    private javax.swing.JComboBox<String> cbcondicion;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabladetalle;
@@ -330,5 +351,18 @@ this.dispose();
     modelo.addRow(c.DatosArray());
     }         
         }
+    }
+    
+    int columnaABuscar = 0;
+        //Filtro de combo para busqueda
+        public void filtro() {
+            
+        if ("Descripción".equals(cbcolumna.getSelectedItem().toString())) {
+            columnaABuscar = 2;
+        }
+        if ("Código".equals(cbcolumna.getSelectedItem().toString())) {
+            columnaABuscar = 0;
+        }
+        s.setRowFilter(RowFilter.regexFilter(txbusqueda.getText(), columnaABuscar));
     }
 }
