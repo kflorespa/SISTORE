@@ -53,96 +53,96 @@ public final class FICategorias extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jToolBar1 = new javax.swing.JToolBar();
-        btnnuevo = new javax.swing.JButton();
-        btnguardar = new javax.swing.JButton();
-        btneditar = new javax.swing.JButton();
-        btnexportaexcel = new javax.swing.JButton();
-        btnimprimir = new javax.swing.JButton();
+        btncnuevo = new javax.swing.JButton();
+        btncguardar = new javax.swing.JButton();
+        btnceditar = new javax.swing.JButton();
+        btncexportaexcel = new javax.swing.JButton();
+        btncimprimir = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         cbfiltro = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        txdetalle = new javax.swing.JTextField();
+        txcdetalle = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        txidproducto = new javax.swing.JTextField();
+        txidcategoria = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txdescripcion = new javax.swing.JTextField();
+        txcdescripcion = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        btnbfleje = new javax.swing.JButton();
-        txcategoria = new javax.swing.JTextField();
-        txfleje = new javax.swing.JTextField();
+        btncbfleje = new javax.swing.JButton();
+        txcdiaretiro = new javax.swing.JTextField();
+        txcfleje = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaproductos = new javax.swing.JTable();
+        lsttablacategorias = new javax.swing.JTable();
 
         setClosable(true);
         setIconifiable(true);
-        setTitle("Productos");
+        setTitle("Categorias");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icono.png"))); // NOI18N
 
         jToolBar1.setFloatable(false);
         jToolBar1.setRollover(true);
 
-        btnnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/new.png"))); // NOI18N
-        btnnuevo.setFocusable(false);
-        btnnuevo.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnnuevo.addActionListener(new java.awt.event.ActionListener() {
+        btncnuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/new.png"))); // NOI18N
+        btncnuevo.setFocusable(false);
+        btncnuevo.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btncnuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnnuevoActionPerformed(evt);
+                btncnuevoActionPerformed(evt);
             }
         });
-        jToolBar1.add(btnnuevo);
+        jToolBar1.add(btncnuevo);
 
-        btnguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/save.png"))); // NOI18N
-        btnguardar.setFocusable(false);
-        btnguardar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnguardar.addActionListener(new java.awt.event.ActionListener() {
+        btncguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/save.png"))); // NOI18N
+        btncguardar.setFocusable(false);
+        btncguardar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btncguardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnguardarActionPerformed(evt);
+                btncguardarActionPerformed(evt);
             }
         });
-        jToolBar1.add(btnguardar);
+        jToolBar1.add(btncguardar);
 
-        btneditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/edit.png"))); // NOI18N
-        btneditar.setFocusable(false);
-        btneditar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btneditar.addActionListener(new java.awt.event.ActionListener() {
+        btnceditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/edit.png"))); // NOI18N
+        btnceditar.setFocusable(false);
+        btnceditar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnceditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btneditarActionPerformed(evt);
+                btnceditarActionPerformed(evt);
             }
         });
-        jToolBar1.add(btneditar);
+        jToolBar1.add(btnceditar);
 
-        btnexportaexcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/export_excel.png"))); // NOI18N
-        btnexportaexcel.setToolTipText("");
-        btnexportaexcel.setFocusable(false);
-        btnexportaexcel.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnexportaexcel.addActionListener(new java.awt.event.ActionListener() {
+        btncexportaexcel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/export_excel.png"))); // NOI18N
+        btncexportaexcel.setToolTipText("");
+        btncexportaexcel.setFocusable(false);
+        btncexportaexcel.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btncexportaexcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnexportaexcelActionPerformed(evt);
+                btncexportaexcelActionPerformed(evt);
             }
         });
-        jToolBar1.add(btnexportaexcel);
+        jToolBar1.add(btncexportaexcel);
 
-        btnimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/print.png"))); // NOI18N
-        btnimprimir.setFocusable(false);
-        btnimprimir.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnimprimir.addActionListener(new java.awt.event.ActionListener() {
+        btncimprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/print.png"))); // NOI18N
+        btncimprimir.setFocusable(false);
+        btncimprimir.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btncimprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnimprimirActionPerformed(evt);
+                btncimprimirActionPerformed(evt);
             }
         });
-        jToolBar1.add(btnimprimir);
+        jToolBar1.add(btncimprimir);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Búsqueda avanzada"));
 
         jLabel1.setText("Filtrar por");
 
-        txdetalle.addKeyListener(new java.awt.event.KeyAdapter() {
+        txcdetalle.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txdetalleKeyTyped(evt);
+                txcdetalleKeyTyped(evt);
             }
         });
 
@@ -160,7 +160,7 @@ public final class FICategorias extends javax.swing.JInternalFrame {
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(cbfiltro, 0, 161, Short.MAX_VALUE)
-                    .addComponent(txdetalle))
+                    .addComponent(txcdetalle))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -172,7 +172,7 @@ public final class FICategorias extends javax.swing.JInternalFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txdetalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txcdetalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -181,9 +181,9 @@ public final class FICategorias extends javax.swing.JInternalFrame {
 
         jLabel3.setText("ID");
 
-        txdescripcion.addKeyListener(new java.awt.event.KeyAdapter() {
+        txcdescripcion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txdescripcionKeyTyped(evt);
+                txcdescripcionKeyTyped(evt);
             }
         });
 
@@ -193,22 +193,22 @@ public final class FICategorias extends javax.swing.JInternalFrame {
 
         jLabel11.setText("Fleje");
 
-        btnbfleje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa.png"))); // NOI18N
-        btnbfleje.addActionListener(new java.awt.event.ActionListener() {
+        btncbfleje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa.png"))); // NOI18N
+        btncbfleje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnbflejeActionPerformed(evt);
+                btncbflejeActionPerformed(evt);
             }
         });
 
-        txcategoria.addKeyListener(new java.awt.event.KeyAdapter() {
+        txcdiaretiro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txcategoriaKeyTyped(evt);
+                txcdiaretiroKeyTyped(evt);
             }
         });
 
-        txfleje.addKeyListener(new java.awt.event.KeyAdapter() {
+        txcfleje.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txflejeKeyTyped(evt);
+                txcflejeKeyTyped(evt);
             }
         });
 
@@ -228,8 +228,8 @@ public final class FICategorias extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel5)))
                         .addGap(14, 14, 14)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txdescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txidproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txcdescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txidcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,10 +239,10 @@ public final class FICategorias extends javax.swing.JInternalFrame {
                             .addComponent(jLabel7))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txcategoria, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                            .addComponent(txfleje))
+                            .addComponent(txcdiaretiro, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                            .addComponent(txcfleje))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnbfleje, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btncbfleje, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -251,35 +251,35 @@ public final class FICategorias extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(txidproducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txidcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(txdescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txcdescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(txcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txcdiaretiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnbfleje)
+                    .addComponent(btncbfleje)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txfleje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txcfleje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel11)))
                 .addContainerGap(229, Short.MAX_VALUE))
         );
 
-        txdescripcion.getAccessibleContext().setAccessibleName("");
+        txcdescripcion.getAccessibleContext().setAccessibleName("");
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Listado de categorias para productos"));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Listado de categorias"));
 
-        listaproductos = new javax.swing.JTable(){
+        lsttablacategorias = new javax.swing.JTable(){
             public boolean isCellEditable(int rowIndex, int colIndex){
                 return false;
             }
         };
-        listaproductos.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        listaproductos.setModel(new javax.swing.table.DefaultTableModel(
+        lsttablacategorias.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        lsttablacategorias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -290,15 +290,15 @@ public final class FICategorias extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        listaproductos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        listaproductos.getTableHeader().setResizingAllowed(false);
-        listaproductos.getTableHeader().setReorderingAllowed(false);
-        listaproductos.addMouseListener(new java.awt.event.MouseAdapter() {
+        lsttablacategorias.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        lsttablacategorias.getTableHeader().setResizingAllowed(false);
+        lsttablacategorias.getTableHeader().setReorderingAllowed(false);
+        lsttablacategorias.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                listaproductosMouseClicked(evt);
+                lsttablacategoriasMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(listaproductos);
+        jScrollPane1.setViewportView(lsttablacategorias);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -345,97 +345,86 @@ public final class FICategorias extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void listaproductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaproductosMouseClicked
-             filaseleccionada = listaproductos.getSelectedRow();
-             btneditar.setEnabled(zmenu.P_PRODUCTOS[1]=='0');
+    private void lsttablacategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lsttablacategoriasMouseClicked
+             filaseleccionada = lsttablacategorias.getSelectedRow();
+             btnceditar.setEnabled(zmenu.P_CATEGORIASDEPRODUCTOS[1]=='0');
              pasarDatosFila();
-    }//GEN-LAST:event_listaproductosMouseClicked
+    }//GEN-LAST:event_lsttablacategoriasMouseClicked
 
-    private void btnnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnuevoActionPerformed
-    setEnabledDatosP(zmenu.P_PRODUCTOS[0]=='0'); //Verificar si puede crear
+    private void btncnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncnuevoActionPerformed
+    setEnabledDatosP(zmenu.P_CATEGORIASDEPRODUCTOS[0]=='0'); //Verificar si puede crear
     limpiarcampos();
-    }//GEN-LAST:event_btnnuevoActionPerformed
+    }//GEN-LAST:event_btncnuevoActionPerformed
 
-    private void txdetalleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txdetalleKeyTyped
+    private void txcdetalleKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txcdetalleKeyTyped
     // TODO add your handling code here:
-    new dashtyped().control_maxdigitos(evt, txdetalle, 25); 
-        txdetalle.addKeyListener(new KeyAdapter() {
+    new dashtyped().control_maxdigitos(evt, txcdetalle, 25); 
+        txcdetalle.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(final KeyEvent e) {
-                String cadena = (txdetalle.getText());
-                txdetalle.setText(cadena.toUpperCase());
+                String cadena = (txcdetalle.getText());
+                txcdetalle.setText(cadena.toUpperCase());
                 repaint();
                 filtro();
             }
         });
-        s = new TableRowSorter(listaproductos.getModel());
-        listaproductos.setRowSorter(s);
+        s = new TableRowSorter(lsttablacategorias.getModel());
+        lsttablacategorias.setRowSorter(s);
 
-    }//GEN-LAST:event_txdetalleKeyTyped
+    }//GEN-LAST:event_txcdetalleKeyTyped
 
-    private void btnguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnguardarActionPerformed
+    private void btncguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncguardarActionPerformed
         try {
-            if (txidproducto.getText().isEmpty()||txdescripcion.getText().isEmpty())
+            if (txidcategoria.getText().isEmpty()||txcdescripcion.getText().isEmpty())
                      {
                 JOptionPane.showInternalMessageDialog(internal, "Debe completar todos los campos","Validar datos",JOptionPane.WARNING_MESSAGE); 
             }
             else{
  
-            Categoria cat=new Categoria();
-            cat.setIDCATEGORIA(Integer.parseInt(txcategoria.getText()));
-                if (ADCategoria.Existe(cat)) {
-                                Producto p = new Producto();
-                                p.setIDPRODUCTO(Integer.parseInt(txidproducto.getText()));
-                                p.setDESCRIPCION(txdescripcion.getText().toUpperCase());
-                                p.setFCHMOD(zmenu.lbhorasistema.getText());
-                                p.setUSRMOD(zmenu.lbnombreusuario.getText());
-                                p.setIDCATEGORIA(Integer.parseInt(txcategoria.getText()));
-                                p.setFLGELI(txfleje.getText().charAt(0));
-                                if (ADProducto.Guardar(p)) {
+                                Categoria p = new Categoria();
+                                p.setIDCATEGORIA(Integer.parseInt(txidcategoria.getText()));
+                                p.setDESCRIPCION(txcdescripcion.getText().toUpperCase());
+                                p.setDIARETIRO(Integer.parseInt(txcdiaretiro.getText()));
+                                p.setFLGELI(txcfleje.getText().charAt(0));
+                                if (ADCategoria.Guardar(p)) {
                                 JOptionPane.showInternalMessageDialog(internal, "Se guardaron cambios","Exito",JOptionPane.INFORMATION_MESSAGE);
                                 cargartabla();
                                 limpiarcampos();
-                                txdetalle.setText("");
-                                txidproducto.setText("");
-                                txdetalle.requestFocus();
+                                txcdetalle.setText("");
+                                txidcategoria.setText("");
+                                txcdetalle.requestFocus();
                                 setEnabledDatosP(false);
                                 }else{
                                 JOptionPane.showInternalMessageDialog(internal, "Intente nuevamente más tarde","Validar datos",JOptionPane.ERROR_MESSAGE);      
                                 }
-                            
-                       
-                }else{
-                JOptionPane.showInternalMessageDialog(internal, "Selecciona una categoria válida","Validar datos",JOptionPane.ERROR_MESSAGE);
-                txcategoria.requestFocus();
-                }
             }
         } catch (ClassNotFoundException | SQLException | ParseException ex) {
             Logger.getLogger(FICategorias.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_btnguardarActionPerformed
+    }//GEN-LAST:event_btncguardarActionPerformed
 
-    private void btneditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneditarActionPerformed
+    private void btnceditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnceditarActionPerformed
                       
         try{
             //Guardamos en un entero la fila seleccionada.
-            if (listaproductos.getSelectedRow()<0){
+            if (lsttablacategorias.getSelectedRow()<0){
                 JOptionPane.showInternalMessageDialog(internal, "Selecciona una fila","Validar datos",JOptionPane.INFORMATION_MESSAGE);
             } else {
                     pasarDatosFila();
-                    setEnabledDatosP(zmenu.P_PRODUCTOS[1]=='0'); //Verificar si puede modificar
+                    setEnabledDatosP(zmenu.P_CATEGORIASDEPRODUCTOS[1]=='0'); //Verificar si puede modificar
             }
         }catch (HeadlessException ex){
             JOptionPane.showInternalMessageDialog(internal, "Error inesperado, intente más tarde","Validar datos",JOptionPane.ERROR_MESSAGE);
         }
         
-    }//GEN-LAST:event_btneditarActionPerformed
-public static int idtabla;
-public static String titulo;
-    private void btnbflejeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbflejeActionPerformed
+    }//GEN-LAST:event_btnceditarActionPerformed
+public static String c_titulo;
+public static int c_idtabla;
+    private void btncbflejeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncbflejeActionPerformed
         try {
-            idtabla=103; //tabla flgeli
-            titulo="Fleje";
-            FIDTabladetalle d=new FIDTabladetalle();
+            c_idtabla=103; //tabla flgeli
+            c_titulo="Fleje";
+            FIDCTablaDetalle d=new FIDCTablaDetalle();
             d.setModal(true);
             internal.add(d);
             d.setLocation((internal.getWidth()-d.getWidth())/2,(internal.getHeight()-d.getHeight())/2);
@@ -443,23 +432,20 @@ public static String titulo;
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(FICategorias.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_btnbflejeActionPerformed
+    }//GEN-LAST:event_btncbflejeActionPerformed
 
-    private void btnexportaexcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexportaexcelActionPerformed
+    private void btncexportaexcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncexportaexcelActionPerformed
         try {
             ExportarExcel obj = new ExportarExcel();
             JTable tablatemp = new JTable();
-            String[] columnas = {"IDPRODUCTO","EAN","DESCRIPCION","DCATEGORIA","DUME","DESTADO","FLEJE"};
-            String copiatemp [] = new String[7];
+            String[] columnas = {"IDCATEGORIA","DESCRIPCION","DIARETIRO","FLEJE"};  
+            String copiatemp [] = new String[4];
             DefaultTableModel mtablatemp =new DefaultTableModel (null,columnas);
-            for (int f = 0; f < listaproductos.getRowCount(); f++) {
-                    copiatemp[0]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 0).toString();
-                    copiatemp[1]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 1).toString();
-                    copiatemp[2]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 2).toString();
-                    copiatemp[3]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 6).toString();
-                    copiatemp[4]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 8).toString();
-                    copiatemp[5]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 10).toString();
-                    copiatemp[6]=listaproductos.getModel().getValueAt(listaproductos.convertRowIndexToModel(f), 12).toString();
+            for (int f = 0; f < lsttablacategorias.getRowCount(); f++) {
+                    copiatemp[0]=lsttablacategorias.getModel().getValueAt(lsttablacategorias.convertRowIndexToModel(f), 0).toString();
+                    copiatemp[1]=lsttablacategorias.getModel().getValueAt(lsttablacategorias.convertRowIndexToModel(f), 1).toString();
+                    copiatemp[2]=lsttablacategorias.getModel().getValueAt(lsttablacategorias.convertRowIndexToModel(f), 3).toString();
+                    copiatemp[3]=lsttablacategorias.getModel().getValueAt(lsttablacategorias.convertRowIndexToModel(f), 4).toString();
                     mtablatemp.addRow(copiatemp);
             }
             tablatemp.setModel(mtablatemp);
@@ -467,41 +453,41 @@ public static String titulo;
         } catch (IOException ex) {
            JOptionPane.showInternalMessageDialog(internal, "Error inesperado, intente más tarde","Validar datos",JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btnexportaexcelActionPerformed
+    }//GEN-LAST:event_btncexportaexcelActionPerformed
 
-    private void btnimprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnimprimirActionPerformed
+    private void btncimprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncimprimirActionPerformed
                   try {
               // tabla1.print();//envia los datos de la tabla a la impresora
-                     MessageFormat headerFormat = new MessageFormat("Sistore - Productos "+Formatos.sdfruta.format(new Date()));
+                     MessageFormat headerFormat = new MessageFormat("Sistore - Categorias "+Formatos.sdfruta.format(new Date()));
                      MessageFormat footerFormat = new MessageFormat("- Página {0} -");
-                     listaproductos.print(PrintMode.FIT_WIDTH, headerFormat, footerFormat);
+                     lsttablacategorias.print(PrintMode.FIT_WIDTH, headerFormat, footerFormat);
                                          
                      
             } catch (PrinterException ex) {
                 JOptionPane.showMessageDialog(null, "No se ha podido imprimir correctamente, intentalo más tarde.");
             }  
-    }//GEN-LAST:event_btnimprimirActionPerformed
+    }//GEN-LAST:event_btncimprimirActionPerformed
 
-    private void txdescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txdescripcionKeyTyped
- new dashtyped().control_maxdigitos(evt, txdescripcion, 40);
-    }//GEN-LAST:event_txdescripcionKeyTyped
+    private void txcdescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txcdescripcionKeyTyped
+ new dashtyped().control_maxdigitos(evt, txcdescripcion, 40);
+    }//GEN-LAST:event_txcdescripcionKeyTyped
 
-    private void txcategoriaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txcategoriaKeyTyped
- new dashtyped().control_maxdigitos_numeros(evt, txcategoria, 4);
-    }//GEN-LAST:event_txcategoriaKeyTyped
+    private void txcdiaretiroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txcdiaretiroKeyTyped
+ new dashtyped().control_maxdigitos_numeros(evt, txcdiaretiro, 4);
+    }//GEN-LAST:event_txcdiaretiroKeyTyped
 
-    private void txflejeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txflejeKeyTyped
-new dashtyped().control_cero_uno(evt, txfleje);
-    }//GEN-LAST:event_txflejeKeyTyped
+    private void txcflejeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txcflejeKeyTyped
+new dashtyped().control_cero_uno(evt, txcfleje);
+    }//GEN-LAST:event_txcflejeKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnbfleje;
-    private javax.swing.JButton btneditar;
-    private javax.swing.JButton btnexportaexcel;
-    private javax.swing.JButton btnguardar;
-    private javax.swing.JButton btnimprimir;
-    private javax.swing.JButton btnnuevo;
+    private javax.swing.JButton btncbfleje;
+    private javax.swing.JButton btnceditar;
+    private javax.swing.JButton btncexportaexcel;
+    private javax.swing.JButton btncguardar;
+    private javax.swing.JButton btncimprimir;
+    private javax.swing.JButton btncnuevo;
     private javax.swing.JComboBox<String> cbfiltro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -514,118 +500,109 @@ new dashtyped().control_cero_uno(evt, txfleje);
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JTable listaproductos;
-    public static javax.swing.JTextField txcategoria;
-    private javax.swing.JTextField txdescripcion;
-    private javax.swing.JTextField txdetalle;
-    public static javax.swing.JTextField txfleje;
-    private javax.swing.JTextField txidproducto;
+    private javax.swing.JTable lsttablacategorias;
+    private javax.swing.JTextField txcdescripcion;
+    private javax.swing.JTextField txcdetalle;
+    public static javax.swing.JTextField txcdiaretiro;
+    public static javax.swing.JTextField txcfleje;
+    private javax.swing.JTextField txidcategoria;
     // End of variables declaration//GEN-END:variables
 
 public void limpiarcampos(){
-    txidproducto.setText("0");
-    txdescripcion.setText("");
-    txcategoria.setText("");
-    txfleje.setText("");
-    txdescripcion.requestFocus();
+    txidcategoria.setText("0");
+    txcdescripcion.setText("");
+    txcdiaretiro.setText("");
+    txcfleje.setText("");
+    txcdescripcion.requestFocus();
 }
   
     private void initabla() {
-    String[] columnas = {"IDPRODUCTO","EAN","DESCRIPCION","PRECIOCOM","PRECIOVEN","IDCATEGORIA","DCATEGORIA","CODUME","DUME","CODESTADO","DESTADO","FLGELI","FLEJE","FC","UC","FM","UM"};    
+    String[] columnas = {"IDCATEGORIA","DESCRIPCION","DIARETIRO","FLEJE","FLGELI"};    
     modelo = new DefaultTableModel(null,columnas);
     s = new TableRowSorter(modelo);
-    listaproductos.setModel(modelo);
-    listaproductos.setRowSorter(s);
+    lsttablacategorias.setModel(modelo);
+    lsttablacategorias.setRowSorter(s);
     
     //posiciones de tabla
-    int posicion [] = {16,15,14,13,11,9,7,5,4,3};
+    int posicion [] = {4};
         for (int i = 0; i < posicion.length; i++) {
-            listaproductos.getColumnModel().getColumn(posicion[i]).setMaxWidth(0);
-            listaproductos.getColumnModel().getColumn(posicion[i]).setMinWidth(0);
-            listaproductos.getColumnModel().getColumn(posicion[i]).setPreferredWidth(0);
+            lsttablacategorias.getColumnModel().getColumn(posicion[i]).setMaxWidth(0);
+            lsttablacategorias.getColumnModel().getColumn(posicion[i]).setMinWidth(0);
+            lsttablacategorias.getColumnModel().getColumn(posicion[i]).setPreferredWidth(0);
         }
 
     //tamaños de columnas de tabla    
-    listaproductos.getColumnModel().getColumn(0).setPreferredWidth(60);
-    listaproductos.getColumnModel().getColumn(1).setPreferredWidth(80);
-    listaproductos.getColumnModel().getColumn(2).setPreferredWidth(250);
-    listaproductos.getColumnModel().getColumn(6).setPreferredWidth(120);
+    lsttablacategorias.getColumnModel().getColumn(0).setPreferredWidth(80);
+    lsttablacategorias.getColumnModel().getColumn(1).setPreferredWidth(250);
+    lsttablacategorias.getColumnModel().getColumn(3).setPreferredWidth(80);
     TableRowSorter<DefaultTableModel> sorteo = new TableRowSorter<> (modelo);
-    listaproductos.setRowSorter(sorteo);
+    lsttablacategorias.setRowSorter(sorteo);
     }
     
         public void setEnabledDatosP(boolean estado){
-            txdescripcion.setEnabled(estado);
-            txcategoria.setEnabled(estado);
-            txfleje.setEnabled(estado);
-            btnbfleje.setEnabled(estado);
-            btnguardar.setEnabled(estado);
+            txcdescripcion.setEnabled(estado);
+            txcdiaretiro.setEnabled(estado);
+            txcfleje.setEnabled(estado);
+            btncbfleje.setEnabled(estado);
+            btncguardar.setEnabled(estado);
         }
         int columnaABuscar = 0;
         //Filtro de combo para busqueda
         public void filtro() {
             
-        if ("IDPRODUCTO".equals(cbfiltro.getSelectedItem().toString())) {
+        if ("IDCATEGORIA".equals(cbfiltro.getSelectedItem().toString())) {
             columnaABuscar = 0;
         }
         if ("DESCRIPCION".equals(cbfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 2;
-        }
-        if ("EAN".equals(cbfiltro.getSelectedItem().toString())) {
             columnaABuscar = 1;
         }
-         if ("CATEGORIA".equals(cbfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 6;
-        }
-         if ("ESTADO".equals(cbfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 10;
+        if ("DIARETIRO".equals(cbfiltro.getSelectedItem().toString())) {
+            columnaABuscar = 2;
         }
          if ("FLEJE".equals(cbfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 12;
+            columnaABuscar = 3;
         }
-        s.setRowFilter(RowFilter.regexFilter(txdetalle.getText(), columnaABuscar));
+        s.setRowFilter(RowFilter.regexFilter(txcdetalle.getText(), columnaABuscar));
     }
     
         //Carga la lista de producto en la tabla
         public void cargartabla() throws ClassNotFoundException, SQLException, ParseException {
         initabla();
         try {
-                 for (Producto p : ADProducto.Listar()) {
-                     modelo.addRow(p.DatosArray());
+                 for (Categoria p : ADCategoria.Listacompleta()) {
+                     modelo.addRow(p.Lista());
                  }
-                 listaproductos.setModel(modelo);
+                 lsttablacategorias.setModel(modelo);
              }catch(ClassNotFoundException | NumberFormatException | SQLException e){
              JOptionPane.showMessageDialog(this, e);
              }
         }
  //Carga las opciones de la ventana
  public void cargaopcion(){
-         btnnuevo.setEnabled(zmenu.P_PRODUCTOS[0]=='0');  //nuevo 
-         btnexportaexcel.setEnabled(zmenu.P_PRODUCTOS[2]=='0'); //exportar
-         btnimprimir.setEnabled(zmenu.P_PRODUCTOS[3]=='0'); //imprimir
+         btncnuevo.setEnabled(zmenu.P_CATEGORIASDEPRODUCTOS[0]=='0');  //nuevo 
+         btncexportaexcel.setEnabled(zmenu.P_CATEGORIASDEPRODUCTOS[2]=='0'); //exportar
+         btncimprimir.setEnabled(zmenu.P_CATEGORIASDEPRODUCTOS[3]=='0'); //imprimir
  }   
         
 //Carga toda la configuracion de la ventana
               public void cargarconfig() throws ClassNotFoundException, SQLException {
                   //Cargar combo de Filtros
+                  cbfiltro.addItem("IDCATEGORIA");
                   cbfiltro.addItem("DESCRIPCION");
-                  cbfiltro.addItem("IDPRODUCTO");
-                  cbfiltro.addItem("EAN");
-                  cbfiltro.addItem("CATEGORIA");
-                  cbfiltro.addItem("ESTADO");
+                  cbfiltro.addItem("DIARETIRO");
                   cbfiltro.addItem("FLEJE");
                   //Desabilitar campos producto
                   setEnabledDatosP(false);
-                  txidproducto.setEnabled(false);
+                  txidcategoria.setEnabled(false);
                   cargaopcion();
               
               }
 //Obtener datos de tabla y pasarlas a fila
     private void pasarDatosFila() {
-            txidproducto.setText(listaproductos.getValueAt(listaproductos.getSelectedRow(), 0).toString());
-            txdescripcion.setText(listaproductos.getValueAt(listaproductos.getSelectedRow(), 2).toString());
-            txcategoria.setText(listaproductos.getValueAt(listaproductos.getSelectedRow(), 5).toString());
-            txfleje.setText(listaproductos.getValueAt(listaproductos.getSelectedRow(), 11).toString());
+            txidcategoria.setText(lsttablacategorias.getValueAt(lsttablacategorias.getSelectedRow(), 0).toString());
+            txcdescripcion.setText(lsttablacategorias.getValueAt(lsttablacategorias.getSelectedRow(), 1).toString());
+            txcdiaretiro.setText(lsttablacategorias.getValueAt(lsttablacategorias.getSelectedRow(), 2).toString());
+            txcfleje.setText(lsttablacategorias.getValueAt(lsttablacategorias.getSelectedRow(), 4).toString());
     }
 
 

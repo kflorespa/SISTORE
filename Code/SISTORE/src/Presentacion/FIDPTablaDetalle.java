@@ -11,10 +11,7 @@ import Entidades.Categoria;
 import Entidades.Tabladetalle;
 import static Presentacion.FIProductos.idtabla;
 import static Presentacion.FIProductos.titulo;
-import static Presentacion.FIProductos.txcategoria;
 import static Presentacion.FIProductos.txestado;
-import static Presentacion.FIProductos.txfleje;
-import static Presentacion.FIProductos.txumedida;
 import static Presentacion.zmenu.internal;
 import java.awt.AWTEvent;
 import java.awt.ActiveEvent;
@@ -31,12 +28,15 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import recursos.dashstyle;
 import recursos.dashtyped;
+import static Presentacion.FIProductos.txpcategoria;
+import static Presentacion.FIProductos.txpumedida;
+import static Presentacion.FIProductos.txpfleje;
 
 /**
  *
  * @author KFLORES
  */
-public class FIDTabladetalle extends javax.swing.JInternalFrame{
+public class FIDPTablaDetalle extends javax.swing.JInternalFrame{
 
     /**
      * Creates new form FIDTabladetalle
@@ -44,7 +44,7 @@ public class FIDTabladetalle extends javax.swing.JInternalFrame{
      * @throws java.sql.SQLException
      */
     
-    public FIDTabladetalle() throws ClassNotFoundException, SQLException {
+    public FIDPTablaDetalle() throws ClassNotFoundException, SQLException {
         initComponents();
         cargardatos();
         txbusqueda.requestFocus();
@@ -184,13 +184,13 @@ this.dispose();
         String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
         this.dispose();
         if (idtabla==0) {
-        txcategoria.setText(valor);
+        txpcategoria.setText(valor);
         }if (idtabla==100) {
-        txumedida.setText(valor);
+        txpumedida.setText(valor);
         }if (idtabla==104) {
         txestado.setText(valor);
         }if (idtabla==103) {
-        txfleje.setText(valor);
+        txpfleje.setText(valor);
         }
         }
         
@@ -203,13 +203,13 @@ this.dispose();
        String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
         this.dispose();
            if (idtabla==0) {
-        txcategoria.setText(valor);
+        txpcategoria.setText(valor);
         }if (idtabla==100) {
-        txumedida.setText(valor);
+        txpumedida.setText(valor);
         }if (idtabla==104) {
         txestado.setText(valor);
         }if (idtabla==103) {
-        txfleje.setText(valor);
+        txpfleje.setText(valor);
         }
        }
     }//GEN-LAST:event_tabladetalleMouseClicked
@@ -347,7 +347,7 @@ this.dispose();
     }
     }  
         }else{
-    for (Categoria c : ADCategoria.Listar()) {
+    for (Categoria c : ADCategoria.Listapersonalizada()) {
     modelo.addRow(c.DatosArray());
     }         
         }

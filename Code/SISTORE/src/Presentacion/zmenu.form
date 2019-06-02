@@ -35,6 +35,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="iproductos">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+Alt+P"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Productos"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
@@ -44,6 +47,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="icategorias">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+Alt+C"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Categorias"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>

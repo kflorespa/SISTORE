@@ -57,7 +57,7 @@ public class ADCategoria {
     /*-------------------------------------------------------------------------*/
     public static boolean Existe(Categoria u) throws ClassNotFoundException, SQLException{
     boolean r = false;
-    String sql = "SELECT IDCATEGORIA fROM TCATEGORIA WHERE IDCATEGORIA=?";
+    String sql = "SELECT IDCATEGORIA FROM TCATEGORIA WHERE IDCATEGORIA=?";
         try (Connection cn = conexionSS.conexion();
             PreparedStatement ps = cn.prepareStatement(sql)){            
             ps.setInt(1, u.getIDCATEGORIA());
@@ -79,14 +79,28 @@ public class ADCategoria {
     public static boolean Eliminar(Categoria u) throws ClassNotFoundException, SQLException{
             return Baja(u);
     }
-    public static LinkedList<Categoria> Listar() throws ClassNotFoundException, SQLException{
+    public static LinkedList<Categoria> Listapersonalizada() throws ClassNotFoundException, SQLException{
     LinkedList<Categoria> lista = new LinkedList<>();
-    String sql = "SELECT IDCATEGORIA,DIARETIRO,DESCRIPCION,FLGELI fROM TCATEGORIA t WHERE t.FLGELI='0'";
+    String sql = "SELECT IDCATEGORIA,DIARETIRO,DESCRIPCION,FLGELI fROM TCATEGORIA WHERE FLGELI='0'";
         try (Connection cn = conexionSS.conexion();
             PreparedStatement ps = cn.prepareStatement(sql)){            
             try (ResultSet rs = ps.executeQuery();){
                 while(rs.next()){
                 lista.add(new Categoria(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4).charAt(0)));
+                }
+            }            
+        }
+    return lista;
+    }
+    
+    public static LinkedList<Categoria> Listacompleta() throws ClassNotFoundException, SQLException{
+    LinkedList<Categoria> lista = new LinkedList<>();
+    String sql = "SELECT * FROM V_CATEGORIAS";
+        try (Connection cn = conexionSS.conexion();
+            PreparedStatement ps = cn.prepareStatement(sql)){            
+            try (ResultSet rs = ps.executeQuery();){
+                while(rs.next()){
+                lista.add(new Categoria(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4),rs.getString(5).charAt(0)));
                 }
             }            
         }

@@ -318,6 +318,7 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
         iproveedores.setEnabled(false);
         jmtablas.add(iproveedores);
 
+        iproductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         iproductos.setText("Productos");
         iproductos.setEnabled(false);
         iproductos.addActionListener(new java.awt.event.ActionListener() {
@@ -327,6 +328,7 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
         });
         jmtablas.add(iproductos);
 
+        icategorias.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         icategorias.setText("Categorias");
         icategorias.setEnabled(false);
         icategorias.addActionListener(new java.awt.event.ActionListener() {
@@ -502,15 +504,24 @@ System.exit(0);
         try {
             FIProductos fip=new FIProductos();
             fip.setSize(internal.getWidth(),internal.getHeight());
-            fip.setVisible(true);
+            fip.setVisible(true);   
             internal.add(fip);
+            fip.toFront();
         } catch (ParseException ex) {
             Logger.getLogger(zmenu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_iproductosActionPerformed
 
     private void icategoriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_icategoriasActionPerformed
-        // TODO add your handling code here:
+          try {
+            FICategorias fip=new FICategorias();
+            fip.setSize(internal.getWidth(),internal.getHeight());
+            fip.setVisible(true);
+            internal.add(fip);
+            fip.toFront();
+        } catch (ParseException ex) {
+            Logger.getLogger(zmenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_icategoriasActionPerformed
 
     private void ilistamovimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ilistamovimientosActionPerformed
