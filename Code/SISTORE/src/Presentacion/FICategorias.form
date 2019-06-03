@@ -234,8 +234,8 @@
                           </Group>
                           <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txcdescripcion" min="-2" pref="223" max="-2" attributes="0"/>
-                              <Component id="txidcategoria" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="txcategoria_descripcion" min="-2" pref="223" max="-2" attributes="0"/>
+                              <Component id="txcategoria_id" min="-2" pref="90" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -249,11 +249,11 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txcdiaretiro" pref="58" max="32767" attributes="0"/>
-                              <Component id="txcfleje" max="32767" attributes="0"/>
+                              <Component id="txcategoria_diaretiro" pref="58" max="32767" attributes="0"/>
+                              <Component id="txcategoria_fleje" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btncbfleje" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="btncategoria_fleje" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -266,23 +266,23 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txidcategoria" min="-2" max="-2" attributes="0"/>
+                      <Component id="txcategoria_id" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                      <Component id="txcdescripcion" min="-2" pref="19" max="-2" attributes="0"/>
+                      <Component id="txcategoria_descripcion" min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txcdiaretiro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txcategoria_diaretiro" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btncbfleje" min="-2" max="-2" attributes="0"/>
+                      <Component id="btncategoria_fleje" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txcfleje" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txcategoria_fleje" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -292,19 +292,19 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="txidcategoria">
+        <Component class="javax.swing.JTextField" name="txcategoria_id">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="text" type="java.lang.String" value="ID"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txcdescripcion">
+        <Component class="javax.swing.JTextField" name="txcategoria_descripcion">
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
           </AccessibilityProperties>
           <Events>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txcdescripcionKeyTyped"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txcategoria_descripcionKeyTyped"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -322,27 +322,27 @@
             <Property name="text" type="java.lang.String" value="Fleje"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btncbfleje">
+        <Component class="javax.swing.JButton" name="btncategoria_fleje">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/recursos/lupa.png"/>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncbflejeActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncategoria_flejeActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="txcdiaretiro">
+        <Component class="javax.swing.JTextField" name="txcategoria_diaretiro">
           <Events>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txcdiaretiroKeyTyped"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txcategoria_diaretiroKeyTyped"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="txcfleje">
+        <Component class="javax.swing.JTextField" name="txcategoria_fleje">
           <Events>
-            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txcflejeKeyTyped"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txcategoria_flejeKeyTyped"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>

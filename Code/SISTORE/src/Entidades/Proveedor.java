@@ -21,6 +21,16 @@ Date FCHMOD;
 String USRMOD;
 char FLGELI;
 
+String FLEJE;
+
+    public String getFLEJE() {
+        return FLEJE;
+    }
+
+    public void setFLEJE(String FLEJE) {
+        this.FLEJE = FLEJE;
+    }
+
     public int getIDPROVEEDOR() {
         return IDPROVEEDOR;
     }
@@ -110,7 +120,7 @@ char FLGELI;
     }
 
 
-    public Proveedor(int IDPROVEEDOR, String RUC, String RAZONSOCIAL, String DIRECCION, String TELEFONO, String RUBRO, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD, char FLGELI) {
+    public Proveedor(int IDPROVEEDOR, String RUC, String RAZONSOCIAL, String DIRECCION, String TELEFONO, String RUBRO, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD, String FLEJE,char FLGELI) {
         this.IDPROVEEDOR = IDPROVEEDOR;
         this.RUC = RUC;
         this.RAZONSOCIAL = RAZONSOCIAL;
@@ -122,13 +132,14 @@ char FLGELI;
         this.FCHMOD = FCHMOD;
         this.USRMOD = USRMOD;
         this.FLGELI = FLGELI;
+        this.FLEJE = FLEJE;
     }
 
     public Proveedor() {
     }
 
         public String [] DatosArray(){
-        String [] lista = new String[11];
+        String [] lista = new String[12];
         lista[0]=String.valueOf(IDPROVEEDOR);
         lista[1]=RUC;
         lista[2]=RAZONSOCIAL;
@@ -139,7 +150,8 @@ char FLGELI;
         lista[7]=USRCREA;
         lista[8]=Formatos.sdf.format(FCHMOD);
         lista[9]=USRMOD;
-        lista[10]=String.valueOf(FLGELI);
+        lista[10]=FLEJE;
+        lista[11]=String.valueOf(FLGELI);
         return lista;
     } 
 

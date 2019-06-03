@@ -29,6 +29,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="iproveedores">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+Alt+V"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Proveedores"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>

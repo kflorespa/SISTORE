@@ -314,6 +314,7 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
         ialmacenes.setEnabled(false);
         jmtablas.add(ialmacenes);
 
+        iproveedores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         iproveedores.setText("Proveedores");
         iproveedores.setEnabled(false);
         iproveedores.addActionListener(new java.awt.event.ActionListener() {
@@ -542,7 +543,15 @@ System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void iproveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iproveedoresActionPerformed
-        // TODO add your handling code here:
+          try {
+            FIProveedores fip=new FIProveedores();
+            fip.setSize(internal.getWidth(),internal.getHeight());
+            fip.setVisible(true);
+            internal.add(fip);
+            fip.toFront();
+        } catch (ParseException ex) {
+            Logger.getLogger(zmenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_iproveedoresActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

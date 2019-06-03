@@ -9,9 +9,7 @@ import AD.ADCategoria;
 import AD.ADTabladetalle;
 import Entidades.Categoria;
 import Entidades.Tabladetalle;
-import static Presentacion.FIProductos.idtabla;
-import static Presentacion.FIProductos.titulo;
-import static Presentacion.FIProductos.txestado;
+import static Presentacion.FICategorias.*;
 import static Presentacion.zmenu.internal;
 import java.awt.AWTEvent;
 import java.awt.ActiveEvent;
@@ -26,17 +24,12 @@ import javax.swing.RowFilter;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
-import recursos.dashstyle;
-import recursos.dashtyped;
-import static Presentacion.FIProductos.txpcategoria;
-import static Presentacion.FIProductos.txpumedida;
-import static Presentacion.FIProductos.txpfleje;
 
 /**
  *
  * @author KFLORES
  */
-public class FIDPTablaDetalle extends javax.swing.JInternalFrame{
+public class FIDCategoriaTD extends javax.swing.JInternalFrame{
 
     /**
      * Creates new form FIDTabladetalle
@@ -44,7 +37,7 @@ public class FIDPTablaDetalle extends javax.swing.JInternalFrame{
      * @throws java.sql.SQLException
      */
     
-    public FIDPTablaDetalle() throws ClassNotFoundException, SQLException {
+    public FIDCategoriaTD() throws ClassNotFoundException, SQLException {
         initComponents();
         cargardatos();
         txbusqueda.requestFocus();
@@ -183,39 +176,20 @@ this.dispose();
         }else{
         String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
         this.dispose();
-        if (idtabla==0) {
-        txpcategoria.setText(valor);
-        }if (idtabla==100) {
-        txpumedida.setText(valor);
-        }if (idtabla==104) {
-        txestado.setText(valor);
-        }if (idtabla==103) {
-        txpfleje.setText(valor);
+        txcategoria_fleje.setText(valor);
         }
-        }
-        
-//abrir ventana y cargar la fila donde esta ubicada el elemento.
-//cargar elemento seleccionado directo en el cuadro invocador.
+
     }//GEN-LAST:event_btnaplicarActionPerformed
 
     private void tabladetalleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabladetalleMouseClicked
        if(evt.getClickCount()==2){
        String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
         this.dispose();
-           if (idtabla==0) {
-        txpcategoria.setText(valor);
-        }if (idtabla==100) {
-        txpumedida.setText(valor);
-        }if (idtabla==104) {
-        txestado.setText(valor);
-        }if (idtabla==103) {
-        txpfleje.setText(valor);
-        }
+        txcategoria_fleje.setText(valor);
        }
     }//GEN-LAST:event_tabladetalleMouseClicked
 
     private void txbusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txbusquedaKeyTyped
-        new dashtyped().control_maxdigitos(evt, txestado, 50); 
         txbusqueda.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(final KeyEvent e) {
@@ -324,7 +298,7 @@ this.dispose();
     DefaultTableModel modelo;
     
     private void cargardatos() throws ClassNotFoundException, SQLException {
-    setTitle(titulo);
+    setTitle(c_titulo);
     String[] columnas = {"Código","Tabla","Descripción","Fleje"};    
     modelo = new DefaultTableModel(null,columnas); 
     s = new TableRowSorter(modelo);
@@ -334,23 +308,17 @@ this.dispose();
     
     tabladetalle.removeColumn(tabladetalle.getColumnModel().getColumn(3));
     tabladetalle.removeColumn(tabladetalle.getColumnModel().getColumn(1));
-    
-    //tabladetalle.getColumnModel().getColumn(0).setPreferredWidth(25);
+
     tabladetalle.getColumnModel().getColumn(1).setPreferredWidth(200);
     TableRowSorter<DefaultTableModel> sorteo = new TableRowSorter<> (modelo);
     tabladetalle.setRowSorter(sorteo);
-    
-        if (idtabla!=0) {
+
     for (Tabladetalle c : ADTabladetalle.Listar()) {
-    if (c.getIDTABLA()==idtabla) {
-    modelo.addRow(c.DatosArray());
-    }
-    }  
-        }else{
-    for (Categoria c : ADCategoria.Listapersonalizada()) {
-    modelo.addRow(c.DatosArray());
-    }         
+        if (c.getIDTABLA()==c_idtabla) {
+                modelo.addRow(c.DatosArray());
         }
+    }         
+       
     }
     
     int columnaABuscar = 0;

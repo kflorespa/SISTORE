@@ -64,15 +64,15 @@ public final class FICategorias extends javax.swing.JInternalFrame {
         txcdetalle = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        txidcategoria = new javax.swing.JTextField();
+        txcategoria_id = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txcdescripcion = new javax.swing.JTextField();
+        txcategoria_descripcion = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        btncbfleje = new javax.swing.JButton();
-        txcdiaretiro = new javax.swing.JTextField();
-        txcfleje = new javax.swing.JTextField();
+        btncategoria_fleje = new javax.swing.JButton();
+        txcategoria_diaretiro = new javax.swing.JTextField();
+        txcategoria_fleje = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lsttablacategorias = new javax.swing.JTable();
@@ -181,9 +181,9 @@ public final class FICategorias extends javax.swing.JInternalFrame {
 
         jLabel3.setText("ID");
 
-        txcdescripcion.addKeyListener(new java.awt.event.KeyAdapter() {
+        txcategoria_descripcion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txcdescripcionKeyTyped(evt);
+                txcategoria_descripcionKeyTyped(evt);
             }
         });
 
@@ -193,22 +193,22 @@ public final class FICategorias extends javax.swing.JInternalFrame {
 
         jLabel11.setText("Fleje");
 
-        btncbfleje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa.png"))); // NOI18N
-        btncbfleje.addActionListener(new java.awt.event.ActionListener() {
+        btncategoria_fleje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa.png"))); // NOI18N
+        btncategoria_fleje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncbflejeActionPerformed(evt);
+                btncategoria_flejeActionPerformed(evt);
             }
         });
 
-        txcdiaretiro.addKeyListener(new java.awt.event.KeyAdapter() {
+        txcategoria_diaretiro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txcdiaretiroKeyTyped(evt);
+                txcategoria_diaretiroKeyTyped(evt);
             }
         });
 
-        txcfleje.addKeyListener(new java.awt.event.KeyAdapter() {
+        txcategoria_fleje.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txcflejeKeyTyped(evt);
+                txcategoria_flejeKeyTyped(evt);
             }
         });
 
@@ -228,8 +228,8 @@ public final class FICategorias extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel5)))
                         .addGap(14, 14, 14)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txcdescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txidcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txcategoria_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txcategoria_id, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -239,10 +239,10 @@ public final class FICategorias extends javax.swing.JInternalFrame {
                             .addComponent(jLabel7))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txcdiaretiro, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                            .addComponent(txcfleje))
+                            .addComponent(txcategoria_diaretiro, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                            .addComponent(txcategoria_fleje))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btncbfleje, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btncategoria_fleje, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -251,25 +251,25 @@ public final class FICategorias extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(txidcategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txcategoria_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(txcdescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txcategoria_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(txcdiaretiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txcategoria_diaretiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btncbfleje)
+                    .addComponent(btncategoria_fleje)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txcfleje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txcategoria_fleje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel11)))
                 .addContainerGap(229, Short.MAX_VALUE))
         );
 
-        txcdescripcion.getAccessibleContext().setAccessibleName("");
+        txcategoria_descripcion.getAccessibleContext().setAccessibleName("");
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Listado de categorias"));
 
@@ -375,23 +375,23 @@ public final class FICategorias extends javax.swing.JInternalFrame {
 
     private void btncguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncguardarActionPerformed
         try {
-            if (txidcategoria.getText().isEmpty()||txcdescripcion.getText().isEmpty())
+            if (txcategoria_id.getText().isEmpty()||txcategoria_descripcion.getText().isEmpty())
                      {
                 JOptionPane.showInternalMessageDialog(internal, "Debe completar todos los campos","Validar datos",JOptionPane.WARNING_MESSAGE); 
             }
             else{
  
                                 Categoria p = new Categoria();
-                                p.setIDCATEGORIA(Integer.parseInt(txidcategoria.getText()));
-                                p.setDESCRIPCION(txcdescripcion.getText().toUpperCase());
-                                p.setDIARETIRO(Integer.parseInt(txcdiaretiro.getText()));
-                                p.setFLGELI(txcfleje.getText().charAt(0));
+                                p.setIDCATEGORIA(Integer.parseInt(txcategoria_id.getText()));
+                                p.setDESCRIPCION(txcategoria_descripcion.getText().toUpperCase());
+                                p.setDIARETIRO(Integer.parseInt(txcategoria_diaretiro.getText()));
+                                p.setFLGELI(txcategoria_fleje.getText().charAt(0));
                                 if (ADCategoria.Guardar(p)) {
                                 JOptionPane.showInternalMessageDialog(internal, "Se guardaron cambios","Exito",JOptionPane.INFORMATION_MESSAGE);
                                 cargartabla();
                                 limpiarcampos();
                                 txcdetalle.setText("");
-                                txidcategoria.setText("");
+                                txcategoria_id.setText("");
                                 txcdetalle.requestFocus();
                                 setEnabledDatosP(false);
                                 }else{
@@ -420,11 +420,11 @@ public final class FICategorias extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnceditarActionPerformed
 public static String c_titulo;
 public static int c_idtabla;
-    private void btncbflejeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncbflejeActionPerformed
+    private void btncategoria_flejeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncategoria_flejeActionPerformed
         try {
             c_idtabla=103; //tabla flgeli
             c_titulo="Fleje";
-            FIDCTablaDetalle d=new FIDCTablaDetalle();
+            FIDCategoriaTD d=new FIDCategoriaTD();
             d.setModal(true);
             internal.add(d);
             d.setLocation((internal.getWidth()-d.getWidth())/2,(internal.getHeight()-d.getHeight())/2);
@@ -432,7 +432,7 @@ public static int c_idtabla;
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(FICategorias.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_btncbflejeActionPerformed
+    }//GEN-LAST:event_btncategoria_flejeActionPerformed
 
     private void btncexportaexcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncexportaexcelActionPerformed
         try {
@@ -468,21 +468,21 @@ public static int c_idtabla;
             }  
     }//GEN-LAST:event_btncimprimirActionPerformed
 
-    private void txcdescripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txcdescripcionKeyTyped
- new dashtyped().control_maxdigitos(evt, txcdescripcion, 40);
-    }//GEN-LAST:event_txcdescripcionKeyTyped
+    private void txcategoria_descripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txcategoria_descripcionKeyTyped
+ new dashtyped().control_maxdigitos(evt, txcategoria_descripcion, 40);
+    }//GEN-LAST:event_txcategoria_descripcionKeyTyped
 
-    private void txcdiaretiroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txcdiaretiroKeyTyped
- new dashtyped().control_maxdigitos_numeros(evt, txcdiaretiro, 4);
-    }//GEN-LAST:event_txcdiaretiroKeyTyped
+    private void txcategoria_diaretiroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txcategoria_diaretiroKeyTyped
+ new dashtyped().control_maxdigitos_numeros(evt, txcategoria_diaretiro, 4);
+    }//GEN-LAST:event_txcategoria_diaretiroKeyTyped
 
-    private void txcflejeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txcflejeKeyTyped
-new dashtyped().control_cero_uno(evt, txcfleje);
-    }//GEN-LAST:event_txcflejeKeyTyped
+    private void txcategoria_flejeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txcategoria_flejeKeyTyped
+new dashtyped().control_cero_uno(evt, txcategoria_fleje);
+    }//GEN-LAST:event_txcategoria_flejeKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btncbfleje;
+    private javax.swing.JButton btncategoria_fleje;
     private javax.swing.JButton btnceditar;
     private javax.swing.JButton btncexportaexcel;
     private javax.swing.JButton btncguardar;
@@ -501,19 +501,19 @@ new dashtyped().control_cero_uno(evt, txcfleje);
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTable lsttablacategorias;
-    private javax.swing.JTextField txcdescripcion;
+    private javax.swing.JTextField txcategoria_descripcion;
+    public static javax.swing.JTextField txcategoria_diaretiro;
+    public static javax.swing.JTextField txcategoria_fleje;
+    private javax.swing.JTextField txcategoria_id;
     private javax.swing.JTextField txcdetalle;
-    public static javax.swing.JTextField txcdiaretiro;
-    public static javax.swing.JTextField txcfleje;
-    private javax.swing.JTextField txidcategoria;
     // End of variables declaration//GEN-END:variables
 
 public void limpiarcampos(){
-    txidcategoria.setText("0");
-    txcdescripcion.setText("");
-    txcdiaretiro.setText("");
-    txcfleje.setText("");
-    txcdescripcion.requestFocus();
+    txcategoria_id.setText("0");
+    txcategoria_descripcion.setText("");
+    txcategoria_diaretiro.setText("");
+    txcategoria_fleje.setText("");
+    txcategoria_descripcion.requestFocus();
 }
   
     private void initabla() {
@@ -540,10 +540,10 @@ public void limpiarcampos(){
     }
     
         public void setEnabledDatosP(boolean estado){
-            txcdescripcion.setEnabled(estado);
-            txcdiaretiro.setEnabled(estado);
-            txcfleje.setEnabled(estado);
-            btncbfleje.setEnabled(estado);
+            txcategoria_descripcion.setEnabled(estado);
+            txcategoria_diaretiro.setEnabled(estado);
+            txcategoria_fleje.setEnabled(estado);
+            btncategoria_fleje.setEnabled(estado);
             btncguardar.setEnabled(estado);
         }
         int columnaABuscar = 0;
@@ -593,16 +593,16 @@ public void limpiarcampos(){
                   cbfiltro.addItem("FLEJE");
                   //Desabilitar campos producto
                   setEnabledDatosP(false);
-                  txidcategoria.setEnabled(false);
+                  txcategoria_id.setEnabled(false);
                   cargaopcion();
               
               }
 //Obtener datos de tabla y pasarlas a fila
     private void pasarDatosFila() {
-            txidcategoria.setText(lsttablacategorias.getValueAt(lsttablacategorias.getSelectedRow(), 0).toString());
-            txcdescripcion.setText(lsttablacategorias.getValueAt(lsttablacategorias.getSelectedRow(), 1).toString());
-            txcdiaretiro.setText(lsttablacategorias.getValueAt(lsttablacategorias.getSelectedRow(), 2).toString());
-            txcfleje.setText(lsttablacategorias.getValueAt(lsttablacategorias.getSelectedRow(), 4).toString());
+            txcategoria_id.setText(lsttablacategorias.getValueAt(lsttablacategorias.getSelectedRow(), 0).toString());
+            txcategoria_descripcion.setText(lsttablacategorias.getValueAt(lsttablacategorias.getSelectedRow(), 1).toString());
+            txcategoria_diaretiro.setText(lsttablacategorias.getValueAt(lsttablacategorias.getSelectedRow(), 2).toString());
+            txcategoria_fleje.setText(lsttablacategorias.getValueAt(lsttablacategorias.getSelectedRow(), 4).toString());
     }
 
 

@@ -5,11 +5,8 @@
  */
 package Presentacion;
 
-import AD.ADCategoria;
 import AD.ADTabladetalle;
-import Entidades.Categoria;
 import Entidades.Tabladetalle;
-import static Presentacion.FICategorias.*;
 import static Presentacion.zmenu.internal;
 import java.awt.AWTEvent;
 import java.awt.ActiveEvent;
@@ -24,12 +21,18 @@ import javax.swing.RowFilter;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import recursos.dashtyped;
+import static Presentacion.FIProductos.txproducto_estado;
+import static Presentacion.FIProductos.producto_idtabla;
+import static Presentacion.FIProductos.producto_titulo;
+import static Presentacion.FIProveedores.proveedores_idtabla;
+import static Presentacion.FIProveedores.txproveedor_fleje;
 
 /**
  *
  * @author KFLORES
  */
-public class FIDCTablaDetalle extends javax.swing.JInternalFrame{
+public class FIDProveedoresTD extends javax.swing.JInternalFrame{
 
     /**
      * Creates new form FIDTabladetalle
@@ -37,7 +40,7 @@ public class FIDCTablaDetalle extends javax.swing.JInternalFrame{
      * @throws java.sql.SQLException
      */
     
-    public FIDCTablaDetalle() throws ClassNotFoundException, SQLException {
+    public FIDProveedoresTD() throws ClassNotFoundException, SQLException {
         initComponents();
         cargardatos();
         txbusqueda.requestFocus();
@@ -176,20 +179,23 @@ this.dispose();
         }else{
         String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
         this.dispose();
-        txcfleje.setText(valor);
+        txproveedor_fleje.setText(valor);
         }
-
+        
+//abrir ventana y cargar la fila donde esta ubicada el elemento.
+//cargar elemento seleccionado directo en el cuadro invocador.
     }//GEN-LAST:event_btnaplicarActionPerformed
 
     private void tabladetalleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabladetalleMouseClicked
        if(evt.getClickCount()==2){
        String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
         this.dispose();
-        txcfleje.setText(valor);
+        txproveedor_fleje.setText(valor);
        }
     }//GEN-LAST:event_tabladetalleMouseClicked
 
     private void txbusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txbusquedaKeyTyped
+        new dashtyped().control_maxdigitos(evt, txproducto_estado, 50); 
         txbusqueda.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(final KeyEvent e) {
@@ -298,7 +304,7 @@ this.dispose();
     DefaultTableModel modelo;
     
     private void cargardatos() throws ClassNotFoundException, SQLException {
-    setTitle(c_titulo);
+    setTitle(producto_titulo);
     String[] columnas = {"Código","Tabla","Descripción","Fleje"};    
     modelo = new DefaultTableModel(null,columnas); 
     s = new TableRowSorter(modelo);
@@ -308,17 +314,19 @@ this.dispose();
     
     tabladetalle.removeColumn(tabladetalle.getColumnModel().getColumn(3));
     tabladetalle.removeColumn(tabladetalle.getColumnModel().getColumn(1));
-
+    
+    //tabladetalle.getColumnModel().getColumn(0).setPreferredWidth(25);
     tabladetalle.getColumnModel().getColumn(1).setPreferredWidth(200);
     TableRowSorter<DefaultTableModel> sorteo = new TableRowSorter<> (modelo);
     tabladetalle.setRowSorter(sorteo);
-
+    
+        if (proveedores_idtabla!=0) {
     for (Tabladetalle c : ADTabladetalle.Listar()) {
-        if (c.getIDTABLA()==c_idtabla) {
-                modelo.addRow(c.DatosArray());
+    if (c.getIDTABLA()==proveedores_idtabla) {
+    modelo.addRow(c.DatosArray());
+    }
+    }  
         }
-    }         
-       
     }
     
     int columnaABuscar = 0;
