@@ -316,6 +316,11 @@ public final class zmenu extends javax.swing.JFrame implements Runnable{
 
         iproveedores.setText("Proveedores");
         iproveedores.setEnabled(false);
+        iproveedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iproveedoresActionPerformed(evt);
+            }
+        });
         jmtablas.add(iproveedores);
 
         iproductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
@@ -535,6 +540,10 @@ System.exit(0);
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
 
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void iproveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iproveedoresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_iproveedoresActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnentrar;

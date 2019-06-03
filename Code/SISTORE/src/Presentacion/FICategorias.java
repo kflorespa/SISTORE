@@ -587,8 +587,8 @@ public void limpiarcampos(){
 //Carga toda la configuracion de la ventana
               public void cargarconfig() throws ClassNotFoundException, SQLException {
                   //Cargar combo de Filtros
-                  cbfiltro.addItem("IDCATEGORIA");
                   cbfiltro.addItem("DESCRIPCION");
+                  cbfiltro.addItem("IDCATEGORIA");                  
                   cbfiltro.addItem("DIARETIRO");
                   cbfiltro.addItem("FLEJE");
                   //Desabilitar campos producto
