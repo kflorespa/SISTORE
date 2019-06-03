@@ -26,6 +26,8 @@ char FLGELI;
 
 //VARIABLES AUXILIARES
 int IDSUCURSAL;
+String FLEJE;
+String PERFIL;
 
     public int getIDSUCURSAL() {
         return IDSUCURSAL;
@@ -147,7 +149,7 @@ int IDSUCURSAL;
         this.FLGELI = FLGELI;
     }
 
-    public Usuario(int IDUSUARIO, int IDPERFIL, String USUARIO, String CLAVE, String EMAIL, String NOMBRES, String APELLIDOS, Date FCHNAC, String DNI, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD, char FLGELI) {
+    public Usuario(int IDPERFIL, String PERFIL, int IDUSUARIO, String USUARIO, String CLAVE, String EMAIL, String DNI, String NOMBRES, String APELLIDOS, Date FCHNAC, String FLEJE, char FLGELI, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD) {
         this.IDUSUARIO = IDUSUARIO;
         this.IDPERFIL = IDPERFIL;
         this.USUARIO = USUARIO;
@@ -162,26 +164,32 @@ int IDSUCURSAL;
         this.FCHMOD = FCHMOD;
         this.USRMOD = USRMOD;
         this.FLGELI = FLGELI;
+        this.FLEJE = FLEJE;
+        this.PERFIL = PERFIL;
     }
+
+
 
     public Usuario() {
     }
        public String [] DatosArray(){
-        String [] lista = new String[14];
-        lista[0]=String.valueOf(IDUSUARIO);
-        lista[1]=String.valueOf(IDPERFIL);
-        lista[2]=USUARIO;
-        lista[3]=CLAVE;
-        lista[4]=EMAIL;
-        lista[5]=NOMBRES;
-        lista[6]=APELLIDOS;
-        lista[7]=Formatos.sdf.format(FCHNAC);
-        lista[8]=DNI;
-        lista[9]=Formatos.sdf.format(FCHCREA);
-        lista[10]=USRCREA;
-        lista[11]=Formatos.sdf.format(FCHMOD);
-        lista[12]=USRMOD;
-        lista[13]=String.valueOf(FLGELI);
+        String [] lista = new String[16];
+        lista[0]=String.valueOf(IDPERFIL);
+        lista[1]=String.valueOf(PERFIL);
+        lista[2]=String.valueOf(IDUSUARIO);
+        lista[3]=USUARIO;
+        lista[4]=CLAVE;
+        lista[5]=EMAIL;
+        lista[6]=DNI;
+        lista[7]=NOMBRES;
+        lista[8]=APELLIDOS;
+        lista[9]=Formatos.sdf.format(FCHNAC);
+        lista[10]=String.valueOf(FLEJE);
+        lista[11]=String.valueOf(FLGELI);
+        lista[12]=Formatos.sdf.format(FCHCREA);
+        lista[13]=USRCREA;
+        lista[14]=Formatos.sdf.format(FCHMOD);
+        lista[15]=USRMOD;
         return lista;
     }   
 

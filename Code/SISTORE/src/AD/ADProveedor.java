@@ -28,8 +28,8 @@ public class ADProveedor {
             ps.setString(3, u.getDIRECCION());
             ps.setString(4, u.getTELEFONO());
             ps.setString(5, u.getRUBRO());
-            ps.setString(6, u.getFCHCREA());
-            ps.setString(7, u.getUSRCREA());
+            ps.setString(6, u.getFCHMOD());
+            ps.setString(7, u.getUSRMOD());
             ps.setString(8, u.getFCHMOD());
             ps.setString(9, u.getUSRMOD());
             ps.setString(10, String.valueOf(u.getFLGELI()));
@@ -37,17 +37,7 @@ public class ADProveedor {
         }
     return r==1;
     }
-//IDPROVEEDOR
-//RUC
-//RAZONSOCIAL
-//DIRECCION
-//TELEFONO
-//RUBRO
-//FCHCREA
-//USRCREA
-//FCHMOD
-//USRMOD
-//FLGELI
+
     private static boolean Actualizar(Proveedor u) throws ClassNotFoundException, SQLException{
     int r = 0;
     String sql = " UPDATE TPROVEEDOR SET RUC=?,RAZONSOCIAL=?,DIRECCION=?,TELEFONO=?,RUBRO=?,FCHMOD=?,USRMOD=?,FLGELI=? WHERE IDPROVEEDOR=?";

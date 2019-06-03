@@ -18,9 +18,6 @@ public class ADProducto {
     String sql = "INSERT INTO TPRODUCTO VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
         try (Connection cn = conexionSS.conexion();
             PreparedStatement ps = cn.prepareStatement(sql)){
-            u.setUSRCREA(u.getUSRMOD());
-            u.setFCHCREA(u.getFCHMOD());
-            
             ps.setInt(1, u.getIDCATEGORIA());
             ps.setInt(2, u.getCODUME());
             ps.setInt(3, u.getCODESTADO());
@@ -28,8 +25,8 @@ public class ADProducto {
             ps.setString(5, u.getDESCRIPCION());
             ps.setFloat(6, u.getPRECIOCOM());
             ps.setFloat(7, u.getPRECIOVEN());
-            ps.setString(8, u.getFCHCREA());
-            ps.setString(9, u.getUSRCREA());
+            ps.setString(8, u.getFCHMOD());
+            ps.setString(9, u.getUSRMOD());
             ps.setString(10, u.getFCHMOD());
             ps.setString(11, u.getUSRMOD());
             ps.setString(12, String.valueOf(u.getFLGELI()));
