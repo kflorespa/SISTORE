@@ -28,19 +28,19 @@ import recursos.dashtyped;
  *
  * @author kflores
  */
-public final class FICategorias extends javax.swing.JInternalFrame {
+public final class FICategoria extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FIProductos
      * @throws java.text.ParseException
      */
-    public FICategorias() throws ParseException {
+    public FICategoria() throws ParseException {
         initComponents();
         try {
             cargarconfig();
             cargartabla();
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(FICategorias.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FICategoria.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
         /*VARIABLES NECESARIAS*/
@@ -347,12 +347,12 @@ public final class FICategorias extends javax.swing.JInternalFrame {
 
     private void lsttablacategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lsttablacategoriasMouseClicked
              filaseleccionada = lsttablacategorias.getSelectedRow();
-             btnceditar.setEnabled(zmenu.P_CATEGORIASDEPRODUCTOS[1]=='0');
+             btnceditar.setEnabled(zmenu.P_CATEGORIA[1]=='0');
              pasarDatosFila();
     }//GEN-LAST:event_lsttablacategoriasMouseClicked
 
     private void btncnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncnuevoActionPerformed
-    setEnabledDatosP(zmenu.P_CATEGORIASDEPRODUCTOS[0]=='0'); //Verificar si puede crear
+    setEnabledDatosP(zmenu.P_CATEGORIA[0]=='0'); //Verificar si puede crear
     limpiarcampos();
     }//GEN-LAST:event_btncnuevoActionPerformed
 
@@ -399,7 +399,7 @@ public final class FICategorias extends javax.swing.JInternalFrame {
                                 }
             }
         } catch (ClassNotFoundException | SQLException | ParseException ex) {
-            Logger.getLogger(FICategorias.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FICategoria.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btncguardarActionPerformed
 
@@ -411,7 +411,7 @@ public final class FICategorias extends javax.swing.JInternalFrame {
                 JOptionPane.showInternalMessageDialog(internal, "Selecciona una fila","Validar datos",JOptionPane.INFORMATION_MESSAGE);
             } else {
                     pasarDatosFila();
-                    setEnabledDatosP(zmenu.P_CATEGORIASDEPRODUCTOS[1]=='0'); //Verificar si puede modificar
+                    setEnabledDatosP(zmenu.P_CATEGORIA[1]=='0'); //Verificar si puede modificar
             }
         }catch (HeadlessException ex){
             JOptionPane.showInternalMessageDialog(internal, "Error inesperado, intente más tarde","Validar datos",JOptionPane.ERROR_MESSAGE);
@@ -430,7 +430,7 @@ public static int c_idtabla;
             d.setLocation((internal.getWidth()-d.getWidth())/2,(internal.getHeight()-d.getHeight())/2);
             d.setVisible(true);
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(FICategorias.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FICategoria.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btncategoria_flejeActionPerformed
 
@@ -579,9 +579,9 @@ public void limpiarcampos(){
         }
  //Carga las opciones de la ventana
  public void cargaopcion(){
-         btncnuevo.setEnabled(zmenu.P_CATEGORIASDEPRODUCTOS[0]=='0');  //nuevo 
-         btncexportaexcel.setEnabled(zmenu.P_CATEGORIASDEPRODUCTOS[2]=='0'); //exportar
-         btncimprimir.setEnabled(zmenu.P_CATEGORIASDEPRODUCTOS[3]=='0'); //imprimir
+         btncnuevo.setEnabled(zmenu.P_CATEGORIA[0]=='0');  //nuevo 
+         btncexportaexcel.setEnabled(zmenu.P_CATEGORIA[2]=='0'); //exportar
+         btncimprimir.setEnabled(zmenu.P_CATEGORIA[3]=='0'); //imprimir
  }   
         
 //Carga toda la configuracion de la ventana

@@ -28,19 +28,19 @@ import recursos.dashtyped;
  *
  * @author kflores
  */
-public final class FIProveedores extends javax.swing.JInternalFrame {
+public final class FIProveedor extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FIProductos
      * @throws java.text.ParseException
      */
-    public FIProveedores() throws ParseException {
+    public FIProveedor() throws ParseException {
         initComponents();
         try {
             cargarconfig();
             cargartabla();
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(FIProveedores.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FIProveedor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
         /*VARIABLES NECESARIAS*/
@@ -404,12 +404,12 @@ public final class FIProveedores extends javax.swing.JInternalFrame {
 
     private void lsttablaproveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lsttablaproveedoresMouseClicked
              filaseleccionada = lsttablaproveedores.getSelectedRow();
-             btnpeditar.setEnabled(zmenu.P_PROVEEDORES[1]=='0');
+             btnpeditar.setEnabled(zmenu.P_PROVEEDOR[1]=='0');
              pasarDatosFila();
     }//GEN-LAST:event_lsttablaproveedoresMouseClicked
 
     private void btnpnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpnuevoActionPerformed
-    setEnabledDatosP(zmenu.P_PROVEEDORES[0]=='0'); //Verificar si puede crear
+    setEnabledDatosP(zmenu.P_PROVEEDOR[0]=='0'); //Verificar si puede crear
     limpiarcampos();
     }//GEN-LAST:event_btnpnuevoActionPerformed
 
@@ -463,7 +463,7 @@ public final class FIProveedores extends javax.swing.JInternalFrame {
                 
             }
         } catch (ClassNotFoundException | SQLException | ParseException ex) {
-            Logger.getLogger(FIProveedores.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FIProveedor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnpguardarActionPerformed
 
@@ -475,7 +475,7 @@ public final class FIProveedores extends javax.swing.JInternalFrame {
                 JOptionPane.showInternalMessageDialog(internal, "Selecciona una fila","Validar datos",JOptionPane.INFORMATION_MESSAGE);
             } else {
                     pasarDatosFila();
-                    setEnabledDatosP(zmenu.P_PROVEEDORES[1]=='0'); //Verificar si puede modificar
+                    setEnabledDatosP(zmenu.P_PROVEEDOR[1]=='0'); //Verificar si puede modificar
             }
         }catch (HeadlessException ex){
             JOptionPane.showInternalMessageDialog(internal, "Error inesperado, intente más tarde","Validar datos",JOptionPane.ERROR_MESSAGE);
@@ -488,13 +488,13 @@ public static String proveedores_titulo;
         try {
             proveedores_idtabla=103; //tabla flgeli
             proveedores_titulo="Fleje";
-            FIDProductosTD d=new FIDProductosTD();
+            FIDProductoTD d=new FIDProductoTD();
             d.setModal(true);
             internal.add(d);
             d.setLocation((internal.getWidth()-d.getWidth())/2,(internal.getHeight()-d.getHeight())/2);
             d.setVisible(true);
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(FIProveedores.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FIProveedor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnproveedor_flejeActionPerformed
 
@@ -680,9 +680,9 @@ public void limpiarcampos(){
         }
  //Carga las opciones de la ventana
  public void cargaopcion(){
-         btnpnuevo.setEnabled(zmenu.P_PROVEEDORES[0]=='0');  //nuevo 
-         btnpexportaexcel.setEnabled(zmenu.P_PROVEEDORES[2]=='0'); //exportar
-         btnpimprimir.setEnabled(zmenu.P_PROVEEDORES[3]=='0'); //imprimir
+         btnpnuevo.setEnabled(zmenu.P_PROVEEDOR[0]=='0');  //nuevo 
+         btnpexportaexcel.setEnabled(zmenu.P_PROVEEDOR[2]=='0'); //exportar
+         btnpimprimir.setEnabled(zmenu.P_PROVEEDOR[3]=='0'); //imprimir
  }   
         
 //Carga toda la configuracion de la ventana

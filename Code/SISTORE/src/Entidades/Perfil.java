@@ -12,6 +12,7 @@ package Entidades;
 public class Perfil {
 int IDPERFIL;
 String DESCRIPCION;
+String FLEJE;
 char FLGELI;
 
     public int getIDPERFIL() {
@@ -30,6 +31,14 @@ char FLGELI;
         this.DESCRIPCION = DESCRIPCION;
     }
 
+    public String getFLEJE() {
+        return FLEJE;
+    }
+
+    public void setFLEJE(String FLEJE) {
+        this.FLEJE = FLEJE;
+    }
+
     public char getFLGELI() {
         return FLGELI;
     }
@@ -38,20 +47,23 @@ char FLGELI;
         this.FLGELI = FLGELI;
     }
 
-    public Perfil(int IDPERFIL, String DESCRIPCION, char FLGELI) {
+
+    public Perfil(int IDPERFIL, String DESCRIPCION, String FLEJE, char FLGELI) {
         this.IDPERFIL = IDPERFIL;
         this.DESCRIPCION = DESCRIPCION;
         this.FLGELI = FLGELI;
+        this.FLEJE = FLEJE;
     }
 
     public Perfil() {
     }
 
             public String [] DatosArray(){
-        String [] lista = new String[3];
+        String [] lista = new String[4];
         lista[0]=String.valueOf(IDPERFIL);
         lista[1]=DESCRIPCION;
-        lista[2]=String.valueOf(FLGELI);
+        lista[2]=FLEJE;
+        lista[3]=String.valueOf(FLGELI);
         return lista;
     }   
 

@@ -5,9 +5,7 @@
  */
 package Presentacion;
 
-import AD.ADCategoria;
 import AD.ADTabladetalle;
-import Entidades.Categoria;
 import Entidades.Tabladetalle;
 import static Presentacion.zmenu.internal;
 import java.awt.AWTEvent;
@@ -23,20 +21,18 @@ import javax.swing.RowFilter;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
-import recursos.dashstyle;
 import recursos.dashtyped;
-import static Presentacion.FIProductos.txproducto_categoria;
-import static Presentacion.FIProductos.txproducto_umedida;
-import static Presentacion.FIProductos.txproducto_estado;
-import static Presentacion.FIProductos.txproducto_fleje;
-import static Presentacion.FIProductos.producto_idtabla;
-import static Presentacion.FIProductos.producto_titulo;
+import static Presentacion.FIProducto.txproducto_estado;
+import static Presentacion.FIProducto.producto_idtabla;
+import static Presentacion.FIProducto.producto_titulo;
+import static Presentacion.FIProveedor.proveedores_idtabla;
+import static Presentacion.FIProveedor.txproveedor_fleje;
 
 /**
  *
  * @author KFLORES
  */
-public class FIDProductosTD extends javax.swing.JInternalFrame{
+public class FIDProveedorTD extends javax.swing.JInternalFrame{
 
     /**
      * Creates new form FIDTabladetalle
@@ -44,7 +40,7 @@ public class FIDProductosTD extends javax.swing.JInternalFrame{
      * @throws java.sql.SQLException
      */
     
-    public FIDProductosTD() throws ClassNotFoundException, SQLException {
+    public FIDProveedorTD() throws ClassNotFoundException, SQLException {
         initComponents();
         cargardatos();
         txbusqueda.requestFocus();
@@ -183,15 +179,7 @@ this.dispose();
         }else{
         String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
         this.dispose();
-        if (producto_idtabla==0) {
-        txproducto_categoria.setText(valor);
-        }if (producto_idtabla==100) {
-        txproducto_umedida.setText(valor);
-        }if (producto_idtabla==104) {
-        txproducto_estado.setText(valor);
-        }if (producto_idtabla==103) {
-        txproducto_fleje.setText(valor);
-        }
+        txproveedor_fleje.setText(valor);
         }
         
 //abrir ventana y cargar la fila donde esta ubicada el elemento.
@@ -202,15 +190,7 @@ this.dispose();
        if(evt.getClickCount()==2){
        String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
         this.dispose();
-           if (producto_idtabla==0) {
-        txproducto_categoria.setText(valor);
-        }if (producto_idtabla==100) {
-        txproducto_umedida.setText(valor);
-        }if (producto_idtabla==104) {
-        txproducto_estado.setText(valor);
-        }if (producto_idtabla==103) {
-        txproducto_fleje.setText(valor);
-        }
+        txproveedor_fleje.setText(valor);
        }
     }//GEN-LAST:event_tabladetalleMouseClicked
 
@@ -340,16 +320,12 @@ this.dispose();
     TableRowSorter<DefaultTableModel> sorteo = new TableRowSorter<> (modelo);
     tabladetalle.setRowSorter(sorteo);
     
-        if (producto_idtabla!=0) {
+        if (proveedores_idtabla!=0) {
     for (Tabladetalle c : ADTabladetalle.Listar()) {
-    if (c.getIDTABLA()==producto_idtabla) {
+    if (c.getIDTABLA()==proveedores_idtabla) {
     modelo.addRow(c.DatosArray());
     }
     }  
-        }else{
-    for (Categoria c : ADCategoria.Listapersonalizada()) {
-    modelo.addRow(c.DatosArray());
-    }         
         }
     }
     

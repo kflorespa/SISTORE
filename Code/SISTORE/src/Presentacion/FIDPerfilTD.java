@@ -5,11 +5,12 @@
  */
 package Presentacion;
 
-import AD.ADCategoria;
 import AD.ADTabladetalle;
-import Entidades.Categoria;
 import Entidades.Tabladetalle;
 import static Presentacion.FICategoria.*;
+import static Presentacion.FIPerfil.perfil_idtabla;
+import static Presentacion.FIPerfil.perfil_titulo;
+import static Presentacion.FIPerfil.txperfil_fleje;
 import static Presentacion.zmenu.internal;
 import java.awt.AWTEvent;
 import java.awt.ActiveEvent;
@@ -29,7 +30,7 @@ import javax.swing.table.TableRowSorter;
  *
  * @author KFLORES
  */
-public class FIDCategoriaTD extends javax.swing.JInternalFrame{
+public class FIDPerfilTD extends javax.swing.JInternalFrame{
 
     /**
      * Creates new form FIDTabladetalle
@@ -37,7 +38,7 @@ public class FIDCategoriaTD extends javax.swing.JInternalFrame{
      * @throws java.sql.SQLException
      */
     
-    public FIDCategoriaTD() throws ClassNotFoundException, SQLException {
+    public FIDPerfilTD() throws ClassNotFoundException, SQLException {
         initComponents();
         cargardatos();
         txbusqueda.requestFocus();
@@ -176,7 +177,7 @@ this.dispose();
         }else{
         String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
         this.dispose();
-        txcategoria_fleje.setText(valor);
+        txperfil_fleje.setText(valor);
         }
 
     }//GEN-LAST:event_btnaplicarActionPerformed
@@ -185,7 +186,7 @@ this.dispose();
        if(evt.getClickCount()==2){
        String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
         this.dispose();
-        txcategoria_fleje.setText(valor);
+        txperfil_fleje.setText(valor);
        }
     }//GEN-LAST:event_tabladetalleMouseClicked
 
@@ -298,7 +299,7 @@ this.dispose();
     DefaultTableModel modelo;
     
     private void cargardatos() throws ClassNotFoundException, SQLException {
-    setTitle(c_titulo);
+    setTitle(perfil_titulo);
     String[] columnas = {"Código","Tabla","Descripción","Fleje"};    
     modelo = new DefaultTableModel(null,columnas); 
     s = new TableRowSorter(modelo);
@@ -314,7 +315,7 @@ this.dispose();
     tabladetalle.setRowSorter(sorteo);
 
     for (Tabladetalle c : ADTabladetalle.Listar()) {
-        if (c.getIDTABLA()==c_idtabla) {
+        if (c.getIDTABLA()==perfil_idtabla) {
                 modelo.addRow(c.DatosArray());
         }
     }         

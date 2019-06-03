@@ -16,55 +16,6 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="jmtablas">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tablas"/>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="ialmacenes">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Almacenes"/>
-                <Property name="enabled" type="boolean" value="false"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="iproveedores">
-              <Properties>
-                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+Alt+V"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Proveedores"/>
-                <Property name="enabled" type="boolean" value="false"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="iproveedoresActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="iproductos">
-              <Properties>
-                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+Alt+P"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Productos"/>
-                <Property name="enabled" type="boolean" value="false"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="iproductosActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="icategorias">
-              <Properties>
-                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Ctrl+Alt+C"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Categorias"/>
-                <Property name="enabled" type="boolean" value="false"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="icategoriasActionPerformed"/>
-              </Events>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
         <Menu class="javax.swing.JMenu" name="jmoperaciones">
           <Properties>
             <Property name="text" type="java.lang.String" value="Operaciones"/>
@@ -72,7 +23,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="ivisualizarstock">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Visualizar de stocks"/>
+                <Property name="text" type="java.lang.String" value="Visualizar stocks"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
@@ -128,21 +79,9 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="iperfiles">
+            <MenuItem class="javax.swing.JMenuItem" name="ialmacenes">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Perfiles"/>
-                <Property name="enabled" type="boolean" value="false"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="iusuarios">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Usuarios"/>
-                <Property name="enabled" type="boolean" value="false"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="itienda">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Tienda"/>
+                <Property name="text" type="java.lang.String" value="Almacenes"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
@@ -152,15 +91,44 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
-            <Menu class="javax.swing.JMenu" name="imasignaciones">
+            <MenuItem class="javax.swing.JMenuItem" name="itienda">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Asignaciones"/>
+                <Property name="text" type="java.lang.String" value="Tienda"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+            </MenuItem>
+            <Menu class="javax.swing.JMenu" name="jMenu2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Personal"/>
+              </Properties>
               <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="iperfiles">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Perfiles"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="iperfilesActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="iusuarios">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Usuarios"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="iusuariosActionPerformed"/>
+                  </Events>
+                </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="iasigvistausuario">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Asignar vista a usuario"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="iasigprivilegiousuario">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Asignar privilegios a usuario"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </MenuItem>
@@ -170,11 +138,48 @@
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="iasigprivilegiousuario">
+              </SubComponents>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="jMenu1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Materiales"/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="icategorias">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Asignar privilegios a usuario"/>
+                    <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                      <KeyStroke key="Ctrl+Alt+C"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Categorias"/>
                     <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="icategoriasActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="iproductos">
+                  <Properties>
+                    <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                      <KeyStroke key="Ctrl+Alt+P"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Productos"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="iproductosActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="iproveedores">
+                  <Properties>
+                    <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                      <KeyStroke key="Ctrl+Alt+V"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Proveedores"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="iproveedoresActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>

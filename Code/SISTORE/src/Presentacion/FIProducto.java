@@ -28,19 +28,19 @@ import recursos.dashtyped;
  *
  * @author kflores
  */
-public final class FIProductos extends javax.swing.JInternalFrame {
+public final class FIProducto extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form FIProductos
      * @throws java.text.ParseException
      */
-    public FIProductos() throws ParseException {
+    public FIProducto() throws ParseException {
         initComponents();
         try {
             cargarconfig();
             cargartabla();
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(FIProductos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FIProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
         /*VARIABLES NECESARIAS*/
@@ -469,12 +469,12 @@ public final class FIProductos extends javax.swing.JInternalFrame {
 
     private void lsttablaproductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lsttablaproductosMouseClicked
              filaseleccionada = lsttablaproductos.getSelectedRow();
-             btnpeditar.setEnabled(zmenu.P_PRODUCTOS[1]=='0');
+             btnpeditar.setEnabled(zmenu.P_PRODUCTO[1]=='0');
              pasarDatosFila();
     }//GEN-LAST:event_lsttablaproductosMouseClicked
 
     private void btnpnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpnuevoActionPerformed
-    setEnabledDatosP(zmenu.P_PRODUCTOS[0]=='0'); //Verificar si puede crear
+    setEnabledDatosP(zmenu.P_PRODUCTO[0]=='0'); //Verificar si puede crear
     limpiarcampos();
     }//GEN-LAST:event_btnpnuevoActionPerformed
 
@@ -549,7 +549,7 @@ public final class FIProductos extends javax.swing.JInternalFrame {
                 }
             }
         } catch (ClassNotFoundException | SQLException | ParseException ex) {
-            Logger.getLogger(FIProductos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FIProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnpguardarActionPerformed
 
@@ -561,7 +561,7 @@ public final class FIProductos extends javax.swing.JInternalFrame {
                 JOptionPane.showInternalMessageDialog(internal, "Selecciona una fila","Validar datos",JOptionPane.INFORMATION_MESSAGE);
             } else {
                     pasarDatosFila();
-                    setEnabledDatosP(zmenu.P_PRODUCTOS[1]=='0'); //Verificar si puede modificar
+                    setEnabledDatosP(zmenu.P_PRODUCTO[1]=='0'); //Verificar si puede modificar
             }
         }catch (HeadlessException ex){
             JOptionPane.showInternalMessageDialog(internal, "Error inesperado, intente más tarde","Validar datos",JOptionPane.ERROR_MESSAGE);
@@ -574,13 +574,13 @@ public static String producto_titulo;
         try {
             producto_idtabla=0; //categoria
             producto_titulo="Categoria";
-            FIDProductosTD d=new FIDProductosTD();
+            FIDProductoTD d=new FIDProductoTD();
             d.setModal(true);
             internal.add(d);
             d.setLocation((internal.getWidth()-d.getWidth())/2,(internal.getHeight()-d.getHeight())/2);
             d.setVisible(true);
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(FIProductos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FIProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnproducto_categoriaActionPerformed
 
@@ -588,13 +588,13 @@ public static String producto_titulo;
         try {
             producto_idtabla=100; //tabla unidad de medida
             producto_titulo="Unidad medida";
-            FIDProductosTD d=new FIDProductosTD();
+            FIDProductoTD d=new FIDProductoTD();
             d.setModal(true);
             internal.add(d);
             d.setLocation((internal.getWidth()-d.getWidth())/2,(internal.getHeight()-d.getHeight())/2);
             d.setVisible(true);
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(FIProductos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FIProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnproducto_umedidaActionPerformed
 
@@ -602,13 +602,13 @@ public static String producto_titulo;
         try {
             producto_idtabla=104; //tabla estado de producto
             producto_titulo="Estado";
-            FIDProductosTD d=new FIDProductosTD();
+            FIDProductoTD d=new FIDProductoTD();
             d.setModal(true);
             internal.add(d);
             d.setLocation((internal.getWidth()-d.getWidth())/2,(internal.getHeight()-d.getHeight())/2);
             d.setVisible(true);
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(FIProductos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FIProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnproducto_estadoActionPerformed
 
@@ -616,13 +616,13 @@ public static String producto_titulo;
         try {
             producto_idtabla=103; //tabla flgeli
             producto_titulo="Fleje";
-            FIDProductosTD d=new FIDProductosTD();
+            FIDProductoTD d=new FIDProductoTD();
             d.setModal(true);
             internal.add(d);
             d.setLocation((internal.getWidth()-d.getWidth())/2,(internal.getHeight()-d.getHeight())/2);
             d.setVisible(true);
         } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(FIProductos.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FIProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnproducto_flejeActionPerformed
 
@@ -827,9 +827,9 @@ public void limpiarcampos(){
         }
  //Carga las opciones de la ventana
  public void cargaopcion(){
-         btnpnuevo.setEnabled(zmenu.P_PRODUCTOS[0]=='0');  //nuevo 
-         btnpexportaexcel.setEnabled(zmenu.P_PRODUCTOS[2]=='0'); //exportar
-         btnpimprimir.setEnabled(zmenu.P_PRODUCTOS[3]=='0'); //imprimir
+         btnpnuevo.setEnabled(zmenu.P_PRODUCTO[0]=='0');  //nuevo 
+         btnpexportaexcel.setEnabled(zmenu.P_PRODUCTO[2]=='0'); //exportar
+         btnpimprimir.setEnabled(zmenu.P_PRODUCTO[3]=='0'); //imprimir
  }   
         
 //Carga toda la configuracion de la ventana
