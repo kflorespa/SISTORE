@@ -149,7 +149,7 @@ String PERFIL;
         this.FLGELI = FLGELI;
     }
 
-    public Usuario(int IDPERFIL, String PERFIL, int IDUSUARIO, String USUARIO, String CLAVE, String EMAIL, String DNI, String NOMBRES, String APELLIDOS, Date FCHNAC, String FLEJE, char FLGELI, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD) {
+    public Usuario(int IDUSUARIO, String USUARIO,int IDPERFIL, String PERFIL, String CLAVE, String EMAIL, String DNI, String NOMBRES, String APELLIDOS, Date FCHNAC, String FLEJE, char FLGELI, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD) {
         this.IDUSUARIO = IDUSUARIO;
         this.IDPERFIL = IDPERFIL;
         this.USUARIO = USUARIO;
@@ -174,10 +174,10 @@ String PERFIL;
     }
        public String [] DatosArray(){
         String [] lista = new String[16];
-        lista[0]=String.valueOf(IDPERFIL);
-        lista[1]=String.valueOf(PERFIL);
-        lista[2]=String.valueOf(IDUSUARIO);
-        lista[3]=USUARIO;
+        lista[0]=String.valueOf(IDUSUARIO);
+        lista[1]=USUARIO;
+        lista[2]=String.valueOf(IDPERFIL);
+        lista[3]=String.valueOf(PERFIL);
         lista[4]=CLAVE;
         lista[5]=EMAIL;
         lista[6]=DNI;

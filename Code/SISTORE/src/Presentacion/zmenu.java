@@ -565,7 +565,15 @@ System.exit(0);
     }//GEN-LAST:event_iproveedoresActionPerformed
 
     private void iusuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iusuariosActionPerformed
-        // TODO add your handling code here:
+          try {
+            FIUsuario fip=new FIUsuario();
+            fip.setSize(internal.getWidth(),internal.getHeight());
+            fip.setVisible(true);
+            internal.add(fip);
+            fip.toFront();
+        } catch (ParseException ex) {
+            Logger.getLogger(zmenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_iusuariosActionPerformed
 
     private void iperfilesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iperfilesActionPerformed

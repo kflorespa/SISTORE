@@ -64,35 +64,40 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
         txpdetalle = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        txproducto_id = new javax.swing.JTextField();
+        txusuario_id = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txproducto_ean = new javax.swing.JTextField();
-        tx_producto_descripcion = new javax.swing.JTextField();
+        txusuario_nombres = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txproducto_preciocom = new javax.swing.JTextField();
+        txusuario_dni = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txproducto_precioven = new javax.swing.JTextField();
+        txusuario_fechan = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        btnproducto_categoria = new javax.swing.JButton();
-        btnproducto_umedida = new javax.swing.JButton();
-        btnproducto_estado = new javax.swing.JButton();
-        btnproducto_fleje = new javax.swing.JButton();
-        txproducto_categoria = new javax.swing.JTextField();
-        txproducto_umedida = new javax.swing.JTextField();
-        txproducto_estado = new javax.swing.JTextField();
-        txproducto_fleje = new javax.swing.JTextField();
+        btnusuario_perfil = new javax.swing.JButton();
+        btnusuario_fleje = new javax.swing.JButton();
+        txusuario_usuario = new javax.swing.JTextField();
+        txusuario_clave = new javax.swing.JTextField();
+        txusuario_perfil = new javax.swing.JTextField();
+        txusuario_fleje = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        txusuario_apellidos = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        txusuario_email = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        btnusuario_resetearclave = new javax.swing.JButton();
+        btnusuario_avistas = new javax.swing.JButton();
+        btnusuario_aprivilegios = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        lsttablaproductos = new javax.swing.JTable();
+        lsttablausuarios = new javax.swing.JTable();
 
         setClosable(true);
         setIconifiable(true);
-        setTitle("Productos");
+        setTitle("Usuarios");
         setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/icono.png"))); // NOI18N
 
         jToolBar1.setFloatable(false);
@@ -190,218 +195,249 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del producto"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos del usuario"));
 
         jLabel3.setText("ID");
 
-        jLabel4.setText("Ean");
-
-        txproducto_ean.addKeyListener(new java.awt.event.KeyAdapter() {
+        txusuario_nombres.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txproducto_eanKeyTyped(evt);
+                txusuario_nombresKeyTyped(evt);
             }
         });
 
-        tx_producto_descripcion.addKeyListener(new java.awt.event.KeyAdapter() {
+        jLabel5.setText("Nombres");
+
+        jLabel6.setText("DNI");
+
+        txusuario_dni.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                tx_producto_descripcionKeyTyped(evt);
+                txusuario_dniKeyTyped(evt);
             }
         });
 
-        jLabel5.setText("Descripcion");
+        jLabel7.setText("Usuario");
 
-        jLabel6.setText("P. Compra(S./)");
+        jLabel8.setText("Clave");
 
-        txproducto_preciocom.addKeyListener(new java.awt.event.KeyAdapter() {
+        jLabel9.setText("Perfil");
+
+        jLabel10.setText("Fecha N.");
+
+        txusuario_fechan.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txproducto_preciocomKeyTyped(evt);
-            }
-        });
-
-        jLabel7.setText("Categoria");
-
-        jLabel8.setText("U. Medida");
-
-        jLabel9.setText("Estado");
-
-        jLabel10.setText("P. Venta(S./)");
-
-        txproducto_precioven.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txproducto_preciovenKeyTyped(evt);
+                txusuario_fechanKeyTyped(evt);
             }
         });
 
         jLabel11.setText("Fleje");
 
-        btnproducto_categoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa.png"))); // NOI18N
-        btnproducto_categoria.addActionListener(new java.awt.event.ActionListener() {
+        btnusuario_perfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa.png"))); // NOI18N
+        btnusuario_perfil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnproducto_categoriaActionPerformed(evt);
+                btnusuario_perfilActionPerformed(evt);
             }
         });
 
-        btnproducto_umedida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa.png"))); // NOI18N
-        btnproducto_umedida.addActionListener(new java.awt.event.ActionListener() {
+        btnusuario_fleje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa.png"))); // NOI18N
+        btnusuario_fleje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnproducto_umedidaActionPerformed(evt);
+                btnusuario_flejeActionPerformed(evt);
             }
         });
 
-        btnproducto_estado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa.png"))); // NOI18N
-        btnproducto_estado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnproducto_estadoActionPerformed(evt);
-            }
-        });
-
-        btnproducto_fleje.setIcon(new javax.swing.ImageIcon(getClass().getResource("/recursos/lupa.png"))); // NOI18N
-        btnproducto_fleje.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnproducto_flejeActionPerformed(evt);
-            }
-        });
-
-        txproducto_categoria.addKeyListener(new java.awt.event.KeyAdapter() {
+        txusuario_usuario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txproducto_categoriaKeyTyped(evt);
+                txusuario_usuarioKeyTyped(evt);
             }
         });
 
-        txproducto_umedida.addKeyListener(new java.awt.event.KeyAdapter() {
+        txusuario_clave.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txproducto_umedidaKeyTyped(evt);
+                txusuario_claveKeyTyped(evt);
             }
         });
 
-        txproducto_estado.addKeyListener(new java.awt.event.KeyAdapter() {
+        txusuario_perfil.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txproducto_estadoKeyTyped(evt);
+                txusuario_perfilKeyTyped(evt);
             }
         });
 
-        txproducto_fleje.addKeyListener(new java.awt.event.KeyAdapter() {
+        txusuario_fleje.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txproducto_flejeKeyTyped(evt);
+                txusuario_flejeKeyTyped(evt);
             }
         });
+
+        jLabel12.setText("Apellidos");
+
+        txusuario_apellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txusuario_apellidosKeyTyped(evt);
+            }
+        });
+
+        txusuario_email.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txusuario_emailKeyTyped(evt);
+            }
+        });
+
+        jLabel13.setText("Email");
+
+        btnusuario_resetearclave.setText("Resetar clave");
+
+        btnusuario_avistas.setText("Asignar vistas");
+
+        btnusuario_aprivilegios.setText("Asignar privilegios");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addComponent(btnusuario_resetearclave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(28, 28, 28)
+                                .addComponent(txusuario_email))
+                            .addComponent(jSeparator1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel7)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(7, 7, 7)
+                                        .addComponent(jLabel3)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txusuario_nombres)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(txusuario_id, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txusuario_dni)
+                                        .addGap(4, 4, 4))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(txusuario_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(26, 26, 26)
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txusuario_clave))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txusuario_apellidos)))
+                        .addGap(14, 14, 14))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txproducto_preciocom, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel11))
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txusuario_perfil)
+                            .addComponent(txusuario_fleje, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnusuario_fleje, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnusuario_perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jSeparator2)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnusuario_aprivilegios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnusuario_avistas, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txproducto_precioven, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(tx_producto_descripcion)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txproducto_id, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(23, 23, 23)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txproducto_ean)))
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txproducto_estado, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txproducto_umedida)
-                            .addComponent(txproducto_fleje, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnproducto_umedida, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnproducto_estado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnproducto_fleje, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txproducto_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnproducto_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(txusuario_fechan, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(142, 142, 142))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txproducto_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(txproducto_ean, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txusuario_dni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txusuario_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel5))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(tx_producto_descripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                        .addComponent(txusuario_nombres, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txproducto_preciocom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(txproducto_precioven, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txusuario_apellidos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txusuario_fechan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
-                .addGap(13, 13, 13)
+                .addGap(15, 15, 15)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnproducto_categoria, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel7)
-                        .addComponent(txproducto_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(10, 10, 10)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel8)
-                        .addComponent(txproducto_umedida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnproducto_umedida))
+                        .addComponent(txusuario_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8))
+                    .addComponent(txusuario_clave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(txusuario_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
                         .addComponent(jLabel9)
-                        .addComponent(txproducto_estado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnproducto_estado))
-                .addGap(10, 10, 10)
+                        .addGap(21, 21, 21))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txusuario_perfil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnusuario_perfil))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnproducto_fleje)
+                    .addComponent(btnusuario_fleje)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txproducto_fleje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txusuario_fleje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel11)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(btnusuario_resetearclave, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnusuario_aprivilegios, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(btnusuario_avistas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
-        tx_producto_descripcion.getAccessibleContext().setAccessibleName("");
+        txusuario_nombres.getAccessibleContext().setAccessibleName("");
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Listado de productos"));
 
-        lsttablaproductos = new javax.swing.JTable(){
+        lsttablausuarios = new javax.swing.JTable(){
             public boolean isCellEditable(int rowIndex, int colIndex){
                 return false;
             }
         };
-        lsttablaproductos.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        lsttablaproductos.setModel(new javax.swing.table.DefaultTableModel(
+        lsttablausuarios.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        lsttablausuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -412,25 +448,25 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        lsttablaproductos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        lsttablaproductos.getTableHeader().setResizingAllowed(false);
-        lsttablaproductos.getTableHeader().setReorderingAllowed(false);
-        lsttablaproductos.addMouseListener(new java.awt.event.MouseAdapter() {
+        lsttablausuarios.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        lsttablausuarios.getTableHeader().setResizingAllowed(false);
+        lsttablausuarios.getTableHeader().setReorderingAllowed(false);
+        lsttablausuarios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lsttablaproductosMouseClicked(evt);
+                lsttablausuariosMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(lsttablaproductos);
+        jScrollPane1.setViewportView(lsttablausuarios);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 625, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 739, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -467,14 +503,14 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lsttablaproductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lsttablaproductosMouseClicked
-             filaseleccionada = lsttablaproductos.getSelectedRow();
-             btnpeditar.setEnabled(zmenu.P_PRODUCTO[1]=='0');
+    private void lsttablausuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lsttablausuariosMouseClicked
+             filaseleccionada = lsttablausuarios.getSelectedRow();
+             btnpeditar.setEnabled(zmenu.P_USUARIO[1]=='0');
              pasarDatosFila();
-    }//GEN-LAST:event_lsttablaproductosMouseClicked
+    }//GEN-LAST:event_lsttablausuariosMouseClicked
 
     private void btnpnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpnuevoActionPerformed
-    setEnabledDatosP(zmenu.P_PRODUCTO[0]=='0'); //Verificar si puede crear
+    setEnabledDatosP(zmenu.P_USUARIO[0]=='0'); //Verificar si puede crear
     limpiarcampos();
     }//GEN-LAST:event_btnpnuevoActionPerformed
 
@@ -490,63 +526,43 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
                 filtro();
             }
         });
-        s = new TableRowSorter(lsttablaproductos.getModel());
-        lsttablaproductos.setRowSorter(s);
+        s = new TableRowSorter(lsttablausuarios.getModel());
+        lsttablausuarios.setRowSorter(s);
 
     }//GEN-LAST:event_txpdetalleKeyTyped
 
     private void btnpguardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpguardarActionPerformed
         try {
-            if (txproducto_id.getText().isEmpty()||txproducto_ean.getText().isEmpty()||tx_producto_descripcion.getText().isEmpty()||
-                    txproducto_preciocom.getText().isEmpty()||txproducto_precioven.getText().isEmpty()) {
+            if (txusuario_id.getText().isEmpty()||txusuario_dni.getText().isEmpty()||txusuario_nombres.getText().isEmpty()||
+                    txusuario_dni.getText().isEmpty()||txusuario_fechan.getText().isEmpty()) {
                 JOptionPane.showInternalMessageDialog(internal, "Debe completar todos los campos","Validar datos",JOptionPane.WARNING_MESSAGE); 
             }
             else{
- 
-            Categoria cat=new Categoria();
-            cat.setIDCATEGORIA(Integer.parseInt(txproducto_categoria.getText()));
-                if (ADCategoria.Existe(cat)) {
-                 Tabladetalle est=new Tabladetalle();
-                est.setIDTABLADETALLE(Integer.parseInt(txproducto_estado.getText()));
-                        if (ADTabladetalle.Existe(est)) {
-                            Tabladetalle um=new Tabladetalle();
-                            est.setIDTABLADETALLE(Integer.parseInt(txproducto_umedida.getText()));
-                            if (ADTabladetalle.Existe(um)) {
-                                Producto p = new Producto();
-                                p.setIDPRODUCTO(Integer.parseInt(txproducto_id.getText()));
-                                p.setEAN(txproducto_ean.getText());
-                                p.setDESCRIPCION(tx_producto_descripcion.getText().toUpperCase());
-                                p.setPRECIOCOM(Float.parseFloat(txproducto_preciocom.getText()));
-                                p.setPRECIOVEN(Float.parseFloat(txproducto_precioven.getText()));
+                                Usuario p = new Usuario();
+                                p.setIDUSUARIO(Integer.parseInt(txusuario_id.getText()));
+                                p.setDNI(txusuario_dni.getText());
+                                p.setNOMBRES(txusuario_nombres.getText().toUpperCase());
+                                p.setAPELLIDOS(txusuario_apellidos.getText());
+                                p.setFCHNAC(txusuario_fechan.getText());
+                                p.setUSUARIO(txusuario_usuario.getText());
+                                p.setCLAVE(txusuario_clave.getText());
+                                p.setEMAIL(txusuario_email.getText());
+                                p.setPERFIL(Integer.parseInt(txusuario_perfil.getText()));
+                                p.setFLGELI(txusuario_fleje.getText().charAt(0));
                                 p.setFCHMOD(zmenu.lbhorasistema.getText());
                                 p.setUSRMOD(zmenu.lbnombreusuario.getText());
-                                p.setCODESTADO(Integer.parseInt(txproducto_estado.getText()));
-                                p.setIDCATEGORIA(Integer.parseInt(txproducto_categoria.getText()));
-                                p.setCODUME(Integer.parseInt(txproducto_umedida.getText()));
-                                p.setFLGELI(txproducto_fleje.getText().charAt(0));
-                                if (ADProducto.Guardar(p)) {
+                                if (ADUsuario.Guardar(p)) {
                                 JOptionPane.showInternalMessageDialog(internal, "Se guardaron cambios","Exito",JOptionPane.INFORMATION_MESSAGE);
                                 cargartabla();
                                 limpiarcampos();
                                 txpdetalle.setText("");
-                                txproducto_id.setText("");
+                                txusuario_id.setText("");
                                 txpdetalle.requestFocus();
                                 setEnabledDatosP(false);
                                 }else{
                                 JOptionPane.showInternalMessageDialog(internal, "Intente nuevamente más tarde","Validar datos",JOptionPane.ERROR_MESSAGE);      
                                 }
-                            }else{
-                            JOptionPane.showInternalMessageDialog(internal, "Selecciona unidad de medida válido","Validar datos",JOptionPane.ERROR_MESSAGE);  
-                            txproducto_umedida.requestFocus();
-                            }
-                       }else{
-                       JOptionPane.showInternalMessageDialog(internal,"Selecciona un estado válido","Validar datos",JOptionPane.ERROR_MESSAGE);
-                       txproducto_estado.requestFocus();
-                       }
-                }else{
-                JOptionPane.showInternalMessageDialog(internal, "Selecciona una categoria válida","Validar datos",JOptionPane.ERROR_MESSAGE);
-                txproducto_categoria.requestFocus();
-                }
+                
             }
         } catch (ClassNotFoundException | SQLException | ParseException ex) {
             Logger.getLogger(FIUsuario.class.getName()).log(Level.SEVERE, null, ex);
@@ -557,7 +573,7 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
                       
         try{
             //Guardamos en un entero la fila seleccionada.
-            if (lsttablaproductos.getSelectedRow()<0){
+            if (lsttablausuarios.getSelectedRow()<0){
                 JOptionPane.showInternalMessageDialog(internal, "Selecciona una fila","Validar datos",JOptionPane.INFORMATION_MESSAGE);
             } else {
                     pasarDatosFila();
@@ -568,13 +584,13 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
         }
         
     }//GEN-LAST:event_btnpeditarActionPerformed
-public static int producto_idtabla;
-public static String producto_titulo;
-    private void btnproducto_categoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnproducto_categoriaActionPerformed
+public static int usuario_idtabla;
+public static String usuario_titulo;
+    private void btnusuario_perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnusuario_perfilActionPerformed
         try {
-            producto_idtabla=0; //categoria
-            producto_titulo="Categoria";
-            FIDProductoTD d=new FIDProductoTD();
+            usuario_idtabla=0; //tabla estado de producto
+            usuario_titulo="Perfil";
+            FIDUsuarioTD d=new FIDUsuarioTD();
             d.setModal(true);
             internal.add(d);
             d.setLocation((internal.getWidth()-d.getWidth())/2,(internal.getHeight()-d.getHeight())/2);
@@ -582,13 +598,13 @@ public static String producto_titulo;
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(FIUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_btnproducto_categoriaActionPerformed
+    }//GEN-LAST:event_btnusuario_perfilActionPerformed
 
-    private void btnproducto_umedidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnproducto_umedidaActionPerformed
+    private void btnusuario_flejeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnusuario_flejeActionPerformed
         try {
-            producto_idtabla=100; //tabla unidad de medida
-            producto_titulo="Unidad medida";
-            FIDProductoTD d=new FIDProductoTD();
+            usuario_idtabla=103; //tabla flgeli
+            usuario_titulo="Fleje";
+            FIDUsuarioTD d=new FIDUsuarioTD();
             d.setModal(true);
             internal.add(d);
             d.setLocation((internal.getWidth()-d.getWidth())/2,(internal.getHeight()-d.getHeight())/2);
@@ -596,51 +612,26 @@ public static String producto_titulo;
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(FIUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_btnproducto_umedidaActionPerformed
-
-    private void btnproducto_estadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnproducto_estadoActionPerformed
-        try {
-            producto_idtabla=104; //tabla estado de producto
-            producto_titulo="Estado";
-            FIDProductoTD d=new FIDProductoTD();
-            d.setModal(true);
-            internal.add(d);
-            d.setLocation((internal.getWidth()-d.getWidth())/2,(internal.getHeight()-d.getHeight())/2);
-            d.setVisible(true);
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(FIUsuario.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_btnproducto_estadoActionPerformed
-
-    private void btnproducto_flejeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnproducto_flejeActionPerformed
-        try {
-            producto_idtabla=103; //tabla flgeli
-            producto_titulo="Fleje";
-            FIDProductoTD d=new FIDProductoTD();
-            d.setModal(true);
-            internal.add(d);
-            d.setLocation((internal.getWidth()-d.getWidth())/2,(internal.getHeight()-d.getHeight())/2);
-            d.setVisible(true);
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(FIUsuario.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_btnproducto_flejeActionPerformed
+    }//GEN-LAST:event_btnusuario_flejeActionPerformed
 
     private void btnpexportaexcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpexportaexcelActionPerformed
         try {
             ExportarExcel obj = new ExportarExcel();
             JTable tablatemp = new JTable();
-            String[] columnas = {"IDPRODUCTO","EAN","DESCRIPCION","DCATEGORIA","DUME","DESTADO","FLEJE"};
-            String copiatemp [] = new String[7];
+            String[] columnas = {"IDUSUARIO","DNI","NOMBRES","APELLIDOS","FECHA NAC","USUARIO","CLAVE","EMAIL","PERFIL","FLEJE"};
+            String copiatemp [] = new String[10];
             DefaultTableModel mtablatemp =new DefaultTableModel (null,columnas);
-            for (int f = 0; f < lsttablaproductos.getRowCount(); f++) {
-                    copiatemp[0]=lsttablaproductos.getModel().getValueAt(lsttablaproductos.convertRowIndexToModel(f), 0).toString();
-                    copiatemp[1]=lsttablaproductos.getModel().getValueAt(lsttablaproductos.convertRowIndexToModel(f), 1).toString();
-                    copiatemp[2]=lsttablaproductos.getModel().getValueAt(lsttablaproductos.convertRowIndexToModel(f), 2).toString();
-                    copiatemp[3]=lsttablaproductos.getModel().getValueAt(lsttablaproductos.convertRowIndexToModel(f), 6).toString();
-                    copiatemp[4]=lsttablaproductos.getModel().getValueAt(lsttablaproductos.convertRowIndexToModel(f), 8).toString();
-                    copiatemp[5]=lsttablaproductos.getModel().getValueAt(lsttablaproductos.convertRowIndexToModel(f), 10).toString();
-                    copiatemp[6]=lsttablaproductos.getModel().getValueAt(lsttablaproductos.convertRowIndexToModel(f), 12).toString();
+            for (int f = 0; f < lsttablausuarios.getRowCount(); f++) {
+                    copiatemp[0]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 0).toString();
+                    copiatemp[1]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 6).toString();
+                    copiatemp[2]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 7).toString();
+                    copiatemp[3]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 8).toString();
+                    copiatemp[4]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 9).toString();
+                    copiatemp[5]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 1).toString();
+                    copiatemp[6]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 4).toString();
+                    copiatemp[7]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 5).toString();
+                    copiatemp[8]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 2).toString();
+                    copiatemp[9]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 11).toString();
                     mtablatemp.addRow(copiatemp);
             }
             tablatemp.setModel(mtablatemp);
@@ -655,7 +646,7 @@ public static String producto_titulo;
               // tabla1.print();//envia los datos de la tabla a la impresora
                      MessageFormat headerFormat = new MessageFormat("Sistore - Productos "+Formatos.sdfruta.format(new Date()));
                      MessageFormat footerFormat = new MessageFormat("- Página {0} -");
-                     lsttablaproductos.print(PrintMode.FIT_WIDTH, headerFormat, footerFormat);
+                     lsttablausuarios.print(PrintMode.FIT_WIDTH, headerFormat, footerFormat);
                                          
                      
             } catch (PrinterException ex) {
@@ -663,37 +654,41 @@ public static String producto_titulo;
             }  
     }//GEN-LAST:event_btnpimprimirActionPerformed
 
-    private void txproducto_eanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txproducto_eanKeyTyped
- new dashtyped().control_maxdigitos_numeros(evt, txproducto_ean, 20);
-    }//GEN-LAST:event_txproducto_eanKeyTyped
+    private void txusuario_nombresKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_nombresKeyTyped
+ new dashtyped().control_maxdigitos(evt, txusuario_nombres, 40);
+    }//GEN-LAST:event_txusuario_nombresKeyTyped
 
-    private void tx_producto_descripcionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tx_producto_descripcionKeyTyped
- new dashtyped().control_maxdigitos(evt, tx_producto_descripcion, 40);
-    }//GEN-LAST:event_tx_producto_descripcionKeyTyped
+    private void txusuario_dniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_dniKeyTyped
+ new dashtyped().control_maxdigitos_decimales(evt, txusuario_dni, 6);
+    }//GEN-LAST:event_txusuario_dniKeyTyped
 
-    private void txproducto_preciocomKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txproducto_preciocomKeyTyped
- new dashtyped().control_maxdigitos_decimales(evt, txproducto_preciocom, 6);
-    }//GEN-LAST:event_txproducto_preciocomKeyTyped
+    private void txusuario_fechanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_fechanKeyTyped
+ new dashtyped().control_maxdigitos_decimales(evt, txusuario_fechan, 6);
+    }//GEN-LAST:event_txusuario_fechanKeyTyped
 
-    private void txproducto_preciovenKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txproducto_preciovenKeyTyped
- new dashtyped().control_maxdigitos_decimales(evt, txproducto_precioven, 6);
-    }//GEN-LAST:event_txproducto_preciovenKeyTyped
+    private void txusuario_usuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_usuarioKeyTyped
+ new dashtyped().control_maxdigitos_numeros(evt, txusuario_usuario, 4);
+    }//GEN-LAST:event_txusuario_usuarioKeyTyped
 
-    private void txproducto_categoriaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txproducto_categoriaKeyTyped
- new dashtyped().control_maxdigitos_numeros(evt, txproducto_categoria, 4);
-    }//GEN-LAST:event_txproducto_categoriaKeyTyped
+    private void txusuario_claveKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_claveKeyTyped
+ new dashtyped().control_maxdigitos_numeros(evt, txusuario_clave, 3);
+    }//GEN-LAST:event_txusuario_claveKeyTyped
 
-    private void txproducto_umedidaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txproducto_umedidaKeyTyped
- new dashtyped().control_maxdigitos_numeros(evt, txproducto_umedida, 3);
-    }//GEN-LAST:event_txproducto_umedidaKeyTyped
+    private void txusuario_perfilKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_perfilKeyTyped
+ new dashtyped().control_maxdigitos_numeros(evt, txusuario_perfil, 3);
+    }//GEN-LAST:event_txusuario_perfilKeyTyped
 
-    private void txproducto_estadoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txproducto_estadoKeyTyped
- new dashtyped().control_maxdigitos_numeros(evt, txproducto_estado, 3);
-    }//GEN-LAST:event_txproducto_estadoKeyTyped
+    private void txusuario_flejeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_flejeKeyTyped
+new dashtyped().control_cero_uno(evt, txusuario_fleje);
+    }//GEN-LAST:event_txusuario_flejeKeyTyped
 
-    private void txproducto_flejeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txproducto_flejeKeyTyped
-new dashtyped().control_cero_uno(evt, txproducto_fleje);
-    }//GEN-LAST:event_txproducto_flejeKeyTyped
+    private void txusuario_apellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_apellidosKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txusuario_apellidosKeyTyped
+
+    private void txusuario_emailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_emailKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txusuario_emailKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -702,17 +697,19 @@ new dashtyped().control_cero_uno(evt, txproducto_fleje);
     private javax.swing.JButton btnpguardar;
     private javax.swing.JButton btnpimprimir;
     private javax.swing.JButton btnpnuevo;
-    private javax.swing.JButton btnproducto_categoria;
-    private javax.swing.JButton btnproducto_estado;
-    private javax.swing.JButton btnproducto_fleje;
-    private javax.swing.JButton btnproducto_umedida;
+    private javax.swing.JButton btnusuario_aprivilegios;
+    private javax.swing.JButton btnusuario_avistas;
+    private javax.swing.JButton btnusuario_fleje;
+    private javax.swing.JButton btnusuario_perfil;
+    private javax.swing.JButton btnusuario_resetearclave;
     private javax.swing.JComboBox<String> cbpfiltro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -722,93 +719,97 @@ new dashtyped().control_cero_uno(evt, txproducto_fleje);
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JTable lsttablaproductos;
-    private javax.swing.JTextField tx_producto_descripcion;
+    private javax.swing.JTable lsttablausuarios;
     private javax.swing.JTextField txpdetalle;
-    public static javax.swing.JTextField txproducto_categoria;
-    private javax.swing.JTextField txproducto_ean;
-    public static javax.swing.JTextField txproducto_estado;
-    public static javax.swing.JTextField txproducto_fleje;
-    private javax.swing.JTextField txproducto_id;
-    private javax.swing.JTextField txproducto_preciocom;
-    private javax.swing.JTextField txproducto_precioven;
-    public static javax.swing.JTextField txproducto_umedida;
+    private javax.swing.JTextField txusuario_apellidos;
+    public static javax.swing.JTextField txusuario_clave;
+    private javax.swing.JTextField txusuario_dni;
+    public static javax.swing.JTextField txusuario_email;
+    private javax.swing.JTextField txusuario_fechan;
+    public static javax.swing.JTextField txusuario_fleje;
+    private javax.swing.JTextField txusuario_id;
+    private javax.swing.JTextField txusuario_nombres;
+    public static javax.swing.JTextField txusuario_perfil;
+    public static javax.swing.JTextField txusuario_usuario;
     // End of variables declaration//GEN-END:variables
 
 public void limpiarcampos(){
-    txproducto_id.setText("0");
-    txproducto_ean.setText("");
-    tx_producto_descripcion.setText("");
-    txproducto_preciocom.setText("");
-    txproducto_precioven.setText("");
-    txproducto_categoria.setText("");
-    txproducto_umedida.setText("");
-    txproducto_estado.setText("");
-    txproducto_fleje.setText("");
-    txproducto_ean.requestFocus();
+    txusuario_id.setText("0");
+    txusuario_dni.setText("");
+    txusuario_nombres.setText("");
+    txusuario_dni.setText("");
+    txusuario_fechan.setText("");
+    txusuario_usuario.setText("");
+    txusuario_clave.setText("");
+    txusuario_perfil.setText("");
+    txusuario_fleje.setText("");
+    txusuario_dni.requestFocus();
 }
   
     private void initabla() {
-    String[] columnas = {"IDPRODUCTO","EAN","DESCRIPCION","PRECIOCOM","PRECIOVEN","IDCATEGORIA","DCATEGORIA","CODUME","DUME","CODESTADO","DESTADO","FLGELI","FLEJE","FC","UC","FM","UM"};    
+    String[] columnas = {"IDUSUARIO","USUARIO","IDPERFIL","PERFIL","CLAVE","EMAIL","DNI","NOMBRES","APELLIDOS","FCHNAC","FLEJE","FLGELI","FCHCREA","USRCREA","FCHMOD","USRMOD"};    
     modelo = new DefaultTableModel(null,columnas);
     s = new TableRowSorter(modelo);
-    lsttablaproductos.setModel(modelo);
-    lsttablaproductos.setRowSorter(s);
+    lsttablausuarios.setModel(modelo);
+    lsttablausuarios.setRowSorter(s);
     
     //posiciones de tabla
-    int posicion [] = {16,15,14,13,11,9,7,5,4,3};
+    int posicion [] = {15,14,13,12,11,4,2};
         for (int i = 0; i < posicion.length; i++) {
-            lsttablaproductos.getColumnModel().getColumn(posicion[i]).setMaxWidth(0);
-            lsttablaproductos.getColumnModel().getColumn(posicion[i]).setMinWidth(0);
-            lsttablaproductos.getColumnModel().getColumn(posicion[i]).setPreferredWidth(0);
+            lsttablausuarios.getColumnModel().getColumn(posicion[i]).setMaxWidth(0);
+            lsttablausuarios.getColumnModel().getColumn(posicion[i]).setMinWidth(0);
+            lsttablausuarios.getColumnModel().getColumn(posicion[i]).setPreferredWidth(0);
         }
 
     //tamaños de columnas de tabla    
-    lsttablaproductos.getColumnModel().getColumn(0).setPreferredWidth(60);
-    lsttablaproductos.getColumnModel().getColumn(1).setPreferredWidth(80);
-    lsttablaproductos.getColumnModel().getColumn(2).setPreferredWidth(250);
-    lsttablaproductos.getColumnModel().getColumn(6).setPreferredWidth(120);
+    lsttablausuarios.getColumnModel().getColumn(0).setPreferredWidth(60);
+    lsttablausuarios.getColumnModel().getColumn(1).setPreferredWidth(60);
+    lsttablausuarios.getColumnModel().getColumn(3).setPreferredWidth(60);
+    lsttablausuarios.getColumnModel().getColumn(5).setPreferredWidth(100);
+    lsttablausuarios.getColumnModel().getColumn(6).setPreferredWidth(60);
+    lsttablausuarios.getColumnModel().getColumn(7).setPreferredWidth(60);
+    lsttablausuarios.getColumnModel().getColumn(8).setPreferredWidth(150);
     TableRowSorter<DefaultTableModel> sorteo = new TableRowSorter<> (modelo);
-    lsttablaproductos.setRowSorter(sorteo);
+    lsttablausuarios.setRowSorter(sorteo);
     }
     
         public void setEnabledDatosP(boolean estado){
-            txproducto_ean.setEnabled(estado);
-            tx_producto_descripcion.setEnabled(estado);
-            txproducto_preciocom.setEnabled(estado);
-            txproducto_precioven.setEnabled(estado);
-            txproducto_categoria.setEnabled(estado);
-            txproducto_umedida.setEnabled(estado);
-            txproducto_estado.setEnabled(estado);
-            txproducto_fleje.setEnabled(estado);
-            btnproducto_categoria.setEnabled(estado);
-            btnproducto_estado.setEnabled(estado);
-            btnproducto_fleje.setEnabled(estado);
-            btnproducto_umedida.setEnabled(estado);
+            txusuario_dni.setEnabled(estado);
+            txusuario_nombres.setEnabled(estado);
+            txusuario_dni.setEnabled(estado);
+            txusuario_fechan.setEnabled(estado);
+            txusuario_usuario.setEnabled(estado);
+            txusuario_clave.setEnabled(estado);
+            txusuario_perfil.setEnabled(estado);
+            txusuario_fleje.setEnabled(estado);
+            btnusuario_perfil.setEnabled(estado);
+            btnusuario_fleje.setEnabled(estado);
             btnpguardar.setEnabled(estado);
         }
         int columnaABuscar = 0;
         //Filtro de combo para busqueda
         public void filtro() {
             
-        if ("IDPRODUCTO".equals(cbpfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 0;
-        }
-        if ("DESCRIPCION".equals(cbpfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 2;
-        }
-        if ("EAN".equals(cbpfiltro.getSelectedItem().toString())) {
+        if ("USUARIO".equals(cbpfiltro.getSelectedItem().toString())) {
             columnaABuscar = 1;
         }
-         if ("CATEGORIA".equals(cbpfiltro.getSelectedItem().toString())) {
+        if ("IDUSUARIO".equals(cbpfiltro.getSelectedItem().toString())) {
+            columnaABuscar = 0;
+        }
+        if ("DNI".equals(cbpfiltro.getSelectedItem().toString())) {
             columnaABuscar = 6;
         }
-         if ("ESTADO".equals(cbpfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 10;
+         if ("NOMBRES".equals(cbpfiltro.getSelectedItem().toString())) {
+            columnaABuscar = 7;
+        }
+         if ("APELLIDOS".equals(cbpfiltro.getSelectedItem().toString())) {
+            columnaABuscar = 8;
         }
          if ("FLEJE".equals(cbpfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 12;
+            columnaABuscar = 10;
         }
         s.setRowFilter(RowFilter.regexFilter(txpdetalle.getText(), columnaABuscar));
     }
@@ -817,47 +818,48 @@ public void limpiarcampos(){
         public void cargartabla() throws ClassNotFoundException, SQLException, ParseException {
         initabla();
         try {
-                 for (Producto p : ADProducto.Listar()) {
+                 for (Usuario p : ADUsuario.Listar()) {
                      modelo.addRow(p.DatosArray());
                  }
-                 lsttablaproductos.setModel(modelo);
+                 lsttablausuarios.setModel(modelo);
              }catch(ClassNotFoundException | NumberFormatException | SQLException e){
              JOptionPane.showMessageDialog(this, e);
              }
         }
  //Carga las opciones de la ventana
  public void cargaopcion(){
-         btnpnuevo.setEnabled(zmenu.P_PRODUCTO[0]=='0');  //nuevo 
-         btnpexportaexcel.setEnabled(zmenu.P_PRODUCTO[2]=='0'); //exportar
-         btnpimprimir.setEnabled(zmenu.P_PRODUCTO[3]=='0'); //imprimir
+         btnpnuevo.setEnabled(zmenu.P_USUARIO[0]=='0');  //nuevo 
+         btnpexportaexcel.setEnabled(zmenu.P_USUARIO[2]=='0'); //exportar
+         btnpimprimir.setEnabled(zmenu.P_USUARIO[3]=='0'); //imprimir
  }   
         
 //Carga toda la configuracion de la ventana
               public void cargarconfig() throws ClassNotFoundException, SQLException {
                   //Cargar combo de Filtros
-                  cbpfiltro.addItem("DESCRIPCION");
-                  cbpfiltro.addItem("IDPRODUCTO");
-                  cbpfiltro.addItem("EAN");
-                  cbpfiltro.addItem("CATEGORIA");
-                  cbpfiltro.addItem("ESTADO");
+                  cbpfiltro.addItem("USUARIO");
+                  cbpfiltro.addItem("IDUSUARIO");
+                  cbpfiltro.addItem("DNI");
+                  cbpfiltro.addItem("NOMBRES");
+                  cbpfiltro.addItem("APELLIDOS");
                   cbpfiltro.addItem("FLEJE");
                   //Desabilitar campos producto
                   setEnabledDatosP(false);
-                  txproducto_id.setEnabled(false);
+                  txusuario_id.setEnabled(false);
                   cargaopcion();
               
               }
 //Obtener datos de tabla y pasarlas a fila
     private void pasarDatosFila() {
-            txproducto_id.setText(lsttablaproductos.getValueAt(lsttablaproductos.getSelectedRow(), 0).toString());
-            txproducto_ean.setText(lsttablaproductos.getValueAt(lsttablaproductos.getSelectedRow(), 1).toString());
-            tx_producto_descripcion.setText(lsttablaproductos.getValueAt(lsttablaproductos.getSelectedRow(), 2).toString());
-            txproducto_preciocom.setText(lsttablaproductos.getValueAt(lsttablaproductos.getSelectedRow(), 3).toString());
-            txproducto_precioven.setText(lsttablaproductos.getValueAt(lsttablaproductos.getSelectedRow(), 4).toString());
-            txproducto_categoria.setText(lsttablaproductos.getValueAt(lsttablaproductos.getSelectedRow(), 5).toString());
-            txproducto_umedida.setText(lsttablaproductos.getValueAt(lsttablaproductos.getSelectedRow(), 7).toString());
-            txproducto_estado.setText(lsttablaproductos.getValueAt(lsttablaproductos.getSelectedRow(), 9).toString());
-            txproducto_fleje.setText(lsttablaproductos.getValueAt(lsttablaproductos.getSelectedRow(), 11).toString());
+            txusuario_id.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 0).toString());
+            txusuario_dni.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 6).toString());
+            txusuario_nombres.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 7).toString());
+            txusuario_apellidos.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 8).toString());
+            txusuario_fechan.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 9).toString());
+            txusuario_usuario.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 1).toString());
+            txusuario_perfil.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 4).toString());
+            txusuario_email.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 5).toString());
+            txusuario_perfil.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 2).toString());
+            txusuario_fleje.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 11).toString());
     }
 
 
