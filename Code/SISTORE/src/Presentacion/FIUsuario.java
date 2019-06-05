@@ -79,7 +79,6 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
         btnusuario_perfil = new javax.swing.JButton();
         btnusuario_fleje = new javax.swing.JButton();
         txusuario_usuario = new javax.swing.JTextField();
-        txusuario_clave = new javax.swing.JTextField();
         txusuario_perfil = new javax.swing.JTextField();
         txusuario_fleje = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -91,6 +90,7 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
         btnusuario_avistas = new javax.swing.JButton();
         btnusuario_aprivilegios = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
+        txusuario_clave = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lsttablausuarios = new javax.swing.JTable();
@@ -251,12 +251,6 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
             }
         });
 
-        txusuario_clave.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txusuario_claveKeyTyped(evt);
-            }
-        });
-
         txusuario_perfil.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txusuario_perfilKeyTyped(evt);
@@ -286,10 +280,21 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
         jLabel13.setText("Email");
 
         btnusuario_resetearclave.setText("Resetar clave");
+        btnusuario_resetearclave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnusuario_resetearclaveActionPerformed(evt);
+            }
+        });
 
         btnusuario_avistas.setText("Asignar vistas");
 
         btnusuario_aprivilegios.setText("Asignar privilegios");
+
+        txusuario_clave.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txusuario_claveKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -301,41 +306,6 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnusuario_resetearclave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addGap(28, 28, 28)
-                                .addComponent(txusuario_email))
-                            .addComponent(jSeparator1)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel7)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(7, 7, 7)
-                                        .addComponent(jLabel3)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txusuario_nombres)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(txusuario_id, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txusuario_dni)
-                                        .addGap(4, 4, 4))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(txusuario_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(26, 26, 26)
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txusuario_clave))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txusuario_apellidos)))
-                        .addGap(14, 14, 14))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9)
@@ -344,11 +314,11 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txusuario_perfil)
                             .addComponent(txusuario_fleje, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnusuario_fleje, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnusuario_perfil, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(127, 127, 127))
                     .addComponent(jSeparator2)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(btnusuario_aprivilegios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -356,10 +326,44 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
                         .addComponent(btnusuario_avistas, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txusuario_fechan, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(142, 142, 142))))
+                        .addComponent(txusuario_fechan, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(122, 122, 122))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(28, 28, 28)
+                                .addComponent(txusuario_email))
+                            .addComponent(jSeparator1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txusuario_apellidos))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel7)
+                                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                            .addGap(7, 7, 7)
+                                            .addComponent(jLabel3)))
+                                    .addComponent(jLabel8))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txusuario_clave)
+                                    .addComponent(txusuario_nombres)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(txusuario_id, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txusuario_dni)
+                                        .addGap(4, 4, 4))
+                                    .addComponent(txusuario_usuario))))
+                        .addContainerGap())))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -390,13 +394,14 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
                 .addGap(15, 15, 15)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel7)
-                        .addComponent(txusuario_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8))
-                    .addComponent(txusuario_clave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txusuario_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(txusuario_clave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(txusuario_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -424,12 +429,12 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnusuario_aprivilegios, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
                     .addComponent(btnusuario_avistas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addContainerGap(166, Short.MAX_VALUE))
         );
 
         txusuario_nombres.getAccessibleContext().setAccessibleName("");
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Listado de productos"));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Listado de usuarios"));
 
         lsttablausuarios = new javax.swing.JTable(){
             public boolean isCellEditable(int rowIndex, int colIndex){
@@ -506,6 +511,7 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
     private void lsttablausuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lsttablausuariosMouseClicked
              filaseleccionada = lsttablausuarios.getSelectedRow();
              btnpeditar.setEnabled(zmenu.P_USUARIO[1]=='0');
+             txusuario_clave.setEnabled(false);
              pasarDatosFila();
     }//GEN-LAST:event_lsttablausuariosMouseClicked
 
@@ -578,6 +584,7 @@ public final class FIUsuario extends javax.swing.JInternalFrame {
             } else {
                     pasarDatosFila();
                     setEnabledDatosP(zmenu.P_PRODUCTO[1]=='0'); //Verificar si puede modificar
+                    txusuario_clave.setEnabled(false);
             }
         }catch (HeadlessException ex){
             JOptionPane.showInternalMessageDialog(internal, "Error inesperado, intente más tarde","Validar datos",JOptionPane.ERROR_MESSAGE);
@@ -616,23 +623,21 @@ public static String usuario_titulo;
 
     private void btnpexportaexcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpexportaexcelActionPerformed
         try {
+            
             ExportarExcel obj = new ExportarExcel();
             JTable tablatemp = new JTable();
-            String[] columnas = {"IDUSUARIO","DNI","NOMBRES","APELLIDOS","FECHA NAC","USUARIO","CLAVE","EMAIL","PERFIL","FLEJE"};
-            String copiatemp [] = new String[10];
+            String[] columnas = {"IDUSUARIO","NOMBRES","APELLIDOS","PERFIL","USUARIO","EMAIL","FLEJE"};
+            String copiatemp [] = new String[7];
             DefaultTableModel mtablatemp =new DefaultTableModel (null,columnas);
             for (int f = 0; f < lsttablausuarios.getRowCount(); f++) {
                     copiatemp[0]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 0).toString();
-                    copiatemp[1]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 6).toString();
-                    copiatemp[2]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 7).toString();
-                    copiatemp[3]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 8).toString();
-                    copiatemp[4]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 9).toString();
-                    copiatemp[5]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 1).toString();
-                    copiatemp[6]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 4).toString();
-                    copiatemp[7]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 5).toString();
-                    copiatemp[8]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 2).toString();
-                    copiatemp[9]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 11).toString();
-                    mtablatemp.addRow(copiatemp);
+                    copiatemp[1]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 2).toString();
+                    copiatemp[2]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 3).toString();
+                    copiatemp[3]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 6).toString();
+                    copiatemp[4]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 7).toString();
+                    copiatemp[5]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 9).toString();
+                    copiatemp[6]=lsttablausuarios.getModel().getValueAt(lsttablausuarios.convertRowIndexToModel(f), 10).toString();
+                   mtablatemp.addRow(copiatemp);
             }
             tablatemp.setModel(mtablatemp);
             obj.exportarExcel(tablatemp);
@@ -659,23 +664,19 @@ public static String usuario_titulo;
     }//GEN-LAST:event_txusuario_nombresKeyTyped
 
     private void txusuario_dniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_dniKeyTyped
- new dashtyped().control_maxdigitos_decimales(evt, txusuario_dni, 6);
+ new dashtyped().control_dni(evt, txusuario_dni);
     }//GEN-LAST:event_txusuario_dniKeyTyped
 
     private void txusuario_fechanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_fechanKeyTyped
- new dashtyped().control_maxdigitos_decimales(evt, txusuario_fechan, 6);
+ //crear control para fechas
     }//GEN-LAST:event_txusuario_fechanKeyTyped
 
     private void txusuario_usuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_usuarioKeyTyped
- new dashtyped().control_maxdigitos_numeros(evt, txusuario_usuario, 4);
+ new dashtyped().control_maxdigitos(evt, txusuario_usuario, 20);
     }//GEN-LAST:event_txusuario_usuarioKeyTyped
 
-    private void txusuario_claveKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_claveKeyTyped
- new dashtyped().control_maxdigitos_numeros(evt, txusuario_clave, 3);
-    }//GEN-LAST:event_txusuario_claveKeyTyped
-
     private void txusuario_perfilKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_perfilKeyTyped
- new dashtyped().control_maxdigitos_numeros(evt, txusuario_perfil, 3);
+ new dashtyped().control_maxdigitos_numeros(evt, txusuario_perfil, 4);
     }//GEN-LAST:event_txusuario_perfilKeyTyped
 
     private void txusuario_flejeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_flejeKeyTyped
@@ -683,12 +684,40 @@ new dashtyped().control_cero_uno(evt, txusuario_fleje);
     }//GEN-LAST:event_txusuario_flejeKeyTyped
 
     private void txusuario_apellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_apellidosKeyTyped
-        // TODO add your handling code here:
+ new dashtyped().control_maxdigitos(evt, txusuario_apellidos, 30);
     }//GEN-LAST:event_txusuario_apellidosKeyTyped
 
     private void txusuario_emailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_emailKeyTyped
-        // TODO add your handling code here:
+ new dashtyped().control_maxdigitos(evt, txusuario_email, 30);
     }//GEN-LAST:event_txusuario_emailKeyTyped
+
+    private void txusuario_claveKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txusuario_claveKeyTyped
+new dashtyped().control_maxdigitos(evt, txusuario_clave, 30);
+    }//GEN-LAST:event_txusuario_claveKeyTyped
+
+    private void btnusuario_resetearclaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnusuario_resetearclaveActionPerformed
+        Usuario u=new Usuario();
+        
+        try {
+            if (txusuario_id.getText().isEmpty()||txusuario_id.getText().equals("0")) {
+            JOptionPane.showInternalMessageDialog(internal, "Debes seleccionar un usuario válido","Validar datos",JOptionPane.ERROR_MESSAGE);    
+            }else{
+            u.setIDUSUARIO(Integer.parseInt(txusuario_id.getText()));
+                if (ADUsuario.resetclave(u)) {
+                JOptionPane.showInternalMessageDialog(internal, "Se guardaron cambios","Exito",JOptionPane.INFORMATION_MESSAGE);
+                                cargartabla();
+                                limpiarcampos();
+                                txpdetalle.setText("");
+                                txusuario_id.setText("");
+                                txpdetalle.requestFocus();
+                                setEnabledDatosP(false);
+                }
+                
+            }            
+        } catch (ClassNotFoundException | SQLException | ParseException ex) {
+            Logger.getLogger(FIUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnusuario_resetearclaveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -725,7 +754,7 @@ new dashtyped().control_cero_uno(evt, txusuario_fleje);
     private javax.swing.JTable lsttablausuarios;
     private javax.swing.JTextField txpdetalle;
     private javax.swing.JTextField txusuario_apellidos;
-    public static javax.swing.JTextField txusuario_clave;
+    private javax.swing.JPasswordField txusuario_clave;
     private javax.swing.JTextField txusuario_dni;
     public static javax.swing.JTextField txusuario_email;
     private javax.swing.JTextField txusuario_fechan;
@@ -746,18 +775,20 @@ public void limpiarcampos(){
     txusuario_clave.setText("");
     txusuario_perfil.setText("");
     txusuario_fleje.setText("");
+    txusuario_apellidos.setText("");
+    txusuario_email.setText("");
     txusuario_dni.requestFocus();
 }
   
     private void initabla() {
-    String[] columnas = {"IDUSUARIO","USUARIO","IDPERFIL","PERFIL","CLAVE","EMAIL","DNI","NOMBRES","APELLIDOS","FCHNAC","FLEJE","FLGELI","FCHCREA","USRCREA","FCHMOD","USRMOD"};    
+    String[] columnas = {"IDUSUARIO","DNI","NOMBRES","APELLIDOS","FCHNAC","IDPERFIL","PERFIL","USUARIO","CLAVE","EMAIL","FLEJE","FLGELI","FCHCREA","USRCREA","FCHMOD","USRMOD"};    
     modelo = new DefaultTableModel(null,columnas);
     s = new TableRowSorter(modelo);
     lsttablausuarios.setModel(modelo);
     lsttablausuarios.setRowSorter(s);
     
     //posiciones de tabla
-    int posicion [] = {15,14,13,12,11,4,2};
+    int posicion [] = {15,14,13,12,11,8,5,4,1};
         for (int i = 0; i < posicion.length; i++) {
             lsttablausuarios.getColumnModel().getColumn(posicion[i]).setMaxWidth(0);
             lsttablausuarios.getColumnModel().getColumn(posicion[i]).setMinWidth(0);
@@ -765,13 +796,7 @@ public void limpiarcampos(){
         }
 
     //tamaños de columnas de tabla    
-    lsttablausuarios.getColumnModel().getColumn(0).setPreferredWidth(60);
-    lsttablausuarios.getColumnModel().getColumn(1).setPreferredWidth(60);
-    lsttablausuarios.getColumnModel().getColumn(3).setPreferredWidth(60);
-    lsttablausuarios.getColumnModel().getColumn(5).setPreferredWidth(100);
-    lsttablausuarios.getColumnModel().getColumn(6).setPreferredWidth(60);
-    lsttablausuarios.getColumnModel().getColumn(7).setPreferredWidth(60);
-    lsttablausuarios.getColumnModel().getColumn(8).setPreferredWidth(150);
+    lsttablausuarios.getColumnModel().getColumn(9).setPreferredWidth(200);
     TableRowSorter<DefaultTableModel> sorteo = new TableRowSorter<> (modelo);
     lsttablausuarios.setRowSorter(sorteo);
     }
@@ -785,28 +810,28 @@ public void limpiarcampos(){
             txusuario_clave.setEnabled(estado);
             txusuario_perfil.setEnabled(estado);
             txusuario_fleje.setEnabled(estado);
+            txusuario_apellidos.setEnabled(estado);
+            txusuario_email.setEnabled(estado);
             btnusuario_perfil.setEnabled(estado);
             btnusuario_fleje.setEnabled(estado);
             btnpguardar.setEnabled(estado);
         }
+        
         int columnaABuscar = 0;
         //Filtro de combo para busqueda
         public void filtro() {
             
         if ("USUARIO".equals(cbpfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 1;
+            columnaABuscar = 7;
         }
         if ("IDUSUARIO".equals(cbpfiltro.getSelectedItem().toString())) {
             columnaABuscar = 0;
         }
-        if ("DNI".equals(cbpfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 6;
-        }
          if ("NOMBRES".equals(cbpfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 7;
+            columnaABuscar = 2;
         }
          if ("APELLIDOS".equals(cbpfiltro.getSelectedItem().toString())) {
-            columnaABuscar = 8;
+            columnaABuscar = 3;
         }
          if ("FLEJE".equals(cbpfiltro.getSelectedItem().toString())) {
             columnaABuscar = 10;
@@ -838,7 +863,6 @@ public void limpiarcampos(){
                   //Cargar combo de Filtros
                   cbpfiltro.addItem("USUARIO");
                   cbpfiltro.addItem("IDUSUARIO");
-                  cbpfiltro.addItem("DNI");
                   cbpfiltro.addItem("NOMBRES");
                   cbpfiltro.addItem("APELLIDOS");
                   cbpfiltro.addItem("FLEJE");
@@ -851,15 +875,15 @@ public void limpiarcampos(){
 //Obtener datos de tabla y pasarlas a fila
     private void pasarDatosFila() {
             txusuario_id.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 0).toString());
-            txusuario_dni.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 6).toString());
-            txusuario_nombres.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 7).toString());
-            txusuario_apellidos.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 8).toString());
-            txusuario_fechan.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 9).toString());
-            txusuario_usuario.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 1).toString());
-            txusuario_perfil.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 4).toString());
-            txusuario_email.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 5).toString());
-            txusuario_perfil.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 2).toString());
+            txusuario_dni.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 1).toString());
+            txusuario_nombres.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 2).toString());
+            txusuario_apellidos.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 3).toString());
+            txusuario_fechan.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 4).toString());
+            txusuario_usuario.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 7).toString());
+            txusuario_perfil.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 5).toString());
+            txusuario_email.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 9).toString());
             txusuario_fleje.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 11).toString());
+            txusuario_clave.setText(lsttablausuarios.getValueAt(lsttablausuarios.getSelectedRow(), 8).toString());
     }
 
 

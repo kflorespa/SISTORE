@@ -148,8 +148,8 @@ String PERFIL;
     public void setFLGELI(char FLGELI) {
         this.FLGELI = FLGELI;
     }
-
-    public Usuario(int IDUSUARIO, String USUARIO,int IDPERFIL, String PERFIL, String CLAVE, String EMAIL, String DNI, String NOMBRES, String APELLIDOS, Date FCHNAC, String FLEJE, char FLGELI, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD) {
+ 
+    public Usuario(int IDUSUARIO, String DNI, String NOMBRES, String APELLIDOS, Date FCHNAC,int IDPERFIL, String PERFIL, String USUARIO, String CLAVE, String EMAIL, String FLEJE, char FLGELI, Date FCHCREA, String USRCREA, Date FCHMOD, String USRMOD) {
         this.IDUSUARIO = IDUSUARIO;
         this.IDPERFIL = IDPERFIL;
         this.USUARIO = USUARIO;
@@ -172,18 +172,20 @@ String PERFIL;
 
     public Usuario() {
     }
+    //String[] columnas = {"IDUSUARIO","DNI","NOMBRES","APELLIDOS","FCHNAC","IDPERFIL","PERFIL","USUARIO","CLAVE","EMAIL","FLEJE","FLGELI","FCHCREA","USRCREA","FCHMOD","USRMOD"};    
+    //{15,14,13,12,11,8,5,4,1};
        public String [] DatosArray(){
         String [] lista = new String[16];
         lista[0]=String.valueOf(IDUSUARIO);
-        lista[1]=USUARIO;
-        lista[2]=String.valueOf(IDPERFIL);
-        lista[3]=String.valueOf(PERFIL);
-        lista[4]=CLAVE;
-        lista[5]=EMAIL;
-        lista[6]=DNI;
-        lista[7]=NOMBRES;
-        lista[8]=APELLIDOS;
-        lista[9]=Formatos.sdf.format(FCHNAC);
+        lista[1]=DNI;
+        lista[2]=NOMBRES;
+        lista[3]=APELLIDOS;
+        lista[4]=Formatos.sdf.format(FCHNAC);
+        lista[5]=String.valueOf(IDPERFIL);
+        lista[6]=String.valueOf(PERFIL);
+        lista[7]=USUARIO;
+        lista[8]=CLAVE;
+        lista[9]=EMAIL;
         lista[10]=String.valueOf(FLEJE);
         lista[11]=String.valueOf(FLGELI);
         lista[12]=Formatos.sdf.format(FCHCREA);

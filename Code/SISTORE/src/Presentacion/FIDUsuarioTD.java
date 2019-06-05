@@ -6,8 +6,10 @@
 package Presentacion;
 
 import AD.ADCategoria;
+import AD.ADPerfil;
 import AD.ADTabladetalle;
 import Entidades.Categoria;
+import Entidades.Perfil;
 import Entidades.Tabladetalle;
 import static Presentacion.zmenu.internal;
 import java.awt.AWTEvent;
@@ -31,6 +33,10 @@ import static Presentacion.FIProducto.txproducto_estado;
 import static Presentacion.FIProducto.txproducto_fleje;
 import static Presentacion.FIProducto.producto_idtabla;
 import static Presentacion.FIProducto.producto_titulo;
+import static Presentacion.FIUsuario.txusuario_fleje;
+import static Presentacion.FIUsuario.txusuario_perfil;
+import static Presentacion.FIUsuario.usuario_idtabla;
+import static Presentacion.FIUsuario.usuario_titulo;
 
 /**
  *
@@ -183,14 +189,11 @@ this.dispose();
         }else{
         String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
         this.dispose();
-        if (producto_idtabla==0) {
-        txproducto_categoria.setText(valor);
-        }if (producto_idtabla==100) {
-        txproducto_umedida.setText(valor);
-        }if (producto_idtabla==104) {
-        txproducto_estado.setText(valor);
-        }if (producto_idtabla==103) {
-        txproducto_fleje.setText(valor);
+           if (producto_idtabla==0) {
+        txusuario_perfil.setText(valor);
+        }
+        if (producto_idtabla==103) {
+        txusuario_fleje.setText(valor);
         }
         }
         
@@ -202,14 +205,11 @@ this.dispose();
        if(evt.getClickCount()==2){
        String valor = tabladetalle.getValueAt(tabladetalle.getSelectedRow(), 0).toString();
         this.dispose();
-           if (producto_idtabla==0) {
-        txproducto_categoria.setText(valor);
-        }if (producto_idtabla==100) {
-        txproducto_umedida.setText(valor);
-        }if (producto_idtabla==104) {
-        txproducto_estado.setText(valor);
-        }if (producto_idtabla==103) {
-        txproducto_fleje.setText(valor);
+           if (usuario_idtabla==0) {
+        txusuario_perfil.setText(valor);
+        }
+        if (usuario_idtabla==103) {
+        txusuario_fleje.setText(valor);
         }
        }
     }//GEN-LAST:event_tabladetalleMouseClicked
@@ -324,7 +324,7 @@ this.dispose();
     DefaultTableModel modelo;
     
     private void cargardatos() throws ClassNotFoundException, SQLException {
-    setTitle(producto_titulo);
+    setTitle(usuario_titulo);
     String[] columnas = {"Código","Tabla","Descripción","Fleje"};    
     modelo = new DefaultTableModel(null,columnas); 
     s = new TableRowSorter(modelo);
@@ -332,25 +332,31 @@ this.dispose();
     tabladetalle.setModel(modelo);
     tabladetalle.setRowSorter(s);
     
+    
+        if (usuario_idtabla!=0) {
     tabladetalle.removeColumn(tabladetalle.getColumnModel().getColumn(3));
     tabladetalle.removeColumn(tabladetalle.getColumnModel().getColumn(1));
-    
-    //tabladetalle.getColumnModel().getColumn(0).setPreferredWidth(25);
-    tabladetalle.getColumnModel().getColumn(1).setPreferredWidth(200);
-    TableRowSorter<DefaultTableModel> sorteo = new TableRowSorter<> (modelo);
-    tabladetalle.setRowSorter(sorteo);
-    
-        if (producto_idtabla!=0) {
+ 
     for (Tabladetalle c : ADTabladetalle.Listar()) {
-    if (c.getIDTABLA()==producto_idtabla) {
+    if (c.getIDTABLA()==usuario_idtabla) {
     modelo.addRow(c.DatosArray());
     }
     }  
         }else{
-    for (Categoria c : ADCategoria.Listapersonalizada()) {
-    modelo.addRow(c.DatosArray());
+    tabladetalle.removeColumn(tabladetalle.getColumnModel().getColumn(3));
+    tabladetalle.removeColumn(tabladetalle.getColumnModel().getColumn(2));
+ 
+    for (Perfil c : ADPerfil.Listapersonalizada()) {
+    modelo.addRow(c.Lista());
     }         
         }
+    
+    //tabladetalle.getColumnModel().getColumn(0).setPreferredWidth(25);
+    tabladetalle.getColumnModel().getColumn(1).setPreferredWidth(200);
+    
+        TableRowSorter<DefaultTableModel> sorteo = new TableRowSorter<> (modelo);
+    tabladetalle.setRowSorter(sorteo);
+    
     }
     
     int columnaABuscar = 0;

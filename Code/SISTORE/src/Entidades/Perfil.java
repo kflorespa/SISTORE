@@ -54,6 +54,7 @@ char FLGELI;
         this.FLGELI = FLGELI;
         this.FLEJE = FLEJE;
     }
+    
 
     public Perfil() {
     }
@@ -66,5 +67,13 @@ char FLGELI;
         lista[3]=String.valueOf(FLGELI);
         return lista;
     }   
+          public String [] Lista(){
+        String [] lista = new String[4];
+        lista[0]=String.valueOf(IDPERFIL);
+        lista[1]=FLEJE;
+        lista[2]=DESCRIPCION;
+        lista[3]=String.valueOf(FLGELI);
+        return lista;
+    }  
 
 }

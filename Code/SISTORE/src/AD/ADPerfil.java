@@ -68,12 +68,12 @@ public class ADPerfil {
 
     public static LinkedList<Perfil> Listapersonalizada() throws ClassNotFoundException, SQLException{
     LinkedList<Perfil> lista = new LinkedList<>();
-    String sql = "";
+    String sql = "select IDPERFIL, '' AS FLEJE ,DESCRIPCION, FLGELI from TPERFIL WHERE FLGELI='0'";
         try (Connection cn = conexionSS.conexion();
             PreparedStatement ps = cn.prepareStatement(sql)){            
             try (ResultSet rs = ps.executeQuery();){
                 while(rs.next()){
-                lista.add(new Perfil());
+                lista.add(new Perfil(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4).charAt(0)));
                 }
             }            
         }

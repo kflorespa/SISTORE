@@ -108,13 +108,12 @@ public class ADUsuario {
     }
  
         
-    private static boolean resetclave(Usuario u) throws ClassNotFoundException, SQLException{
+    public static boolean resetclave(Usuario u) throws ClassNotFoundException, SQLException{
     int r = 0;
-    String sql = "UPDATE TUSUARIO SET CLAVE=? WHERE IDUSUARIO=?";
+    String sql = "UPDATE TUSUARIO SET CLAVE='' WHERE IDUSUARIO=?";
         try (Connection cn = conexionSS.conexion();
             PreparedStatement ps = cn.prepareStatement(sql)){            
-            ps.setString(1, "");
-            ps.setInt(2, u.getIDUSUARIO());
+            ps.setInt(1, u.getIDUSUARIO());
             r = ps.executeUpdate();            
         }
     return r==1;
@@ -127,7 +126,7 @@ public class ADUsuario {
             PreparedStatement ps = cn.prepareStatement(sql)){            
             try (ResultSet rs = ps.executeQuery();){
                 while(rs.next()){
-                lista.add(new Usuario(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getDate(10), rs.getString(11), rs.getString(12).charAt(0), rs.getDate(13), rs.getString(14), rs.getDate(15), rs.getString(16)));
+                lista.add(new Usuario(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getDate(5), rs.getInt(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12).charAt(0), rs.getDate(13), rs.getString(14), rs.getDate(15), rs.getString(16)));
                 }
             }            
         }
