@@ -1,9 +1,4 @@
 package Entidades;
-
-import java.text.ParseException;
-import java.util.Date;
-import recursos.Formatos;
-
 /**
  *
  * @author kflores
@@ -15,7 +10,17 @@ String DIRECCION;
 String DEPARTAMENTO;
 String PROVINCIA;
 String DISTRITO;
-char FLGELI;    
+char FLGELI;
+
+String FLEJE;
+
+    public String getFLEJE() {
+        return FLEJE;
+    }
+
+    public void setFLEJE(String FLEJE) {
+        this.FLEJE = FLEJE;
+    }
 
     public int getIDTIENDA() {
         return IDTIENDA;
@@ -72,7 +77,7 @@ char FLGELI;
         this.FLGELI = FLGELI;
     }
 
-    public Tienda(int IDTIENDA, String NOMBRE, String DIRECCION, String DEPARTAMENTO, String PROVINCIA, String DISTRITO,char FLGELI) {
+    public Tienda(int IDTIENDA, String NOMBRE, String DIRECCION, String DEPARTAMENTO, String PROVINCIA, String DISTRITO, char FLGELI, String FLEJE) {
         this.IDTIENDA = IDTIENDA;
         this.NOMBRE = NOMBRE;
         this.DIRECCION = DIRECCION;
@@ -80,7 +85,10 @@ char FLGELI;
         this.PROVINCIA = PROVINCIA;
         this.DISTRITO = DISTRITO;
         this.FLGELI = FLGELI;
+        this.FLEJE = FLEJE;
     }
+
+
 
     public Tienda() {
     }
@@ -94,6 +102,7 @@ char FLGELI;
         lista[4]=PROVINCIA;
         lista[5]=DISTRITO;
         lista[6]=String.valueOf(FLGELI);
+        lista[6]=FLEJE;
         return lista;
     } 
 

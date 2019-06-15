@@ -741,7 +741,17 @@ new dashtyped().control_maxdigitos(evt, txusuario_clave, 30);
     }//GEN-LAST:event_btnusuario_resetearclaveActionPerformed
 
     private void btnusuario_perfil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnusuario_perfil1ActionPerformed
-        // TODO add your handling code here:
+try {
+            usuario_idtabla=0; //tabla estado de producto
+            usuario_titulo="Sucursales";
+            FIDSucursalUsuarioTD d=new FIDSucursalUsuarioTD();
+            d.setModal(true);
+            internal.add(d);
+            d.setLocation((internal.getWidth()-d.getWidth())/2,(internal.getHeight()-d.getHeight())/2);
+            d.setVisible(true);
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(FIUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnusuario_perfil1ActionPerformed
 
 

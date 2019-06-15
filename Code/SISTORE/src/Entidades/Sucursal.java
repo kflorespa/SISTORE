@@ -1,7 +1,5 @@
 package Entidades;
 
-import recursos.Formatos;
-
 /**
  *
  * @author kflores
@@ -12,6 +10,25 @@ int IDTIENDA;
 String DESCRIPCION;
 String DIRECCION;
 char FLGELI;
+
+String TIENDA;
+String FLEJE;
+
+    public String getTIENDA() {
+        return TIENDA;
+    }
+
+    public void setTIENDA(String TIENDA) {
+        this.TIENDA = TIENDA;
+    }
+
+    public String getFLEJE() {
+        return FLEJE;
+    }
+
+    public void setFLEJE(String FLEJE) {
+        this.FLEJE = FLEJE;
+    }
 
     public int getIDSUCURSAL() {
         return IDSUCURSAL;
@@ -53,25 +70,30 @@ char FLGELI;
         this.FLGELI = FLGELI;
     }
 
-    public Sucursal(int IDSUCURSAL, int IDTIENDA, String DESCRIPCION, String DIRECCION, char FLGELI) {
+    public Sucursal(int IDSUCURSAL, int IDTIENDA, String TIENDA, String DESCRIPCION, String DIRECCION, char FLGELI, String FLEJE) {
         this.IDSUCURSAL = IDSUCURSAL;
         this.IDTIENDA = IDTIENDA;
         this.DESCRIPCION = DESCRIPCION;
         this.DIRECCION = DIRECCION;
         this.FLGELI = FLGELI;
+        this.TIENDA = TIENDA;
+        this.FLEJE = FLEJE;
     }
 
+ 
 
     public Sucursal() {
     }
     
         public String [] DatosArray(){
-        String [] lista = new String[5];
+        String [] lista = new String[7];
         lista[0]=String.valueOf(IDSUCURSAL);
         lista[1]=String.valueOf(IDTIENDA);
-        lista[2]=DESCRIPCION;
-        lista[3]=DIRECCION;
-        lista[4]=String.valueOf(FLGELI);
+        lista[2]=TIENDA;
+        lista[3]=DESCRIPCION;
+        lista[4]=DIRECCION;
+        lista[5]=String.valueOf(FLGELI);
+        lista[6]=FLEJE;
         return lista;
     } 
 

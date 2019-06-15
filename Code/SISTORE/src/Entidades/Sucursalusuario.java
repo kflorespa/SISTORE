@@ -96,16 +96,17 @@ char FLGELI;
     public Sucursalusuario() {
     }
     
-   public String [] DatosArray(){
-        String [] lista = new String[8];
+   public Object [] DatosArray(){
+        Object [] lista = new String[9];
         lista[0]=String.valueOf(IDSUCURSAL_USUARIO);
         lista[1]=String.valueOf(IDSUCURSAL);
         lista[2]=String.valueOf(IDUSUARIO);
         lista[3]=Formatos.sdf.format(FCHCREA);
-        lista[4]=USRCREA;
+        lista[4]=String.valueOf(USRCREA);
         lista[5]=Formatos.sdf.format(FCHMOD);
-        lista[6]=USRMOD;
+        lista[6]=String.valueOf(USRMOD);
         lista[7]=String.valueOf(FLGELI);
+   
         return lista;
     }   
 }
