@@ -9,7 +9,7 @@ int IDSUCURSAL;
 int IDTIENDA;
 String DESCRIPCION;
 String DIRECCION;
-char FLGELI;
+Object FLGELI;
 
 String TIENDA;
 String FLEJE;
@@ -62,15 +62,15 @@ String FLEJE;
         this.DIRECCION = DIRECCION;
     }
     
-    public char getFLGELI() {
+    public Object getFLGELI() {
         return FLGELI;
     }
 
-    public void setFLGELI(char FLGELI) {
+    public void setFLGELI(Object FLGELI) {
         this.FLGELI = FLGELI;
     }
 
-    public Sucursal(int IDSUCURSAL, int IDTIENDA, String TIENDA, String DESCRIPCION, String DIRECCION, char FLGELI, String FLEJE) {
+    public Sucursal(int IDSUCURSAL, int IDTIENDA, String TIENDA, String DESCRIPCION, String DIRECCION, Object FLGELI, String FLEJE) {
         this.IDSUCURSAL = IDSUCURSAL;
         this.IDTIENDA = IDTIENDA;
         this.DESCRIPCION = DESCRIPCION;
@@ -85,14 +85,16 @@ String FLEJE;
     public Sucursal() {
     }
     
-        public String [] DatosArray(){
-        String [] lista = new String[7];
+        public Object [] DatosArray(){
+        Object [] lista = new Object[7];
         lista[0]=String.valueOf(IDSUCURSAL);
         lista[1]=String.valueOf(IDTIENDA);
         lista[2]=TIENDA;
         lista[3]=DESCRIPCION;
         lista[4]=DIRECCION;
-        lista[5]=String.valueOf(FLGELI);
+        int ac = Integer.parseInt((String) FLGELI);
+        if(ac == 1) lista[5] = false;
+        else lista[5] = true;
         lista[6]=FLEJE;
         return lista;
     } 

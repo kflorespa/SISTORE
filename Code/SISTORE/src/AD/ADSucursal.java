@@ -34,7 +34,7 @@ public class ADSucursal {
             PreparedStatement ps = cn.prepareStatement(sql)){            
             try (ResultSet rs = ps.executeQuery();){
                 while(rs.next()){
-                lista.add(new Sucursal(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6).charAt(0), rs.getString(7)));
+                lista.add(new Sucursal(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getObject(6), rs.getString(7)));
                 }
             }            
         }

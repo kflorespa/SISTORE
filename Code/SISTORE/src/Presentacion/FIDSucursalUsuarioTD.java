@@ -6,12 +6,8 @@
 package Presentacion;
 
 
-import AD.ADPerfil;
 import AD.ADSucursal;
-import AD.ADTabladetalle;
-import Entidades.Perfil;
 import Entidades.Sucursal;
-import Entidades.Tabladetalle;
 import static Presentacion.zmenu.internal;
 import java.awt.AWTEvent;
 import java.awt.ActiveEvent;
@@ -23,10 +19,6 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
-import static Presentacion.FIProducto.producto_idtabla;
-import static Presentacion.FIUsuario.txusuario_fleje;
-import static Presentacion.FIUsuario.txusuario_perfil;
-import static Presentacion.FIUsuario.usuario_idtabla;
 import static Presentacion.FIUsuario.usuario_titulo;
 
 /**
@@ -79,7 +71,15 @@ public class FIDSucursalUsuarioTD extends javax.swing.JInternalFrame{
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tabladetalle.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         tabladetalle.getTableHeader().setResizingAllowed(false);
         tabladetalle.getTableHeader().setReorderingAllowed(false);
@@ -261,16 +261,11 @@ this.dispose();
     setTitle(usuario_titulo);
     String[] columnas = {"ID","IDTIENDA","TIENDA","SUCURSAL","DIRECCIÓN","FLGELI","FLEJE"};    
     modelo = new DefaultTableModel(null,columnas); 
-    modelo.addColumn(false);
     tabladetalle.setModel(modelo);
-    int aux=0;
+    
     for (Sucursal c : ADSucursal.ListaCompleta()) {
     modelo.addRow(c.DatosArray());
-    modelo.setValueAt(true, aux,7);
-    aux++;
-    }
-    
-        
+    }        
     //tabladetalle.getColumnModel().getColumn(0).setPreferredWidth(25);
     //tabladetalle.getColumnModel().getColumn(1).setPreferredWidth(200);
     
